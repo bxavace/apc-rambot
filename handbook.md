@@ -65,35 +65,35 @@ Emergency Evacuation 22
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>Scholarship Grants</p>
-</blockquote></th>
+</th>
 <th>24</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Financial Assistance</p>
-</blockquote></td>
+</td>
 <td>26</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Terms and Conditions</p>
-</blockquote></td>
+</td>
 <td>27</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Engineering Scholarship Program</p>
-</blockquote></td>
+</td>
 <td>29</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Renewal of Grants/Financial Assistance</p>
-</blockquote></td>
+</td>
 <td>30</td>
 </tr>
 <tr class="odd">
@@ -101,111 +101,111 @@ Emergency Evacuation 22
 <td><strong>31</strong></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Academic Calendar</p>
-</blockquote></td>
+</td>
 <td>31</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Registration and Enrollment</p>
-</blockquote></td>
+</td>
 <td>31</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Student Classifications</p>
-</blockquote></td>
+</td>
 <td>31</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Registration</p>
-</blockquote></td>
+</td>
 <td>32</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Enrollment</p>
-</blockquote></td>
+</td>
 <td>33</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Credit and Grading System</p>
-</blockquote></td>
+</td>
 <td>35</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Program Shifting</p>
-</blockquote></td>
+</td>
 <td>39</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Discontinuance of Studies</p>
-</blockquote></td>
+</td>
 <td>40</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Readmission</p>
-</blockquote></td>
+</td>
 <td>41</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Maximum Residency</p>
-</blockquote></td>
+</td>
 <td>42</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Graduation</p>
-</blockquote></td>
+</td>
 <td>42</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Application for Graduation</p>
-</blockquote></td>
+</td>
 <td>42</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Graduation Clearance</p>
-</blockquote></td>
+</td>
 <td>43</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Graduation Fee</p>
-</blockquote></td>
+</td>
 <td>44</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Honors List and Academic Awards</p>
-</blockquote></td>
+</td>
 <td>44</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>|Honors List</p>
-</blockquote></td>
+</td>
 <td>44</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Academic Awards</p>
-</blockquote></td>
+</td>
 <td>45</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Request for Student Records</p>
-</blockquote></td>
+</td>
 <td>49</td>
 </tr>
 <tr class="even">
@@ -213,39 +213,39 @@ Emergency Evacuation 22
 <td><strong>49</strong></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Fees and Payments</p>
-</blockquote></td>
+</td>
 <td>49</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Penalties</p>
-</blockquote></td>
+</td>
 <td>50</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Grades, Certifications, and Clearances</p>
-</blockquote></td>
+</td>
 <td>50</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Midterm and Final Exam Clearance</p>
-</blockquote></td>
+</td>
 <td>50</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Graduation Fee</p>
-</blockquote></td>
+</td>
 <td>50</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Replacement Fee of Lost Documents</p>
-</blockquote></td>
+</td>
 <td>50</td>
 </tr>
 </tbody>
@@ -256,36 +256,36 @@ Emergency Evacuation 22
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>E-mail and Network Accounts</p>
-</blockquote></th>
+</th>
 <th>51</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Computer Laboratories and Studio</p>
-</blockquote></td>
+</td>
 <td>52</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Guidelines and Policies for the Use of IT Resources</p>
-</blockquote></td>
+</td>
 <td>53</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Guidelines for Borrowing and Returning of IT Equipment</p>
-</blockquote>
+
 <p>Guidelines for Reserving/Using Computer Laboratories, Audio</p></td>
 <td>58</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Recording Studios, Photography, and Videography Studio</p>
-</blockquote></td>
+</td>
 <td>60</td>
 </tr>
 <tr class="odd">
@@ -293,9 +293,9 @@ Emergency Evacuation 22
 <td><strong>61</strong></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Services</p>
-</blockquote></td>
+</td>
 <td>61</td>
 </tr>
 <tr class="odd">
@@ -303,9 +303,9 @@ Emergency Evacuation 22
 <td><strong>62</strong></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Engineering and Sciences Laboratories</p>
-</blockquote></td>
+</td>
 <td>62</td>
 </tr>
 <tr class="odd">
@@ -313,27 +313,27 @@ Emergency Evacuation 22
 <td><strong>69</strong></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Developmental Programs</p>
-</blockquote></td>
+</td>
 <td>69</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Student Organizations</p>
-</blockquote></td>
+</td>
 <td>69</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Performing Arts Group (PAG)</p>
-</blockquote></td>
+</td>
 <td>70</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Varsities</p>
-</blockquote></td>
+</td>
 <td>71</td>
 </tr>
 <tr class="even">
@@ -349,9 +349,9 @@ Emergency Evacuation 22
 <td><strong>79</strong></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Medical Services</p>
-</blockquote></td>
+</td>
 <td>80</td>
 </tr>
 <tr class="even">
@@ -359,15 +359,15 @@ Emergency Evacuation 22
 <td><strong>82</strong></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Amenities</p>
-</blockquote></td>
+</td>
 <td>82</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Terms and Conditions</p>
-</blockquote></td>
+</td>
 <td>82</td>
 </tr>
 <tr class="odd">
@@ -375,39 +375,39 @@ Emergency Evacuation 22
 <td><strong>82</strong></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Role of the Guidance Counselor</p>
-</blockquote></td>
+</td>
 <td>83</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Role of the Psychometrician</p>
-</blockquote></td>
+</td>
 <td>83</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Guidance Services</p>
-</blockquote></td>
+</td>
 <td>83</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Interviews</p>
-</blockquote></td>
+</td>
 <td>83</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Counseling</p>
-</blockquote></td>
+</td>
 <td>84</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Consultations</p>
-</blockquote></td>
+</td>
 <td>85</td>
 </tr>
 </tbody>
@@ -472,23 +472,23 @@ Other Sports Amenities 125
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>Fitness Center</p>
-</blockquote></th>
+</th>
 <th>126</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Basement Parking</p>
-</blockquote></td>
+</td>
 <td>127</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Auditorium and other Event Venues</p>
-</blockquote></td>
+</td>
 <td>129</td>
 </tr>
 <tr class="odd">
@@ -496,33 +496,33 @@ Other Sports Amenities 125
 <td><strong>130</strong></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Definition of Terms</p>
-</blockquote></td>
+</td>
 <td>131</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Grievance Procedure</p>
-</blockquote></td>
+</td>
 <td>131</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Treatment of Complaint</p>
-</blockquote></td>
+</td>
 <td>133</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Guidelines in Writing a Letter of Complaint</p>
-</blockquote></td>
+</td>
 <td>134</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Grievance Board Procedure</p>
-</blockquote></td>
+</td>
 <td>134</td>
 </tr>
 <tr class="odd">
@@ -530,39 +530,39 @@ Other Sports Amenities 125
 <td><strong>135</strong></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Disciplinary Action and Procedures</p>
-</blockquote></td>
+</td>
 <td>135</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Disciplinary Due Process</p>
-</blockquote></td>
+</td>
 <td>136</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>List of Offenses</p>
-</blockquote></td>
+</td>
 <td>140</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Disciplinary Sanctions for Major Offenses</p>
-</blockquote></td>
+</td>
 <td>140</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Major Offenses</p>
-</blockquote></td>
+</td>
 <td>141</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Minor Offenses</p>
-</blockquote></td>
+</td>
 <td>149</td>
 </tr>
 <tr class="even">
@@ -581,54 +581,54 @@ Other Sports Amenities 125
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p><strong>Sexual Harassment Cases</strong></p>
-</blockquote>
+
 <p><strong>XIX. APPENDICES</strong></p></th>
 <th><strong>157</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Appendix A: Anti-Sexual Harassment Act of 1995</p>
-</blockquote></td>
+</td>
 <td>159</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Appendix B: Anti-Hazing Law of the Republic of the Philippines</p>
-</blockquote></td>
+</td>
 <td>163</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Appendix C: Intellectual Property Code of the Philippines</p>
-</blockquote></td>
+</td>
 <td>168</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Appendix D: Data Privacy Policy</p>
-</blockquote></td>
+</td>
 <td>189</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Appendix E: SOAR Constitution and By-laws</p>
-</blockquote></td>
+</td>
 <td>193</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Appendix F: Home Study Guidelines</p>
-</blockquote></td>
+</td>
 <td>206</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Appendix G: Institutional Health and Safety Management</p>
-</blockquote></td>
+</td>
 <td>209</td>
 </tr>
 </tbody>
@@ -1145,18 +1145,18 @@ the following schedules:
 <td>Extracurricular activities such as exhibits, film showing, contests, and concerts</td>
 <td><p>Auditorium, MPH1, and</p>
 <p>MPH2</p></td>
-<td><blockquote>
+<td>
 <p>Mondays through Fridays 7:00 a.m. to 9:00 p.m.</p>
-</blockquote>
+
 <p>Saturdays</p>
 <p>7:00 a.m. to 5:30 p.m.</p></td>
 </tr>
 <tr class="odd">
 <td>Extracurricular activities like exhibits, contests, and concerts</td>
 <td>Cafeteria</td>
-<td><blockquote>
+<td>
 <p>Mondays through Fridays 5:00 p.m. to 9:00 p.m.</p>
-</blockquote>
+
 <p>Saturdays</p>
 <p>2:00 p.m. to 5:30 p.m.</p></td>
 </tr>
@@ -1308,9 +1308,9 @@ year for Senior High School. Operating Hours:
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>SUBSIDY</p>
-</blockquote></th>
+</th>
 <th>WHO MAY APPLY</th>
 <th>DOCUMENTS TO BE SUBMITTED</th>
 </tr>
@@ -1327,9 +1327,9 @@ year for Senior High School. Operating Hours:
 <li><p>Grade 10 weighted average grade of at least 85%</p></li>
 <li><p>No grade lower than 85 in</p></li>
 </ul>
-<blockquote>
+
 <p>all subject areas</p>
-</blockquote>
+
 <ul>
 <li><p>Graduates of public, science, private, and parish high school</p></li>
 </ul></td>
@@ -1342,9 +1342,9 @@ year for Senior High School. Operating Hours:
 <td></td>
 <td><p>• Graduates of Alternative Learning System (ALS) with A&amp;E Percent Correct (PC) not lower than 85% in Part II (Communication Skills in English) and Part III (Critical</p>
 <p>Thinking and Problem-</p>
-<blockquote>
+
 <p>solving), and Essay Rating not lower than 3</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>ALS Examination Result</p></li>
 <li><p>ALS certification from DepEd</p></li>
@@ -1354,9 +1354,9 @@ year for Senior High School. Operating Hours:
 <tr class="even">
 <td></td>
 <td><p>• Aggregate annual income of family in the same household is less than</p>
-<blockquote>
+
 <p>P250,000</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>If employed, submit latest Income Tax Return (ITR) and Certificate of Employment that states the present salary and position.</p></li>
 <li><p>If unemployed, submit Barangay Certificate which shows the work status of parents.</p></li>
@@ -1368,12 +1368,12 @@ year for Senior High School. Operating Hours:
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>SUBSIDY</p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p>WHO MAY APPLY</p>
-</blockquote></th>
+</th>
 <th>DOCUMENTS TO BE SUBMITTED</th>
 </tr>
 </thead>
@@ -1384,129 +1384,129 @@ year for Senior High School. Operating Hours:
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>65%</p>
-</blockquote></td>
+</td>
 <td>• Highest Honor</td>
-<td><blockquote>
+<td>
 <p>Certification from the High School Principal/Registrar indicating his/her eligibility</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>45%</p>
-</blockquote></td>
+</td>
 <td>• High Honor</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>20%</p>
-</blockquote></td>
+</td>
 <td>• With Honors</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>APC SHS LOYALTY DISCOUNT</p>
-</blockquote></td>
+</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>50%</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Graduates of APC SHS or NU SHS</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>FAMILY DIS</p>
-</blockquote></td>
+</td>
 <td>COUNT</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>20%</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Incoming college students who have currently-enrolled siblings.</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>SM FOUNDA</p>
-</blockquote></td>
+</td>
 <td>TION SCHOLAR (SMF)</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>100%</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>For the complete list of details, students may view https://www. sm-foundation.org/what_we_do/ college-scholarship-program/ for further information.</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p><em>NOTE: Students should directly apply via the Customer Service of any SM Department Store</em></p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>SM GROUP OF COMPANIES SCHOLARSHIP</p>
-</blockquote></td>
+</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>20%</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>Children of regular employees below supervisory level</p></li>
 </ul>
-<blockquote>
+
 <p>•</p>
-</blockquote>
+
 <ul>
 <li><p>Children of regular employees belonging to supervisory level and above</p></li>
 <li><p>Siblings of regular employees</p></li>
 </ul></td>
-<td><blockquote>
+<td>
 <p>Certificate of Employment issued by their respective Human Resources Department and valid SM identification card.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>IBM SCHOLARSHIP PROGRAM</p>
-</blockquote></td>
+</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>40%</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Top 5 high school graduates endorsed by IBM</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Certification and endorsement letter from the IBM HR</p>
 <p>Department</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>20%</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Regular employees of IBM</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -1515,29 +1515,29 @@ year for Senior High School. Operating Hours:
 <td></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>AFP OFFICE</p>
-</blockquote></td>
+</td>
 <td>R’S LADIES CLUB SCHOLARS</td>
 <td>HIP (AFPOLC)</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>60%</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Children of active Commissioned Officers and Enlisted Personnel of the AFP</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Original endorsement letter signed by the designated Chapter Education Committee chairperson and noted by the</p>
 <p>AFPOLC Education Committee</p>
 <p>Chairperson</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>SUBSIDY</p>
-</blockquote></td>
+</td>
 <td>WHO MAY APPLY</td>
 <td>DOCUMENTS TO BE SUBMITTED</td>
 </tr>
@@ -1578,9 +1578,9 @@ year for Senior High School. Operating Hours:
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>SUBSIDY</p>
-</blockquote></th>
+</th>
 <th>WHO MAY APPLY</th>
 <th>DOCUMENTS TO BE SUBMITTED</th>
 </tr>
@@ -1612,37 +1612,37 @@ year for Senior High School. Operating Hours:
 <td>A certification from the High School Principal or Registrar which indicates that he/she is a graduate of a parish school, as well as any document which verifies that his/her annual tuition is less than P35,000</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>THE MANILA ECCLESIASTICAL PROVINCE SCHOOL SYSTEMS ASSOCIATION (MAPSA) INC.</p>
-</blockquote></td>
+</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>35%</td>
-<td><blockquote>
+<td>
 <p>High school graduate of MaPSA member schools (who has not attended any college/university).</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>SOCIALIZED FINANCIAL ASSISTANCE</p>
-</blockquote></td>
+</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>35%</p>
 <p>20%</p></td>
-<td><blockquote>
+<td>
 <p>Students whose family has an aggregate annual income of less than P400,000</p>
 <p>Students whose family has an aggregate annual income that is between P400,000 and P800,000</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Photocopy of parents’ or guardians’ latest Income Tax Return (ITR)</p>
 <p>If parents/guardians have businesses, a copy of the latest ITR and financial statement.</p>
-</blockquote>
+
 <p>*In the absence of an ITR or a withholding tax certificate, a copy of the Certificate of Employment which states the date hired, present salary, and present position may be submitted.</p></td>
 </tr>
 </tbody>
@@ -1669,35 +1669,35 @@ Alvarez Foundation/Industry Partner
 <thead>
 <tr class="header">
 <th>SM Foundation Scholarship (SMF)</th>
-<th><blockquote>
+<th>
 <p>2.5 or better</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Entrance Academic Scholarship</td>
-<td><blockquote>
+<td>
 <p>2.0 or better</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>SM Foundation Scholarship (SMF)</td>
-<td><blockquote>
+<td>
 <p>2.5 or better</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>SM Group of Companies Scholarship</td>
-<td><blockquote>
+<td>
 <p>2.0 or better</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>IBM Scholarship Program</td>
-<td><blockquote>
+<td>
 <p>1.5 or better</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1712,9 +1712,9 @@ Alvarez Foundation/Industry Partner
 <tbody>
 <tr class="odd">
 <td>Active Uniformed PNP</td>
-<td><blockquote>
+<td>
 <p>1.5 or better</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2043,9 +2043,9 @@ differently according to subject categories, such as the following:
 <thead>
 <tr class="header">
 <th>Grade Components</th>
-<th><blockquote>
+<th>
 <p>CORE Subjects</p>
-</blockquote></th>
+</th>
 <th>Academic Track</th>
 <th></th>
 </tr>
@@ -2121,136 +2121,136 @@ Table 2.1. College Grading System
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p><strong>APC</strong></p>
 <p><strong>Grade</strong></p>
 <p><strong>Point</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Description</strong></p>
-</blockquote></th>
+</th>
 <th><strong>Letter Rating</strong></th>
-<th><blockquote>
+<th>
 <p><strong>Grade (%)</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Other</strong></p>
 <p><strong>School’s</strong></p>
 <p><strong>Grade Point</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>4.0</td>
 <td>Excellent</td>
-<td><blockquote>
+<td>
 <p>A</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>95-100</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>1.00</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>3.5</td>
 <td>Very Good</td>
-<td><blockquote>
+<td>
 <p>A</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>91-94</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>1.25</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>3.0</td>
 <td>Good</td>
-<td><blockquote>
+<td>
 <p>B+</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>87-90</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>1.50</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>2.5</td>
 <td>Above Satisfactory</td>
-<td><blockquote>
+<td>
 <p>B</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>83-86</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>1.75</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>2.0</td>
 <td>Satisfactory</td>
-<td><blockquote>
+<td>
 <p>B-</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>79-82</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>2.00</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>1.5</td>
 <td>Fair</td>
-<td><blockquote>
+<td>
 <p>C</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>75-78</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>2.50</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>1.0</td>
 <td>Pass</td>
-<td><blockquote>
+<td>
 <p>D</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>70-74</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3.00</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>R</td>
 <td>Repeat</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>&lt; 70</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>0.0</td>
 <td>Fail</td>
-<td><blockquote>
+<td>
 <p>F</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>5.00</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>A.W.</td>
@@ -2258,9 +2258,9 @@ Table 2.1. College Grading System
 <p>Withdrawal</p></td>
 <td></td>
 <td></td>
-<td><blockquote>
+<td>
 <p>6.00</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2318,9 +2318,9 @@ H = honor points
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>COURSES</p>
-</blockquote></th>
+</th>
 <th>CREDIT UNITS</th>
 <th>GRADE POINTS</th>
 <th>HONOR POINTS</th>
@@ -2329,26 +2329,26 @@ H = honor points
 <tbody>
 <tr class="odd">
 <td><p>GRAMCOM</p>
-<blockquote>
+
 <p>ALGEBRA</p>
 <p>VALUEED</p>
 <p>ITCONCE</p>
 <p>PHYSIC1</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3</p>
 <p>3</p>
 <p>3</p>
 <p>3</p>
 <p>3</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>2.5</p>
 <p>3.5</p>
 <p>3.0</p>
 <p>2.5</p>
 <p>1.5</p>
-</blockquote></td>
+</td>
 <td><p>7.5</p>
 <p>10.5</p>
 <p>9.0</p>
@@ -2357,9 +2357,9 @@ H = honor points
 </tr>
 <tr class="even">
 <td></td>
-<td><blockquote>
+<td>
 <p>15</p>
-</blockquote></td>
+</td>
 <td></td>
 <td>39.0</td>
 </tr>
@@ -2375,9 +2375,9 @@ H = honor points
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>COURSES</p>
-</blockquote></th>
+</th>
 <th>CREDIT UNITS</th>
 <th>GRADE POINTS</th>
 <th>HONOR POINTS</th>
@@ -2386,35 +2386,35 @@ H = honor points
 <tbody>
 <tr class="odd">
 <td><p>GRAMCOM</p>
-<blockquote>
+
 <p>ALGEBRA</p>
 <p>VALUEED</p>
 <p>ITCONCE</p>
 <p>PHYSIC1</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3</p>
 <p>3</p>
 <p>3</p>
 <p>3</p>
 <p>3</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>2.0</p>
 <p>R</p>
 <p>1.5</p>
 <p>0.0</p>
 <p>R</p>
-</blockquote></td>
+</td>
 <td><p>6.0</p>
 <p>4.5</p>
 <p>0.0</p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><blockquote>
+<td>
 <p>9</p>
-</blockquote></td>
+</td>
 <td></td>
 <td>10.5</td>
 </tr>
@@ -2718,32 +2718,32 @@ Valedictorian and the Batch Salutatorian.
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p><strong>Academic Excellence Award</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>General Average</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1. With Highest Honors</td>
-<td><blockquote>
+<td>
 <p>97.00 - 100.00</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>2. With High Honors</td>
-<td><blockquote>
+<td>
 <p>93.00 - 96.99</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>3. With Honors</td>
-<td><blockquote>
+<td>
 <p>88.00 - 92.99</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3519,12 +3519,12 @@ Operating Hours:
 </thead>
 <tbody>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>7:30 a.m. - 12:00 p.m. 1:00 p.m. - 5:30 p.m.</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Subject to SoE Laboratory course offering schedules</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4313,9 +4313,9 @@ Clinic Hours:
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>Mondays to Thursdays</p>
-</blockquote></th>
+</th>
 <th>Fridays</th>
 <th>Saturdays</th>
 </tr>
@@ -4324,9 +4324,9 @@ Clinic Hours:
 <tr class="odd">
 <td>8:00 a.m. – 6:00 p.m.</td>
 <td>8:00 a.m. – 5:00 p.m.</td>
-<td><blockquote>
+<td>
 <p>8:00 a.m. – 12:00 p.m.</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -5571,10 +5571,10 @@ fully vaccinated.
 <p>MongoDB,</p>
 <p>Cassandra, REDIS, Neo4J</p>
 <p>Suse Linux</p>
-<blockquote>
+
 <p>Arduino and Raspberry Pi platforms and sensors</p>
 <p>Full Stack Development platform</p>
-</blockquote>
+
 <p>Ethical Hacking platform like Kali Linux</p></td>
 </tr>
 <tr class="odd">
@@ -6558,22 +6558,22 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -6591,9 +6591,9 @@ E. Selected Faculty Members
 <td>7.4.2</td>
 <td>1</td>
 <td>1</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
@@ -6627,22 +6627,22 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -6682,30 +6682,30 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Unauthorized possession and/or drinking of alcoholic beverages inside and/ or within a 200-meter radius from the College; entering the College premises in a state of intoxication or is proven to have taken any alcoholic beverage</td>
-<td><blockquote>
+<td>
 <p>7.4.10</p>
-</blockquote></td>
+</td>
 <td>5 and 6</td>
 <td>7, 8 or 9</td>
 <td></td>
@@ -6713,9 +6713,9 @@ E. Selected Faculty Members
 <tr class="even">
 <td><p>Unauthorized use</p>
 <p>of school facilities, documents, or equipment</p></td>
-<td><blockquote>
+<td>
 <p>7.4.11</p>
-</blockquote></td>
+</td>
 <td>5 and 6</td>
 <td>7 or 8</td>
 <td></td>
@@ -6723,18 +6723,18 @@ E. Selected Faculty Members
 <tr class="odd">
 <td><p>Violation of policies and regulations regarding</p>
 <p>the use of school facilities</p></td>
-<td><blockquote>
+<td>
 <p>7.4.12</p>
-</blockquote></td>
+</td>
 <td>5 and 6</td>
 <td>7 or 8</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Acts of lewdness, commission of any act of immorality, or the display or distribution of pornographic materials within the college</td>
-<td><blockquote>
+<td>
 <p>7.4.13</p>
-</blockquote></td>
+</td>
 <td>5 and 6</td>
 <td>7 or 8</td>
 <td></td>
@@ -6743,9 +6743,9 @@ E. Selected Faculty Members
 <td><p>Stealing, whether attempted, frustrated, or consummated; failure to turn over lost and found</p>
 <p>items to the Lost and</p>
 <p>Found area</p></td>
-<td><blockquote>
+<td>
 <p>7.4.14</p>
-</blockquote></td>
+</td>
 <td>5 and 6</td>
 <td>7 or 8</td>
 <td></td>
@@ -6756,30 +6756,30 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Acts of embezzlement by individuals who, for the purpose of school activities, have had a right to possess, use, and/or access funds and materials in question, and that such individuals subsequently kept secret and converted the assets for an unintended and/or unsanctioned use</td>
-<td><blockquote>
+<td>
 <p>7.4.15</p>
-</blockquote></td>
+</td>
 <td>5 and 6</td>
 <td>7 or 8</td>
 <td></td>
@@ -6788,9 +6788,9 @@ E. Selected Faculty Members
 <td><p>Gross acts of disrespect, in words or in deeds, that tend to put any member of the faculty, administration, non-teaching staff</p>
 <p>(clerical staff, security</p>
 <p>guard, and maintenance staff), or students in ridicule or contempt</p></td>
-<td><blockquote>
+<td>
 <p>7.4.16</p>
-</blockquote></td>
+</td>
 <td>3, 5 and 6</td>
 <td>7, 8 or 9</td>
 <td></td>
@@ -6801,30 +6801,30 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Acts that tend to destroy the good name of the College, such as public and malicious imputation of a crime, a vice or defect (real or imaginary), or any act or omission on the condition, status, and circumstance that tend to cause dishonor, discredit, or contempt to the name of the College</td>
-<td><blockquote>
+<td>
 <p>7.4.17</p>
-</blockquote></td>
+</td>
 <td>3, 5 and 6</td>
 <td>7, 8 or 9</td>
 <td></td>
@@ -6832,9 +6832,9 @@ E. Selected Faculty Members
 <tr class="even">
 <td><p>Gambling in any form</p>
 <p>within the College premises</p></td>
-<td><blockquote>
+<td>
 <p>7.4.18</p>
-</blockquote></td>
+</td>
 <td>3 and 6</td>
 <td>7 or 8</td>
 <td></td>
@@ -6844,9 +6844,9 @@ E. Selected Faculty Members
 <p>fraternity, sorority, or gang; conspiration or involvement in hazing which is any act that injures, degrades, or tends to degrade or disgrace a fellow student. This includes, but is not limited to,</p>
 <p>initiations, blessings, welcomes, submissions, and/or admissions to</p>
 <p>fraternities, sororities, and other unrecognized student organizations</p></td>
-<td><blockquote>
+<td>
 <p>7.4.19</p>
-</blockquote></td>
+</td>
 <td>7, 8 or 9</td>
 <td></td>
 <td></td>
@@ -6857,92 +6857,92 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
-<th><blockquote>
+<th>
 <p>1st</p>
 <p>OFFENSE</p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p>2nd</p>
 <p>OFFENSE</p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p>3rd</p>
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Intentional insubordination or refusal to follow the orders, instructions, official summonses, or sanctions imposed by any administrator or faculty member of the college</td>
-<td><blockquote>
+<td>
 <p>7.4.20</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and 6</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>7 or 8</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Fifth and succeeding loss of an ID</td>
-<td><blockquote>
+<td>
 <p>7.4.21</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>5 and (4 or 6)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>4, 5 and 6</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>5 and 6</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td><p>Commission of three (3) minor offenses of the same nature or five (5) minor offenses not necessarily of the same</p>
 <p>nature within a single term</p></td>
-<td><blockquote>
+<td>
 <p>7.4.22</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3, 5 and 6</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>7 or 8</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>Threatening another with infliction upon his person, honor, or property; any act amounting to a crime or wrongdoing</td>
-<td><blockquote>
+<td>
 <p>7.4.23</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3, 5 and 6</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>7 or 8</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>A or B</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>Conviction, before any court, for a criminal offense involving moral crime against individuals or property other than through reckless imprudence</td>
-<td><blockquote>
+<td>
 <p>7.4.24</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>7, 8 or 9</p>
-</blockquote></td>
+</td>
 <td></td>
 <td></td>
 </tr>
@@ -6952,30 +6952,30 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Bribery; giving or attempting to give materials or services in exchange for academic favors with malicious intent to any APC staff, faculty, students, visitors, and clients</td>
-<td><blockquote>
+<td>
 <p>7.4.25</p>
-</blockquote></td>
+</td>
 <td>7 or 8</td>
 <td></td>
 <td></td>
@@ -6983,42 +6983,42 @@ E. Selected Faculty Members
 <tr class="even">
 <td><p>Boycotting; anybody who impedes, obstructs, barricades, prevents, or defeats the right and obligation of a teacher or professor to teach their subject, the right of an administrative employee to perform</p>
 <p>his job, or the right of a student to attend his classes</p></td>
-<td><blockquote>
+<td>
 <p>7.4.26</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3, 5 and 6</p>
-</blockquote></td>
+</td>
 <td>7 or 8</td>
 </tr>
 <tr class="odd">
 <td><p>Cheating in any form during an examination, in a test, or in other written requirements such as assignments, experiments, reaction papers, seatworks, etc. (Refer to Academic / Classroom Policies,</p>
 <p>4.2.7)</p></td>
-<td><blockquote>
+<td>
 <p>7.4.27</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3, 5 and 6</p>
-</blockquote></td>
+</td>
 <td>7 or 8</td>
 </tr>
 <tr class="even">
 <td>Plagiarism and violation of the Intellectual Property Rights (Refer to Appendix C; R.A. 8293)</td>
-<td><blockquote>
+<td>
 <p>7.4.28</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3, 5 and 6</p>
-</blockquote></td>
+</td>
 <td>7 or 8</td>
 </tr>
 </tbody>
@@ -7027,118 +7027,118 @@ E. Selected Faculty Members
 <table>
 <thead>
 <tr class="header">
-<th><blockquote>
+<th>
 <p>MAJOR OFFENSES</p>
-</blockquote></th>
+</th>
 <th>REF No.</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>Fabrication and falsification of data, citation, or results in</p>
 <p>academic requirements</p></td>
-<td><blockquote>
+<td>
 <p>7.4.29</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3, 5 and 6</p>
-</blockquote></td>
+</td>
 <td>7 or 8</td>
 </tr>
 <tr class="even">
 <td><p>Deception or providing false information to</p>
 <p>the instructor or school personnel</p></td>
-<td><blockquote>
+<td>
 <p>7.4.30</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3, 5 and 6</p>
-</blockquote></td>
+</td>
 <td>7 or 8</td>
 </tr>
 <tr class="odd">
 <td>Aiding in the violation of school policies, rules, or regulations by another student, whether deliberately or inadvertently *</td>
-<td><blockquote>
+<td>
 <p>7.4.31</p>
-</blockquote></td>
+</td>
 <td>10</td>
 <td>10</td>
 <td>10</td>
 </tr>
 <tr class="even">
 <td>Bullying of any kind (verbal or physical act, gestures; written/ electronic expression, cyberbullying, or a combination thereof) that is severe, repeated, and directed at a student that has the effect of actually causing or placing the victim/complainant in reasonable fear of physical and/or emotional harm, or damage to his or her property; creating a hostile environment at school for the student</td>
-<td><blockquote>
+<td>
 <p>7.4.32</p>
-</blockquote></td>
+</td>
 <td>5 and 6</td>
 <td>7, 8, or 9</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>MAJOR OFFENSES</p>
-</blockquote></td>
+</td>
 <td>REF No.</td>
 <td><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></td>
+</td>
 <td><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></td>
+</td>
 <td><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td><p>Such other acts, hereinafter, may be determined by the Discipline Head, provided that the application thereof is prospective in nature</p>
 <p>*Penalties will be determined upon the resolution and promulgation of such other acts classified as major offenses</p></td>
-<td><blockquote>
+<td>
 <p>7.4.33</p>
-</blockquote></td>
+</td>
 <td>10</td>
 <td>10</td>
 <td>10</td>
 </tr>
 <tr class="odd">
 <td>Unauthorized use of the personal data of other individuals for whatever purposes (e.g., using someone else’s ID card; writing someone else’s name in a violation slip)</td>
-<td><blockquote>
+<td>
 <p>7.4.34</p>
-</blockquote></td>
+</td>
 <td>3 and 6</td>
 <td>7,8, or 9</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Use of tobacco, cigarette, e-cigarette, or vape within the school vicinity based on the provisions of Executive Order No. 26 (s. 2017).</td>
-<td><blockquote>
+<td>
 <p>7.4.35</p>
-</blockquote></td>
+</td>
 <td>1</td>
 <td>2</td>
-<td><blockquote>
+<td>
 <p>3 and 4 or 6</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -7159,21 +7159,21 @@ E. Selected Faculty Members
 <thead>
 <tr class="header">
 <th>MINOR OFFENSES</th>
-<th><blockquote>
+<th>
 <p>REF No.</p>
-</blockquote></th>
+</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -7183,9 +7183,9 @@ E. Selected Faculty Members
 <td>7.5.1</td>
 <td>1</td>
 <td>2 and 5</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
@@ -7196,19 +7196,19 @@ E. Selected Faculty Members
 <p>other official school documents posted by any member of the APC community on the bulletin boards for dissemination of information to the students</p></td>
 <td><p>7.5.2</p>
 <p>7.5.3</p></td>
-<td><blockquote>
+<td>
 <p>1 1 and 5</p>
-</blockquote></td>
+</td>
 <td><p>2 and 5</p>
 <p>2</p></td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p>
-<blockquote>
+
 <p>3 and 4 or 6</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -7217,21 +7217,21 @@ E. Selected Faculty Members
 <thead>
 <tr class="header">
 <th>MINOR OFFENSES</th>
-<th><blockquote>
+<th>
 <p>REF No.</p>
-</blockquote></th>
+</th>
 <th><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 <th><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -7241,9 +7241,9 @@ E. Selected Faculty Members
 <td>7.5.4</td>
 <td>1</td>
 <td>2</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
@@ -7253,9 +7253,9 @@ E. Selected Faculty Members
 <td>7.5.5</td>
 <td>1</td>
 <td>2</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
@@ -7265,9 +7265,9 @@ E. Selected Faculty Members
 <td>7.5.6</td>
 <td>1</td>
 <td>2 and 5</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
@@ -7276,38 +7276,38 @@ E. Selected Faculty Members
 <td>7.5.7</td>
 <td>1</td>
 <td>2</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
 <tr class="odd">
 <td>MINOR OFFENSES</td>
-<td><blockquote>
+<td>
 <p>REF No.</p>
-</blockquote></td>
+</td>
 <td><p>1st</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></td>
+</td>
 <td><p>2nd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></td>
+</td>
 <td><p>3rd</p>
-<blockquote>
+
 <p>OFFENSE</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>Scandalous display of affection, such as torrid and/or passionate kissing, prolonged kissing, prolonged cuddling/hugging/ embracing, necking, petting, sitting on another’s lap, and any other act that is deemed as an inappropriate display of affection</td>
 <td>7.5.8</td>
 <td>1</td>
 <td>2 and 5</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
@@ -7316,24 +7316,24 @@ E. Selected Faculty Members
 <td>7.5.9</td>
 <td>1</td>
 <td>1</td>
-<td><blockquote>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
 <tr class="even">
 <td>Littering; knowingly and intentionally leaving, placing, throwing, dropping, and discarding trash/ garbage (i.e., cigarette butts, food wrappers, etc.) within the school building and its immediate perimeter</td>
-<td><blockquote>
+<td>
 <p>7.5.10</p>
-</blockquote></td>
+</td>
 <td>1</td>
-<td><blockquote>
+<td>
 <p>(4 or 6) and 5</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>3 and (4 or 6)</p>
-</blockquote>
+
 <p>(Refer to</p>
 <p>7.4.22)</p></td>
 </tr>
