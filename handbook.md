@@ -2,7 +2,7 @@
 
 2
 
-> ASIA PACIFIC COLLEGE STUDENT HANDBOOK
+ASIA PACIFIC COLLEGE STUDENT HANDBOOK
 
 Contents
 
@@ -926,41 +926,41 @@ principles and competence in one’s field of specialization.
 
 # APC MARCH
 
-> I.
-> 
-> Sing a song and sing it loud
-> 
-> Hold your head up high and proud
-> 
-> Walk the ground that you hold dear And sing a song of cheer
-> 
-> Chorus:
-> 
-> We are one with APC
-> 
-> Alma Mater hail, we sing
-> 
-> You are in our hearts and minds
-> 
-> As we shape the world and shine
-> 
-> Our beloved APC
-> 
-> Alma Mater hail, we sing
-> 
-> II.
-> 
-> As we move to a brand new day
-> 
-> Tomorrow is one breath away
-> 
-> Let the new day’s sunshine in
-> 
-> Let the future begin
-> 
-> (Repeat Chorus 2x)
-> 
-> Alma Mater hail, we sing.
+I.
+
+Sing a song and sing it loud
+
+Hold your head up high and proud
+
+Walk the ground that you hold dear And sing a song of cheer
+
+Chorus:
+
+We are one with APC
+
+Alma Mater hail, we sing
+
+You are in our hearts and minds
+
+As we shape the world and shine
+
+Our beloved APC
+
+Alma Mater hail, we sing
+
+II.
+
+As we move to a brand new day
+
+Tomorrow is one breath away
+
+Let the new day’s sunshine in
+
+Let the future begin
+
+(Repeat Chorus 2x)
+
+Alma Mater hail, we sing.
 
 # GENERAL INFORMATION
 
@@ -1036,7 +1036,7 @@ following are safety guidelines for all passengers:
 
   - Remember that you represent the school while inside the shuttle.
 
-> Thus, proper behavior is expected.
+Thus, proper behavior is expected.
 
 **Shuttle Service Boarding Pass (SSBP)**
 
@@ -1229,8 +1229,8 @@ College are automatically called off under Signal No. 3.
 When the discretion to suspend classes is left to the school, APC shall
 declare a **“Yellow Status”** for the day, meaning:
 
-> Classes will continue but student absences are not recorded. No tests,
-> in any form, are administered.
+Classes will continue but student absences are not recorded. No tests,
+in any form, are administered.
 
 Whenever a suspension of classes is declared in the middle of the day,
 ongoing classes, at the time of declaration, will be completed. All
@@ -1661,9 +1661,9 @@ academic courses until the end of each school year:
 
 Alvarez Foundation/Industry Partner
 
-> 2.5 or better
-> 
-> Scholarship
+2.5 or better
+
+Scholarship
 
 <table>
 <thead>
@@ -1702,11 +1702,11 @@ Alvarez Foundation/Industry Partner
 </tbody>
 </table>
 
-> AFP Officer’s Ladies Club Scholarship
-> 
-> 1.5 or better
-> 
-> (AFPOLC)
+AFP Officer’s Ladies Club Scholarship
+
+1.5 or better
+
+(AFPOLC)
 
 <table>
 <tbody>
@@ -1917,11 +1917,11 @@ students.
 
 ##### 2.2.1 Petition of Courses
 
-> A student can petition a course during the registration period. A
-> minimum of 10 students are needed for the opening of the petition
-> class. Opening of the petition subject could start as early as the
-> registration period but not later than a day before the start of
-> enrollment.
+A student can petition a course during the registration period. A
+minimum of 10 students are needed for the opening of the petition
+class. Opening of the petition subject could start as early as the
+registration period but not later than a day before the start of
+enrollment.
 
 #### 2.3. ENROLLMENT
 
@@ -1968,28 +1968,28 @@ students.
 
 ##### 2.3.1 Load Revision
 
-> Load revision is a process of changing the course load of a student
-> affected by dissolution and merging of subjects. This is only allowed
-> to students only for students affected by merging and dissolution of
-> courses, or has approved wait-listed courses.
-> 
-> Any request for changes in the Certificate of Registration/Enrollment
-> must be done by securing and accomplishing the from the Office of the
-> Registrar, subject to approval by the Executive Director or Program
-> Director, subject to payment of adjusted assessment. Load Revision
-> Period occurs on the first three (3) days of the term opening.
+Load revision is a process of changing the course load of a student
+affected by dissolution and merging of subjects. This is only allowed
+to students only for students affected by merging and dissolution of
+courses, or has approved wait-listed courses.
+
+Any request for changes in the Certificate of Registration/Enrollment
+must be done by securing and accomplishing the from the Office of the
+Registrar, subject to approval by the Executive Director or Program
+Director, subject to payment of adjusted assessment. Load Revision
+Period occurs on the first three (3) days of the term opening.
 
 ##### 2.3.2 Dropping or Withdrawal of courses
 
-> Except for meritorious reasons, dropping of the entire course load in
-> a term shall not be allowed. Students who fail to apply for the
-> dropping of course(s) are considered officially enrolled and are,
-> therefore, covered by all the provisions pertinent to enrolled
-> students.
-> 
-> Withdrawal from enrollment requires the payment of fees in accordance
-> with the following guidelines, as approved by the Department of
-> Education (DepEd) and the Commission on Higher Education (CHED):
+Except for meritorious reasons, dropping of the entire course load in
+a term shall not be allowed. Students who fail to apply for the
+dropping of course(s) are considered officially enrolled and are,
+therefore, covered by all the provisions pertinent to enrolled
+students.
+
+Withdrawal from enrollment requires the payment of fees in accordance
+with the following guidelines, as approved by the Department of
+Education (DepEd) and the Commission on Higher Education (CHED):
 
 ##### A. Senior High School
 
@@ -2300,16 +2300,16 @@ samples):
 
 The formula representing this computation is as follows:
 
-> GPA = <span class="underline">(H<sub>1</sub> + H<sub>2</sub> + … +
-> H<sub>n</sub>)</span>
+GPA = <span class="underline">(H<sub>1</sub+ H<sub>2</sub+ … +
+H<sub>n</sub>)</span>
 
-(U<sub>1</sub> + U<sub>2</sub> + … + U<sub>n</sub>)
+(U<sub>1</sub+ U<sub>2</sub+ … + U<sub>n</sub>)
 
 where
 
 H = honor points
 
-> n = total number of courses U = credit units
+n = total number of courses U = credit units
 
 ## Sample Trimestral GPA Computation
 
@@ -2366,7 +2366,7 @@ H = honor points
 </tbody>
 </table>
 
-> **GPA = (39.0)/15 = 2.60**
+**GPA = (39.0)/15 = 2.60**
 
 ## Sample Trimestral GPA Computation
 
@@ -2423,7 +2423,7 @@ H = honor points
 
 *NOTE: Credited units excluding “R” grades = 9 units;*
 
-> **GPA = (10.5)/9 = 1.17**
+**GPA = (10.5)/9 = 1.17**
 
 All final grades in academic courses, except for National Service 1 & 2
 (NATSER1 & NATSER2), are included in the computation of trimestral or
@@ -2499,17 +2499,17 @@ reserves the right not to accept students who are AWOL.
 Studying at the college may be permanently discontinued if one of the
 following is done:
 
-> A Certificate of Transfer Credential (Honorable Dismissal) is issued
-> by the Office of the Registrar to a student who has petitioned for a
-> reasonable cause. A written request for this certificate must be done
-> as soon as the student decides to discontinue his/her studies at the
-> College. To secure this certification, a student must be cleared of
-> all accountabilities from the college. No records will be released to
-> any student with unsettled accounts with the Finance and Accounting
-> Office.
-> 
-> Exclusion/Expulsion of a student as initiated by the college for major
-> offenses that are stipulated in the Discipline Policies.
+A Certificate of Transfer Credential (Honorable Dismissal) is issued
+by the Office of the Registrar to a student who has petitioned for a
+reasonable cause. A written request for this certificate must be done
+as soon as the student decides to discontinue his/her studies at the
+College. To secure this certification, a student must be cleared of
+all accountabilities from the college. No records will be released to
+any student with unsettled accounts with the Finance and Accounting
+Office.
+
+Exclusion/Expulsion of a student as initiated by the college for major
+offenses that are stipulated in the Discipline Policies.
 
 An Official Transcript of Records is issued for the purpose of
 transferring a student’s or a graduate’s credits to another institution
@@ -2708,8 +2708,8 @@ College Student Handbook, Academic Excellence Awards are given to
 students who have attained a General Average of at least 88.00 and a
 Final Subject Grade not lower than 85.00.
 
-> **<span class="underline">Criteria for Determining Academic Excellence
-> Awards:</span>**
+**<span class="underline">Criteria for Determining Academic Excellence
+Awards:</span>**
 
 The Asia Pacific College Honors Committee, upon the recommendation of
 the Senior High School Graduation Committee, determines the Batch
@@ -2754,19 +2754,19 @@ The Asia Pacific College Honors Committee, upon the recommendation of
 the Senior High School Graduation Committee, determines the Batch
 Valedictorian and the Batch Salutatorian.
 
-> **<span class="underline">Primary Criteria for Determining the Batch
-> Valedictorian and</span>
-> <span class="underline">Salutatorian:</span>**
-> 
-> The title Valedictorian is awarded to the graduating student who
-> garnered the highest average of all subjects
-> 
-> The title Salutatorian is awarded to the graduating student who
-> garnered the second highest average of all subjects
-> 
-> **<span class="underline">Secondary Criteria for Determining the Batch
-> Valedictorian and</span>
-> <span class="underline">Salutatorian:</span>**
+**<span class="underline">Primary Criteria for Determining the Batch
+Valedictorian and</span>
+<span class="underline">Salutatorian:</span>**
+
+The title Valedictorian is awarded to the graduating student who
+garnered the highest average of all subjects
+
+The title Salutatorian is awarded to the graduating student who
+garnered the second highest average of all subjects
+
+**<span class="underline">Secondary Criteria for Determining the Batch
+Valedictorian and</span>
+<span class="underline">Salutatorian:</span>**
 
 | 1st | Discipline Code Compliance |
 | --- | -------------------------- |
@@ -2802,38 +2802,38 @@ the batch Valedictorian and Salutatorian.
 This award is given to a learner who have demonstrated highest
 proficiency in all of the following Core and/or Applied subjects:
 
-> *Oral Communication, English for Academic and Professional Purposes,
-> Reading and Writing, 21st Century Literature from the Philippines and
-> the World, Pagbasa at Pagsusuri ng Iba’t Ibang Teksto Tungo sa
-> Pananaliksik, Komunikasyon at Pananaliksik sa Wika at Kulturang
-> Filipino, Filipino sa Piling Larangan.*
+*Oral Communication, English for Academic and Professional Purposes,
+Reading and Writing, 21st Century Literature from the Philippines and
+the World, Pagbasa at Pagsusuri ng Iba’t Ibang Teksto Tungo sa
+Pananaliksik, Komunikasyon at Pananaliksik sa Wika at Kulturang
+Filipino, Filipino sa Piling Larangan.*
 
 #### Outstanding Performance in Mathematics
 
 This award is given to a learner who have demonstrated highest
 proficiency in all of the following Core and/or Applied subjects:
 
-> *General Mathematics*
-> 
-> *Statistics and Probability*
+*General Mathematics*
+
+*Statistics and Probability*
 
 #### Outstanding Performance in Science
 
 This award is given to a learner who have demonstrated highest
 proficiency in all of the following Core and/or Applied subjects:
 
-> *For ABM/GAS: Earth and Life Sciences and Physical Science*
-> 
-> *For STEM: Earth Science and Disaster Readiness and Risk Reduction*
+*For ABM/GAS: Earth and Life Sciences and Physical Science*
+
+*For STEM: Earth Science and Disaster Readiness and Risk Reduction*
 
 Outstanding Performance in Social Sciences
 
 This award is given to a learner who have demonstrated highest
 proficiency in all of the following Core and/or Applied subjects:
 
-> *Personal Development, Understanding Culture, Society and*
-> 
-> *Politics, and Introduction to the Philosophy of the Human Person*
+*Personal Development, Understanding Culture, Society and*
+
+*Politics, and Introduction to the Philosophy of the Human Person*
 
 ##### 4.2.2. College
 
@@ -2861,8 +2861,8 @@ his/her Cumulative Grade Point Average (CGPA) for his/her entire stay at
 APC be at least 3.8, with no failing grade (0.0) in all courses and with
 no “R” or repeat grades. The classifications are as follows:
 
-> With High Honors: Candidate who obtained the highest CGPA from among
-> the candidates
+With High Honors: Candidate who obtained the highest CGPA from among
+the candidates
 
 With Honors: Candidate/s who obtained 3.8 and above
 
@@ -2895,7 +2895,7 @@ Operating Hours:
 | --------------------- | --------------------- |
 | 7:30 a.m. - 7:00 p.m. | 7:30 a.m. - 4:30 p.m. |
 
-> \*NO LUNCH BREAKS
+\*NO LUNCH BREAKS
 
 ## Fees and Payments
 
@@ -3276,9 +3276,9 @@ limited to the following:
 
 Lent to other borrowers, and
 
-> Current borrower shall be penalized accordingly unless the reservation
-> is cancelled one (1) hour and forty-five (45) minutes before the
-> pick-up time.
+Current borrower shall be penalized accordingly unless the reservation
+is cancelled one (1) hour and forty-five (45) minutes before the
+pick-up time.
 
 2.  Borrowed equipment not returned on time will be penalized
     accordingly. (See penalty rate in the Borrower’s Form)
@@ -3445,7 +3445,7 @@ EXCOMP2 (Extensive Communication Competency Program 2, Units:
 
 3.0)
 
-> **<span class="underline">Services</span>**
+**<span class="underline">Services</span>**
 
 ### English Diagnostic Testing
 
@@ -4216,12 +4216,12 @@ materials.
 
 When requesting a referral letter, provide the following information:
 
-| Specific date of visit     | : | \<date\>                        |
+| Specific date of visit     | : | \<date\                       |
 | -------------------------- | - | ------------------------------- |
-| Library they want to visit | : | \<name of university, library\> |
-| Researcher’s name/s        | : | \<complete name\>               |
-| Program/Year Level         | : | \<program name, year level\>    |
-| Topic of research          | : | \<topic or title\>              |
+| Library they want to visit | : | \<name of university, library\|
+| Researcher’s name/s        | : | \<complete name\              |
+| Program/Year Level         | : | \<program name, year level\   |
+| Topic of research          | : | \<topic or title\             |
 
 ### Photocopying Service 
 
@@ -4395,7 +4395,7 @@ Clinic Hours:
 #### Recommendations for Students
 
 1.  Students are requested to be vigilant about their health status. The
-    occurrence of fever (oral Temperature \> 38°C) must be evaluated.
+    occurrence of fever (oral Temperature \38°C) must be evaluated.
 
 2.  If a fever is first detected before coming to school, the student
     must no longer report to the school clinic. Instead, they must seek
@@ -5025,29 +5025,29 @@ sanction will be imposed.
 
 ### 1.0 General Directives
 
-> 1.1 All students of the College must be familiar with the contents of
-> this handbook. Ignorance of the provisions stated herein does not
-> excuse anyone from the observance of the policies, rules, and
-> regulations of the College.
-> 
-> 1.2 The College reserves the right to dismiss any student who violates
-> any of the provisions in this handbook.
-> 
-> 1.3 All students shall obey and show courtesy to all people in
-> authority, including security guards and maintenance staff.
-> 
-> 1.4 Each student enrolled in the College is issued an official
-> identification (ID) card that is valid for as long as he remains a
-> bona fide student of Asia Pacific College. This student ID card must
-> always be worn prominently at chest level while riding the shuttle
-> service, inside the classrooms, laboratories, and offices. It must be
-> presented or surrendered to a person of authority whenever requested.
-> 
-> Students who have misplaced or lost their APC ID card may secure a
-> two-day temporary pass from the lobby guard station. If the APC ID is
-> not found within the allotted two (2) days, the student is required to
-> secure a new one. The following procedures shall be observed in the
-> case of a lost ID card:
+1.1 All students of the College must be familiar with the contents of
+this handbook. Ignorance of the provisions stated herein does not
+excuse anyone from the observance of the policies, rules, and
+regulations of the College.
+
+1.2 The College reserves the right to dismiss any student who violates
+any of the provisions in this handbook.
+
+1.3 All students shall obey and show courtesy to all people in
+authority, including security guards and maintenance staff.
+
+1.4 Each student enrolled in the College is issued an official
+identification (ID) card that is valid for as long as he remains a
+bona fide student of Asia Pacific College. This student ID card must
+always be worn prominently at chest level while riding the shuttle
+service, inside the classrooms, laboratories, and offices. It must be
+presented or surrendered to a person of authority whenever requested.
+
+Students who have misplaced or lost their APC ID card may secure a
+two-day temporary pass from the lobby guard station. If the APC ID is
+not found within the allotted two (2) days, the student is required to
+secure a new one. The following procedures shall be observed in the
+case of a lost ID card:
 
 1.  Request a temporary pass from the lobby guard.
 
@@ -5063,20 +5063,20 @@ sanction will be imposed.
 5.  No student will be allowed to apply for the replacement of a lost ID
     more than twice within the entire school year.
 
-> Subsequent entries of the student into the College premises without a
-> valid APC ID card will then be treated as a violation of the APC Dress
-> Code.
+Subsequent entries of the student into the College premises without a
+valid APC ID card will then be treated as a violation of the APC Dress
+Code.
 
 5.  The college reserves the right to deny entry to students who violate
     the policies for ID and dress code.
 
-> For safety and security reasons, the College reserves the right to
-> call for an inspection of bags and other belongings brought in and out
-> of the campus. The Discipline Head and authorized college security
-> personnel may conduct bag and locker searches provided that the
-> student is present at all times during the search. Only the student
-> may handle, empty, or bring out his/her property from his/her bag or
-> locker to present it to the school authorities.
+For safety and security reasons, the College reserves the right to
+call for an inspection of bags and other belongings brought in and out
+of the campus. The Discipline Head and authorized college security
+personnel may conduct bag and locker searches provided that the
+student is present at all times during the search. Only the student
+may handle, empty, or bring out his/her property from his/her bag or
+locker to present it to the school authorities.
 
 6.  All students must report to their classes and bring the materials
     required for their courses.
@@ -5110,125 +5110,125 @@ sanction will be imposed.
 13. The President of APC, or a designated representative, may call off
     classes at any time should circumstances warrant it.
 
-> 2.0
+2.0
 
 ## Social Norms
 
-> 2.1 All students of the College are expected to act as mature and
-> responsible men and women at all times. All students are expected to
-> adhere to the provisions on social norms.
+2.1 All students of the College are expected to act as mature and
+responsible men and women at all times. All students are expected to
+adhere to the provisions on social norms.
 
 2.2 In all interactions with faculty members, administrative personnel,
 
-> and guests, the accepted norms of courteousness and professional
-> etiquette are to be observed.
-> 
-> 2.3 Discrimination on the basis of gender, nationality, and/or
-> religion is discouraged in the College. It is considered unethical for
-> individuals to make unfavorable remarks against each other.
-> 
-> 2.4 The College affirms to provide students, faculty, and staff with a
-> secure and conducive learning environment that is free from sexual
-> harassment, forms of sexual intimidation, and exploitation based on
-> the provisions of Republic Act No.7877 or the AntiSexual Harassment
-> Act of 1995 (Please refer to Section 7.4.2 under *Major Offenses and
-> Appendix A*).
-> 
-> 2.5 Students who do not observe normal classroom procedures and are
-> guilty of having disrespectful conduct may, upon the discretion of the
-> instructor concerned, be asked to leave the classroom (Refer to
-> Section 7.4.16 under *Major Offenses*).
-> 
-> 2.6 Boisterous conduct, whistling, running, or any action that tends
-> to disrupt ongoing activities are not allowed within the College
-> premises.
-> 
-> Entering a class or breaking into a school function without the
-> permission of those concerned is strictly prohibited.
-> 
-> Deliberate disruption of the academic function, class, or school
-> activity is strictly prohibited.
-> 
-> 2.7 Feet should be kept off from walls, tables, or chairs. Students
-> are not allowed to sit on tables or along the corridors.
-> 
-> 2.8 Students are not allowed to drink, eat, or chew gum inside the APC
-> building, except in designated areas (cafeteria and drinking
-> fountain).
-> 
-> 2.9 Every student shall be assigned his/her own locker. The College
-> has thet right to inspect lockers that are suspected to contain
-> illegal drugs, liquor, deadly weapons, pornographic/subversive
-> materials/literature, and missing/stolen items.
-> 
-> 2.10 Areas exclusively used by women and are marked accordingly (e.g.,
-> Ladies’ Room) are off limits to men, and vice versa.
-> 
-> Likewise, areas designed for single person’s use such as, but not
-> limited to, shower room cubicles, PWD/gender-neutral comfort rooms,
-> etc. must be used accordingly.
-> 
-> 2.11 The College encourages healthy interactions among members of the
-> opposite gender. However, acts or gestures that offend other members
-> of the APC community are not tolerated within the College premises.
-> College faculty and staff may accost and report groups or individuals
-> who perform offensive acts within 200 meters of the College premises.
-> 
-> 2.12 Areas designated for APC Personnel are intended exclusively for
-> their use. Entry of students into these places is not allowed.
-> 
-> 2.13 Membership in any fraternity or sorority is NOT allowed. The
-> College condemns any act of hazing or initiations. Such acts are
-> subject to disciplinary sanctions, such as expulsion or dismissal from
-> the College.
-> 
-> The College is not responsible for the actions of students who
-> actively or passively engage in such activities despite being aware of
-> the possible sanctions (Please refer to Appendix B).
-> 
-> 2.14 The use of mobile phones or any electronic devices is NOT allowed
-> during classes, exams, and other school functions (e.g., academic
-> seminars and workshops), unless otherwise approved by an authorized
-> school personnel. Mobile phones should be kept in silent mode or
-> turned off during these activities.
-> 
-> 2.15 Students are required to wear their IDs while inside the school
-> building.
-> 
-> 2.16 Self-bussing is strictly implemented in the cafeteria. Students
-> are expected to clear the table of their used plates, utensils,
-> wrappers, etc.
-> 
-> 2.17 Students are held responsible for the behavior of visitors who
-> come into the school premises on their behalf. The students are
-> charged with an offense when their visitors commit a violation.
-> 
-> 2.18 APC students are expected to respect the rights and privacy of
-> the surrounding community, private homes, church/parish, and
-> commercial establishments. Thus, they must abide by the rules and
-> regulations of APC’s community partners.
+and guests, the accepted norms of courteousness and professional
+etiquette are to be observed.
+
+2.3 Discrimination on the basis of gender, nationality, and/or
+religion is discouraged in the College. It is considered unethical for
+individuals to make unfavorable remarks against each other.
+
+2.4 The College affirms to provide students, faculty, and staff with a
+secure and conducive learning environment that is free from sexual
+harassment, forms of sexual intimidation, and exploitation based on
+the provisions of Republic Act No.7877 or the AntiSexual Harassment
+Act of 1995 (Please refer to Section 7.4.2 under *Major Offenses and
+Appendix A*).
+
+2.5 Students who do not observe normal classroom procedures and are
+guilty of having disrespectful conduct may, upon the discretion of the
+instructor concerned, be asked to leave the classroom (Refer to
+Section 7.4.16 under *Major Offenses*).
+
+2.6 Boisterous conduct, whistling, running, or any action that tends
+to disrupt ongoing activities are not allowed within the College
+premises.
+
+Entering a class or breaking into a school function without the
+permission of those concerned is strictly prohibited.
+
+Deliberate disruption of the academic function, class, or school
+activity is strictly prohibited.
+
+2.7 Feet should be kept off from walls, tables, or chairs. Students
+are not allowed to sit on tables or along the corridors.
+
+2.8 Students are not allowed to drink, eat, or chew gum inside the APC
+building, except in designated areas (cafeteria and drinking
+fountain).
+
+2.9 Every student shall be assigned his/her own locker. The College
+has thet right to inspect lockers that are suspected to contain
+illegal drugs, liquor, deadly weapons, pornographic/subversive
+materials/literature, and missing/stolen items.
+
+2.10 Areas exclusively used by women and are marked accordingly (e.g.,
+Ladies’ Room) are off limits to men, and vice versa.
+
+Likewise, areas designed for single person’s use such as, but not
+limited to, shower room cubicles, PWD/gender-neutral comfort rooms,
+etc. must be used accordingly.
+
+2.11 The College encourages healthy interactions among members of the
+opposite gender. However, acts or gestures that offend other members
+of the APC community are not tolerated within the College premises.
+College faculty and staff may accost and report groups or individuals
+who perform offensive acts within 200 meters of the College premises.
+
+2.12 Areas designated for APC Personnel are intended exclusively for
+their use. Entry of students into these places is not allowed.
+
+2.13 Membership in any fraternity or sorority is NOT allowed. The
+College condemns any act of hazing or initiations. Such acts are
+subject to disciplinary sanctions, such as expulsion or dismissal from
+the College.
+
+The College is not responsible for the actions of students who
+actively or passively engage in such activities despite being aware of
+the possible sanctions (Please refer to Appendix B).
+
+2.14 The use of mobile phones or any electronic devices is NOT allowed
+during classes, exams, and other school functions (e.g., academic
+seminars and workshops), unless otherwise approved by an authorized
+school personnel. Mobile phones should be kept in silent mode or
+turned off during these activities.
+
+2.15 Students are required to wear their IDs while inside the school
+building.
+
+2.16 Self-bussing is strictly implemented in the cafeteria. Students
+are expected to clear the table of their used plates, utensils,
+wrappers, etc.
+
+2.17 Students are held responsible for the behavior of visitors who
+come into the school premises on their behalf. The students are
+charged with an offense when their visitors commit a violation.
+
+2.18 APC students are expected to respect the rights and privacy of
+the surrounding community, private homes, church/parish, and
+commercial establishments. Thus, they must abide by the rules and
+regulations of APC’s community partners.
 
 ### 3.0 Dress Code
 
-> In consonance with the professional image that is being adopted by the
-> College, all students are expected to come to school properly groomed
-> and well-dressed.
-> 
-> An instructor or staff member has the right NOT to admit any student
-> in class, laboratory, or office if they are not wearing their student
-> IDs and/or do not comply with the proper dress code.
+In consonance with the professional image that is being adopted by the
+College, all students are expected to come to school properly groomed
+and well-dressed.
+
+An instructor or staff member has the right NOT to admit any student
+in class, laboratory, or office if they are not wearing their student
+IDs and/or do not comply with the proper dress code.
 
 3.1 Students are required to be in their business attire. IDs should be
 
-> hung at chest level and must be worn at all times. Business attire
-> days are from Mondays through Thursdays.
-> 
-> 3.2 Students should strictly follow the dress code. Failure to do so
-> disallows a student to enter school premises.
+hung at chest level and must be worn at all times. Business attire
+days are from Mondays through Thursdays.
+
+3.2 Students should strictly follow the dress code. Failure to do so
+disallows a student to enter school premises.
 
 #### 3.3 Dress Code for Males
 
-> Mondays to Thursdays
+Mondays to Thursdays
 
   - Long-sleeved or short-sleeved button-down shirt with collar, or
     Barong (long-sleeved or short-sleeved with plain white undershirt)
@@ -5240,7 +5240,7 @@ sanction will be imposed.
   - Office leather shoes (black or brown) with dark colored men’s socks
     (not shorter than ankle length)
 
-> Fridays and Saturdays (Casual Attire)
+Fridays and Saturdays (Casual Attire)
 
   - T-shirt or polo shirt
 
@@ -5251,7 +5251,7 @@ sanction will be imposed.
 
 #### 3.4 Dress Code for Females
 
-> Mondays to Thursdays
+Mondays to Thursdays
 
   - Blouse with collar and sleeves, or collarless corporate blouse with
     sleeves
@@ -5263,7 +5263,7 @@ sanction will be imposed.
 
   - Corporate ladies shoes (leather or leatherette)
 
-> Fridays and Saturdays (Casual Attire)
+Fridays and Saturdays (Casual Attire)
 
   - T-shirt, collared shirts
 
@@ -5275,34 +5275,34 @@ sanction will be imposed.
 
 ### 3.5
 
-> Non-wearing or improper wearing of school ID or wearing the ID 3.5.1
-> lace of another school; No foot socks for male students
-> 
-> Anything denim in clothing material, including jackets, is not 3.5.2
-> allowed from Mondays through Thursdays
-> 
-> Clothing with obscene/offensive messages/words or pictures 3.5.3
-> printed on them
-> 
-> Blouses with plunging necklines, mid-rib, hanging, backless, and
+Non-wearing or improper wearing of school ID or wearing the ID 3.5.1
+lace of another school; No foot socks for male students
+
+Anything denim in clothing material, including jackets, is not 3.5.2
+allowed from Mondays through Thursdays
+
+Clothing with obscene/offensive messages/words or pictures 3.5.3
+printed on them
+
+Blouses with plunging necklines, mid-rib, hanging, backless, and
 
 3.5.4 see-through clothing (unless with undershirt)
 
-> Tank tops (sando/spaghetti straps) without cardigan/sweater/
+Tank tops (sando/spaghetti straps) without cardigan/sweater/
 
 3.5.5 jacket
 
-> Sports t-shirt, pedal pushers/clam-diggers, mid-calf, and Capri
+Sports t-shirt, pedal pushers/clam-diggers, mid-calf, and Capri
 
 3.5.6 pants
 
-> Slippers and elevator/platform shoes that are either closed or
+Slippers and elevator/platform shoes that are either closed or
 
 3.5.7 open-toed.
 
-> Skirts with hemlines and slits that are too high 3.5.8
-> 
-> 103
+Skirts with hemlines and slits that are too high 3.5.8
+
+103
 
 **4.0 Academic/Classroom Policies**
 
@@ -5317,21 +5317,21 @@ name is not in the official class list.
 4.1.3 Students are considered late if they arrive within the allowable
 period as prescribed below:
 
-> 25 minutes for an 80-minute class session
-> 
-> 40 minutes for a 120-minute class session
-> 
-> 50 minutes for a 160-minute class session
-> 
-> 60 minutes for a 240-minute class session
-> 
-> Tardiness is equivalent to 0.5 absence. Students shall be marked
-> absent if they arrive beyond the allowable period.
+25 minutes for an 80-minute class session
+
+40 minutes for a 120-minute class session
+
+50 minutes for a 160-minute class session
+
+60 minutes for a 240-minute class session
+
+Tardiness is equivalent to 0.5 absence. Students shall be marked
+absent if they arrive beyond the allowable period.
 
 4.1.4 A student may also be marked absent if he leaves the classroom/
 
-> laboratory during a class session without the expressed permission of
-> their instructor.
+laboratory during a class session without the expressed permission of
+their instructor.
 
 4.1.5 A student is held responsible for all course requirements and
 content of the sessions missed, regardless of the reasons for his/ her
@@ -5341,17 +5341,17 @@ absences.
 sessions is deemed sufficient to cover for absences due to emergencies.
 Thus, the maximum number of absences is as follows:
 
-> 2.5 for classes meeting once a week
-> 
-> 5.0 for classes meeting twice a week
-> 
-> 7.5 for classes meeting thrice a week
-> 
-> For Associate in Computer Technology IT subjects:
-> 
-> 3 for classes with duration of 10 meetings or less
-> 
-> 5 for classes with duration of more than 10 meetings
+2.5 for classes meeting once a week
+
+5.0 for classes meeting twice a week
+
+7.5 for classes meeting thrice a week
+
+For Associate in Computer Technology IT subjects:
+
+3 for classes with duration of 10 meetings or less
+
+5 for classes with duration of more than 10 meetings
 
 4.1.7 Absences of honor students will not be counted against them except
 for major examination schedules. However, they are expected to be
@@ -5373,8 +5373,8 @@ Guidance Counselor.
 4.2.1 An officially enrolled student is considered late if he comes
 within the first 10 minutes of the session.
 
-> 4.2.2 Coming to class beyond 10 minutes is equivalent to being absent.
-> Three counts of coming to class late is equivalent to one absence.
+4.2.2 Coming to class beyond 10 minutes is equivalent to being absent.
+Three counts of coming to class late is equivalent to one absence.
 
 4.2.3 A student who leaves the classroom/laboratory during a class
 session without the expressed permission of his/her instructor is
@@ -5393,7 +5393,7 @@ specific subjects. The student then will be disqualified from the
 Remediation Program and will repeat the failed subject automatically,
 delaying graduation.
 
-> 105
+105
 
 4.2.6 If the teacher does not arrive in class after 5 minutes from the
 start of the session, the class representative should seek confirmation
@@ -5452,15 +5452,15 @@ time only; it should be worn only in designated areas for P.E.
 neatly combed and clipped for boys who sport long hair). During
 internship, students are obliged to have a neat hairstyle.
 
-> Violation of the APC dress code is subject to disciplinary action and
-> students may not be allowed to enter the building. Violators will be
-> issued documented warnings (violation slip). The issuance of three (3)
-> consecutive violation slips in a term for dress code is considered as
-> insubordination and will automatically merit suspension for the
-> student. All violations are recorded and will affect grants and
-> privileges.
-> 
-> 107
+Violation of the APC dress code is subject to disciplinary action and
+students may not be allowed to enter the building. Violators will be
+issued documented warnings (violation slip). The issuance of three (3)
+consecutive violation slips in a term for dress code is considered as
+insubordination and will automatically merit suspension for the
+student. All violations are recorded and will affect grants and
+privileges.
+
+107
 
 ## ADDENDUM: APC Wave Protocol AY 2023-2024 (For College and SHS Students)
 
@@ -5533,7 +5533,7 @@ fully vaccinated.
 
   - Classrooms are well-ventilated, with open windows, electric fans
 
-> and exhaust fans
+and exhaust fans
 
   - Air conditioners may be switched on at defined times during the day
 
@@ -5548,7 +5548,7 @@ fully vaccinated.
 2.  Open Laboratory (room 414)
 
 3.  Library (online
-    <span class="underline">https://libary.apc.edu.ph</span> and
+    <span class="underline">https://libary.apc.edu.ph</spanand
     on-premise)
 
 4.  Specialized software & hardware:
@@ -5628,7 +5628,7 @@ done online
   - Students are encouraged to bring their lunch and drink, to minimize
     multiple entry/exit to/from the building.
 
-> 119
+119
 
   - Unauthorized possession of notes or any material related to the
     examination, whether or not the student actually uses them
@@ -5646,169 +5646,169 @@ done online
     4.2.5 under *Examinations*) and/or operation of other electronic
     devices
 
-### <sub>4.4</sub> Plagiarism and Violation of Intellectual Property Rights
+### <sub>4.4</subPlagiarism and Violation of Intellectual Property Rights
 
-> Plagiarized work is any assigned output (e.g., report, term paper,
-> case analysis, solution to an assigned machine problem, reaction
-> paper, and the like) downloaded from the Internet or taken from
-> someone else’s work and passing it off as his/her own product
-> submitted for academic purposes, contests, or competitions.
-> 
-> Students who have submitted plagiarized work or have used it in
-> violation of the Intellectual Property Rights Policy (see Appendix C;
-> R.A. 8293) will be given a final grade of 0.0. Plagiarism and
-> violation of the Intellectual Property Code is a major offense and is
-> subject to disciplinary sanctions.
+Plagiarized work is any assigned output (e.g., report, term paper,
+case analysis, solution to an assigned machine problem, reaction
+paper, and the like) downloaded from the Internet or taken from
+someone else’s work and passing it off as his/her own product
+submitted for academic purposes, contests, or competitions.
+
+Students who have submitted plagiarized work or have used it in
+violation of the Intellectual Property Rights Policy (see Appendix C;
+R.A. 8293) will be given a final grade of 0.0. Plagiarism and
+violation of the Intellectual Property Code is a major offense and is
+subject to disciplinary sanctions.
 
 5.0 **Standard Operating Procedures**
 
 ### 5.1 Bulletin Boards
 
-> 5.1.1 Bulletin boards are for official use only. Tampering with the
-> announcements is subject to disciplinary action. Similarly,
-> unauthorized removal of official notices and posters from the bulletin
-> boards is subject to disciplinary action.
-> 
-> 5.1.2 All written announcements, posters, or similar literature from
-> recognized student organizations should be stamped and noted by the
-> Student Activities Office (SAO) and approved by the Building
-> Management Office before posting. Only approved announcements can be
-> posted on the bulletin boards. The sources/proponents should be
-> identified in the posters/notices. Such proponents/sources shall be
-> held answerable in case of complaints. Announcements of organization
-> activities will be allowed only on designated bulletin boards. Walls
-> shall not be used for posting announcements.
-> 
-> 5.1.3 It shall be the responsibility of the concerned student
-> organizations/ groups/individual to remove the materials posted when
-> these are no longer in effect. Otherwise, penalty or removal of
-> privileges may be given.
-> 
-> 5.1.4 Posting and/or distributing literature, pamphlets, pictures,
-> news items, or any announcements without prior written permit from the
-> Building Management Office are subject to disciplinary action.
+5.1.1 Bulletin boards are for official use only. Tampering with the
+announcements is subject to disciplinary action. Similarly,
+unauthorized removal of official notices and posters from the bulletin
+boards is subject to disciplinary action.
+
+5.1.2 All written announcements, posters, or similar literature from
+recognized student organizations should be stamped and noted by the
+Student Activities Office (SAO) and approved by the Building
+Management Office before posting. Only approved announcements can be
+posted on the bulletin boards. The sources/proponents should be
+identified in the posters/notices. Such proponents/sources shall be
+held answerable in case of complaints. Announcements of organization
+activities will be allowed only on designated bulletin boards. Walls
+shall not be used for posting announcements.
+
+5.1.3 It shall be the responsibility of the concerned student
+organizations/ groups/individual to remove the materials posted when
+these are no longer in effect. Otherwise, penalty or removal of
+privileges may be given.
+
+5.1.4 Posting and/or distributing literature, pamphlets, pictures,
+news items, or any announcements without prior written permit from the
+Building Management Office are subject to disciplinary action.
 
 ### 5.2 Lockers
 
-> For safekeeping of school-related materials and personal items, the
-> school provides individual lockers for all enrolled APC students.
-> Student lockers are located along the hallways of the building’s
-> various floors.
+For safekeeping of school-related materials and personal items, the
+school provides individual lockers for all enrolled APC students.
+Student lockers are located along the hallways of the building’s
+various floors.
 
 #### Locker Reservation and Issuance
 
-> 5.2.1 The official receipt reflecting payment for the athletic fee,
-> together with the Registration Form, must be presented to the Building
-> Management Office. These will be used as reference for verification
-> and issuance of locker numbers once the APCStudent Locker Agreement
-> Form has been accomplished.
-> 
-> 5.2.2 Locker Numbers will be issued upon presentation of the Claim
-> Stub attached to the APC-Student Locker Agreement Form.
+5.2.1 The official receipt reflecting payment for the athletic fee,
+together with the Registration Form, must be presented to the Building
+Management Office. These will be used as reference for verification
+and issuance of locker numbers once the APCStudent Locker Agreement
+Form has been accomplished.
+
+5.2.2 Locker Numbers will be issued upon presentation of the Claim
+Stub attached to the APC-Student Locker Agreement Form.
 
 5.2.3 Students are strictly prohibited to switch locker numbers.
 
-> 5.2.4 The Building Management Office has the option to reassign
-> lockers for meritorious reasons or revoke the issuance of lockers due
-> to the student’s violation of use anytime during the school year.
-> 
-> 5.2.5 All students are expected to empty their lockers upon the end of
-> their stay in the College (e.g., during a leave of absence, transfer
-> to another school, or upon graduation). This should be done not later
-> than five (5) days after the last day of the final examination or five
-> (5) days after the termination of their stay. Clearance will not be
-> issued to students who fail to empty their lockers as required. The
-> Building Management Office has the right to open the locker and charge
-> a penalty of one hundred pesos (₱100) for the student’s failure to
-> vacate the locker after the allowable time. All things found in the
-> locker will be placed under the custody of the Building Management
-> Office. It has the right to dispose the items if the owner fails to
-> claim these things after the last day of the current academic year.
+5.2.4 The Building Management Office has the option to reassign
+lockers for meritorious reasons or revoke the issuance of lockers due
+to the student’s violation of use anytime during the school year.
+
+5.2.5 All students are expected to empty their lockers upon the end of
+their stay in the College (e.g., during a leave of absence, transfer
+to another school, or upon graduation). This should be done not later
+than five (5) days after the last day of the final examination or five
+(5) days after the termination of their stay. Clearance will not be
+issued to students who fail to empty their lockers as required. The
+Building Management Office has the right to open the locker and charge
+a penalty of one hundred pesos (₱100) for the student’s failure to
+vacate the locker after the allowable time. All things found in the
+locker will be placed under the custody of the Building Management
+Office. It has the right to dispose the items if the owner fails to
+claim these things after the last day of the current academic year.
 
 #### Policies on the Use of Lockers
 
-> 5.2.7 All students with issued lockers are expected to maintain and
-> care for their lockers.
-> 
-> 5.2.8 Padlocks to secure the assigned locker are provided by the
-> students.
+5.2.7 All students with issued lockers are expected to maintain and
+care for their lockers.
+
+5.2.8 Padlocks to secure the assigned locker are provided by the
+students.
 
 5.2.9 Sharing of lockers is not allowed for security reasons.
 
-> 5.2.10 Missing locker handles, dents, and scratches must be reported
-> to the security guard immediately for record and repair. The security
-> guard logs the complaint upon receipt and issues a service call slip
-> to the maintenance crew for immediate repair.
-> 
-> 5.2.11 In the event that students lose their locker key, those who
-> request for access to their assigned lockers must secure approval from
-> the administration. Without a written advice from the Building
-> Management Office, a locker will not be opened by any maintenance
-> crew.
-> 
-> 5.2.12 A student must not use a locker without permission from the
-> Building Management Office
-> 
-> 5.2.13 Lockers MUST NOT contain liquors, illegal drugs, deadly
-> weapons, and pornographic and/or subversive materials/
-> 
-> literature, and missing/stolen items. The College Discipline Head has
-> the right to inspect lockers anytime.
-> 
-> 5.2.14 Defacement of lockers (e.g., writing, putting stickers, etc.)
-> is prohibited.
+5.2.10 Missing locker handles, dents, and scratches must be reported
+to the security guard immediately for record and repair. The security
+guard logs the complaint upon receipt and issues a service call slip
+to the maintenance crew for immediate repair.
+
+5.2.11 In the event that students lose their locker key, those who
+request for access to their assigned lockers must secure approval from
+the administration. Without a written advice from the Building
+Management Office, a locker will not be opened by any maintenance
+crew.
+
+5.2.12 A student must not use a locker without permission from the
+Building Management Office
+
+5.2.13 Lockers MUST NOT contain liquors, illegal drugs, deadly
+weapons, and pornographic and/or subversive materials/
+
+literature, and missing/stolen items. The College Discipline Head has
+the right to inspect lockers anytime.
+
+5.2.14 Defacement of lockers (e.g., writing, putting stickers, etc.)
+is prohibited.
 
 ### 5.3 Classroom and Lecture/Seminar Halls
 
-> 5.3.1 All classrooms and lecture/seminar halls are scheduled by the
-> Office of the Registrar for classes at the start of the term.
-> Afterwards, room allocations are turned over to the Reception Desk on
-> the 4th floor for reservations.
-> 
-> 5.3.2 Other rooms for academic and student activities can be reserved
-> at the Reception Desk on the 4th floor. Approval of the reservation
-> request is subject to the availability of the rooms.
-> 
-> 5.3.3 Tenants or outsiders may rent the facilities as venues for
-> training and seminars. They must coordinate with the Building
-> Management Office for reservations.
-> 
-> 5.3.4 Students working on projects and those with make-up classes can
-> use the classrooms or lecture/seminar halls upon reservation.
-> 
-> 5.3.5 Students must secure a Reservation Form from the 4th floor
-> Reception Desk and have it filled out not later than two (2) days
-> before the scheduled date of use. After confirmation of the room’s
-> availability, the Reservation Form must be signed and approved by the
-> Facilities Administrator.
-> 
-> 5.3.6 Strictly NO EATING, NO DRINKING, and NO SMOKING inside the
-> rooms. Feet should be kept off the walls, tables, or chairs. Students
-> are not allowed to sit on tables.
-> 
-> 5.3.7 Students are required to wear their respective IDs while inside
-> the classroom and lecture/seminar halls.
-> 
-> 5.3.8 Students are not allowed to stay inside the rooms without the
-> presence of the instructors. The security guard may call their
-> attention and ask them to leave.
-> 
-> 5.3.9 All house rules and guidelines must be observed when staying
-> inside the classrooms, lecture, and seminar halls. Violation of these
-> rules and policies is subject to disciplinary action from the
-> Discipline Head.
+5.3.1 All classrooms and lecture/seminar halls are scheduled by the
+Office of the Registrar for classes at the start of the term.
+Afterwards, room allocations are turned over to the Reception Desk on
+the 4th floor for reservations.
+
+5.3.2 Other rooms for academic and student activities can be reserved
+at the Reception Desk on the 4th floor. Approval of the reservation
+request is subject to the availability of the rooms.
+
+5.3.3 Tenants or outsiders may rent the facilities as venues for
+training and seminars. They must coordinate with the Building
+Management Office for reservations.
+
+5.3.4 Students working on projects and those with make-up classes can
+use the classrooms or lecture/seminar halls upon reservation.
+
+5.3.5 Students must secure a Reservation Form from the 4th floor
+Reception Desk and have it filled out not later than two (2) days
+before the scheduled date of use. After confirmation of the room’s
+availability, the Reservation Form must be signed and approved by the
+Facilities Administrator.
+
+5.3.6 Strictly NO EATING, NO DRINKING, and NO SMOKING inside the
+rooms. Feet should be kept off the walls, tables, or chairs. Students
+are not allowed to sit on tables.
+
+5.3.7 Students are required to wear their respective IDs while inside
+the classroom and lecture/seminar halls.
+
+5.3.8 Students are not allowed to stay inside the rooms without the
+presence of the instructors. The security guard may call their
+attention and ask them to leave.
+
+5.3.9 All house rules and guidelines must be observed when staying
+inside the classrooms, lecture, and seminar halls. Violation of these
+rules and policies is subject to disciplinary action from the
+Discipline Head.
 
 ### 5.4 Basketball Court
 
-> Aside from academic excellence, APC’s mission includes the students’
-> physical and social development. To support this, the College provides
-> basic sports facilities and equipment. Outsiders may rent the sports
-> venue upon securing the management’s approval.
-> 
-> A basketball court that has a surface area of 598.12 square meters is
-> available to students enrolled for the term. It is located on the 11th
-> floor of the APC Building. The court can also be used for volleyball
-> events.
+Aside from academic excellence, APC’s mission includes the students’
+physical and social development. To support this, the College provides
+basic sports facilities and equipment. Outsiders may rent the sports
+venue upon securing the management’s approval.
+
+A basketball court that has a surface area of 598.12 square meters is
+available to students enrolled for the term. It is located on the 11th
+floor of the APC Building. The court can also be used for volleyball
+events.
 
 Operating Hours:
 
@@ -5818,175 +5818,175 @@ Operating Hours:
 
 #### Reservations and Schedules
 
-> 5.4.1 Students with P.E. classes are entitled to use the basketball
-> court during P.E. hours.
-> 
-> 5.4.2 Should a student intend to play beyond the regular P.E. time,
-> he/ she must secure and fill out the reservation form at the Building
-> Management Office not later than two (2) days prior to the scheduled
-> date. Approval of the reservation request is subject to the basketball
-> court’s availability.
-> 
-> 5.4.3 Reservation of the basketball court must not exceed two (2)
-> hours per day for every student. The security guards have the right to
-> call the attention of students who exceed the approved playing hours.
+5.4.1 Students with P.E. classes are entitled to use the basketball
+court during P.E. hours.
+
+5.4.2 Should a student intend to play beyond the regular P.E. time,
+he/ she must secure and fill out the reservation form at the Building
+Management Office not later than two (2) days prior to the scheduled
+date. Approval of the reservation request is subject to the basketball
+court’s availability.
+
+5.4.3 Reservation of the basketball court must not exceed two (2)
+hours per day for every student. The security guards have the right to
+call the attention of students who exceed the approved playing hours.
 
 #### Basketball Court Rental 
 
-> 5.4.4 Rental is subject to the availability of the court and the
-> approval of the management team. Rental is solely for sports purposes
-> only.
-> 
-> 5.4.5 Companies or groups who wish to rent the basketball court must
-> submit a Letter of Intent (LOI) at least five (5) days before the
-> scheduled play date.
-> 
-> 5.4.6 Lessee must confirm the official playing dates with the Building
-> Management Office. In turn, APC will give a Notice of Award (NOA) to
-> the group as a binding contract between APC and the Lessee.
-> 
-> 5.4.7 Upon confirmation, the lessee must settle the rental rate with
-> the Finance Office as stipulated in the NOA at least three (3) days
-> prior to the first playing date. The Building Management Office sets
-> rental rates for the APC basketball court for the use of outsiders.
-> 
-> 5.4.8 Any request for additional equipment that will require extra
-> energy consumption will have to be charged an additional hourly rate.
-> For instance, the use of the scoreboard will be charged per hour as
-> well.
-> 
-> 5.4.9 On the scheduled date, the players or coach must present the
-> official receipt of payment and entry pass to the guard on duty before
-> the basketball court can be used.
+5.4.4 Rental is subject to the availability of the court and the
+approval of the management team. Rental is solely for sports purposes
+only.
+
+5.4.5 Companies or groups who wish to rent the basketball court must
+submit a Letter of Intent (LOI) at least five (5) days before the
+scheduled play date.
+
+5.4.6 Lessee must confirm the official playing dates with the Building
+Management Office. In turn, APC will give a Notice of Award (NOA) to
+the group as a binding contract between APC and the Lessee.
+
+5.4.7 Upon confirmation, the lessee must settle the rental rate with
+the Finance Office as stipulated in the NOA at least three (3) days
+prior to the first playing date. The Building Management Office sets
+rental rates for the APC basketball court for the use of outsiders.
+
+5.4.8 Any request for additional equipment that will require extra
+energy consumption will have to be charged an additional hourly rate.
+For instance, the use of the scoreboard will be charged per hour as
+well.
+
+5.4.9 On the scheduled date, the players or coach must present the
+official receipt of payment and entry pass to the guard on duty before
+the basketball court can be used.
 
 #### Policies on the Use of the Basketball Court 
 
-> 5.4.10 All house rules and guidelines must be observed inside the
-> basketball court. Student violators will be subject to disciplinary
-> action. Lessees will be subject to a breach of contract and forfeiture
-> of privilege to play at the basketball court.
-> 
-> 5.4.11 Only rubber shoes are allowed for use inside the basketball
-> court. Shoes will be inspected/checked (for trapped stones) by the
-> court custodian before each game. Spiked or leather soled shoes are
-> not allowed inside the basketball court.
+5.4.10 All house rules and guidelines must be observed inside the
+basketball court. Student violators will be subject to disciplinary
+action. Lessees will be subject to a breach of contract and forfeiture
+of privilege to play at the basketball court.
+
+5.4.11 Only rubber shoes are allowed for use inside the basketball
+court. Shoes will be inspected/checked (for trapped stones) by the
+court custodian before each game. Spiked or leather soled shoes are
+not allowed inside the basketball court.
 
 5.4.12 Food is not allowed on the basketball court.
 
-> 5.4.13 Large water jugs must be placed in the lobby outside the
-> basketball court. Drinks are prohibited.
-> 
-> 5.4.14 The basketball court is multifunctional and may be used for
-> volleyball or badminton matches. Students must reserve the court for
-> specific use at least two (2) days before the game.
-> 
-> 5.4.15 Balls and nets are available upon request and are issued by the
-> sports equipment custodian. These items must be returned to the
-> custodian after the game.
-> 
-> 5.4.16 Valuables should not be left unattended. Lockers are available
-> at the 10th floor shower room. Students may get the locker key from
-> the Building Maintenance Office.
-> 
-> 5.4.17 Any spillage on the basketball court flooring should be wiped
-> off and immediately reported to the Building Maintenance Office.
+5.4.13 Large water jugs must be placed in the lobby outside the
+basketball court. Drinks are prohibited.
+
+5.4.14 The basketball court is multifunctional and may be used for
+volleyball or badminton matches. Students must reserve the court for
+specific use at least two (2) days before the game.
+
+5.4.15 Balls and nets are available upon request and are issued by the
+sports equipment custodian. These items must be returned to the
+custodian after the game.
+
+5.4.16 Valuables should not be left unattended. Lockers are available
+at the 10th floor shower room. Students may get the locker key from
+the Building Maintenance Office.
+
+5.4.17 Any spillage on the basketball court flooring should be wiped
+off and immediately reported to the Building Maintenance Office.
 
 ### 5.5 Other Sports Amenities
 
-> 5.5.1 Tables for table tennis are set up on the 10th floor. Students
-> may use the table tennis facilities whenever these are available. Its
-> reservation process is similar to the booking procedure for
-> 
-> the basketball court. Reservation is on a first-come, first-served
-> basis.
-> 
-> 5.5.2 Shower rooms are available for students’ use. Shower room
-> lockers are also available. Keys are available at the Building
-> Management Office.
-> 
-> 5.5.3 Sports equipment (e.g., table tennis rackets, balls for
-> basketball and volleyball, etc.) are available at the Building
-> Management Office.
-> 
-> 5.5.4 For issuance of sports equipment, students must show their
-> reservation form and give their respective school IDs to the sports
-> equipment custodian. All borrowed sports equipment must be returned
-> immediately after the game.
-> 
-> 5.5.5 Damaged or lost sports equipment will be charged to the student
-> or person registered in the Room Reservation Module (Project Flavio).
-> Lost items must be replaced within five (5) working days after the
-> incident. Clearance will only be provided once lost items are replaced
-> and charges for damages are paid.
-> 
-> 5.5.6 **FITNESS CENTER**
+5.5.1 Tables for table tennis are set up on the 10th floor. Students
+may use the table tennis facilities whenever these are available. Its
+reservation process is similar to the booking procedure for
+
+the basketball court. Reservation is on a first-come, first-served
+basis.
+
+5.5.2 Shower rooms are available for students’ use. Shower room
+lockers are also available. Keys are available at the Building
+Management Office.
+
+5.5.3 Sports equipment (e.g., table tennis rackets, balls for
+basketball and volleyball, etc.) are available at the Building
+Management Office.
+
+5.5.4 For issuance of sports equipment, students must show their
+reservation form and give their respective school IDs to the sports
+equipment custodian. All borrowed sports equipment must be returned
+immediately after the game.
+
+5.5.5 Damaged or lost sports equipment will be charged to the student
+or person registered in the Room Reservation Module (Project Flavio).
+Lost items must be replaced within five (5) working days after the
+incident. Clearance will only be provided once lost items are replaced
+and charges for damages are paid.
+
+5.5.6 **FITNESS CENTER**
 
 ####  Rules and regulations
 
-> In order to accommodate more people, kindly observe proper decorum
-> while inside the gym. Smoking and loitering within the gym premises
-> are strictly prohibited. Priority is given to gym equipment users
-> working on their fitness goals.
-> 
-> To avoid injuries and other untoward incidents, please use proper
-> fitness/workout attire while inside the gym. Female users are
-> encouraged to wear appropriate outfits. Prescribed footwear
-> (rubber/training shoes) is a MUST. Wearing of flip-flops, opentoed
-> shoes, heels, sandals, and leather shoes are NOT allowed. Going
-> barefoot is NOT allowed.
-> 
-> No food and drinks (except water) are permitted inside the gym at all
-> times. Be responsible for your bottled water within the premises to
-> avoid untoward accidents caused by water spills and the like. For your
-> convenience, you may use the water fountain by the locker area outside
-> the gym.
-> 
-> Refrain from yelling, using profanity, banging weights, and making
-> loud sounds while inside the gym.
-> 
-> Respect the privacy of others by NOT taking pictures of anyone in the
-> gym, including yourself.
+In order to accommodate more people, kindly observe proper decorum
+while inside the gym. Smoking and loitering within the gym premises
+are strictly prohibited. Priority is given to gym equipment users
+working on their fitness goals.
+
+To avoid injuries and other untoward incidents, please use proper
+fitness/workout attire while inside the gym. Female users are
+encouraged to wear appropriate outfits. Prescribed footwear
+(rubber/training shoes) is a MUST. Wearing of flip-flops, opentoed
+shoes, heels, sandals, and leather shoes are NOT allowed. Going
+barefoot is NOT allowed.
+
+No food and drinks (except water) are permitted inside the gym at all
+times. Be responsible for your bottled water within the premises to
+avoid untoward accidents caused by water spills and the like. For your
+convenience, you may use the water fountain by the locker area outside
+the gym.
+
+Refrain from yelling, using profanity, banging weights, and making
+loud sounds while inside the gym.
+
+Respect the privacy of others by NOT taking pictures of anyone in the
+gym, including yourself.
 
 #### When Performing Fitness Activities
 
-> Before beginning your workout, wash your hands or wipe off your
-> cologne or perfume.
-> 
-> For the benefit of fellow RAMS (faculty, staff, and students), rerack
-> weights and return all other equipment and accessories to their proper
-> locations.
-> 
-> Please use equipment properly and follow directions carefully. Do not
-> lean on the equipment and keep your hands away from moving parts.
-> 
-> When using an equipment for the first time, ask the staff on duty to
-> show you how to operate the equipment properly. This is to avoid
-> injuries or damages to the equipment.
-> 
-> Users are responsible for damages to the gym facilities due to
-> equipment misuse or negligence.
+Before beginning your workout, wash your hands or wipe off your
+cologne or perfume.
+
+For the benefit of fellow RAMS (faculty, staff, and students), rerack
+weights and return all other equipment and accessories to their proper
+locations.
+
+Please use equipment properly and follow directions carefully. Do not
+lean on the equipment and keep your hands away from moving parts.
+
+When using an equipment for the first time, ask the staff on duty to
+show you how to operate the equipment properly. This is to avoid
+injuries or damages to the equipment.
+
+Users are responsible for damages to the gym facilities due to
+equipment misuse or negligence.
 
 Stick to posted time limits on all cardiovascular machines.
 
-> Please refrain from using camera phones inside the fitness center.
-> Respect the privacy of other gym users.
-> 
-> Do not disturb others. Focus on your own workout and allow others to
-> do the same. Take phone calls outside the gym.
-> 
-> As a courtesy to the next user, always wipe down the equipment after
-> use. Small towels are provided for this purpose.
-> 
-> Be watchful of your belongings. The gym staff assumes no
-> responsibility for any loss or damages.
-> 
-> Immediately report faulty or damaged equipment to a staff member.
-> 
-> The use of Illegal/prohibited drugs, especially anabolic steroids, is
-> strictly prohibited.
-> 
-> Failure to comply with these rules may result in the loss of gym
-> privileges.
+Please refrain from using camera phones inside the fitness center.
+Respect the privacy of other gym users.
+
+Do not disturb others. Focus on your own workout and allow others to
+do the same. Take phone calls outside the gym.
+
+As a courtesy to the next user, always wipe down the equipment after
+use. Small towels are provided for this purpose.
+
+Be watchful of your belongings. The gym staff assumes no
+responsibility for any loss or damages.
+
+Immediately report faulty or damaged equipment to a staff member.
+
+The use of Illegal/prohibited drugs, especially anabolic steroids, is
+strictly prohibited.
+
+Failure to comply with these rules may result in the loss of gym
+privileges.
 
 ### 5.6 Basement Parking
 
@@ -6009,53 +6009,53 @@ Basement 3 (B3) - 45 slots Operating Hours:
 
 5.6.2 No one is allowed to stay inside the car while it is parked.
 
-> 5.6.3 No one is allowed to wash any vehicle inside the basement
-> parking.
+5.6.3 No one is allowed to wash any vehicle inside the basement
+parking.
 
 5.6.4 SWITCH OFF the engine after parking the vehicle.
 
-> 5.6.5 Do not leave any valuables inside the vehicle. The management
-> will not be responsible for any loss.
-> 
-> 5.6.6 Security guards are deployed by shifts for 24 hours at the
-> basement entrance and exit. Assigned roving guards do random checking
-> and logging of parked vehicles during operation hours.
-> 
-> 5.6.7 Basement roll-up doors, glass doors, and other points of entry
-> and exit are closed from 9:00 p.m. to 7:00 a.m.
-> 
-> 5.6.8 Overnight parking is prohibited unless approved by the Building
-> Management Office.
-> 
-> 5.6.9 After three (3) parking violations, the owner forfeits parking
-> privileges.
-> 
-> 5.6.10 All deliveries and pulling out of materials from the basement
-> parking lot must be coordinated with the Building Management Office
-> for the issuance of a Gate Pass and/or Entry Pass.
+5.6.5 Do not leave any valuables inside the vehicle. The management
+will not be responsible for any loss.
+
+5.6.6 Security guards are deployed by shifts for 24 hours at the
+basement entrance and exit. Assigned roving guards do random checking
+and logging of parked vehicles during operation hours.
+
+5.6.7 Basement roll-up doors, glass doors, and other points of entry
+and exit are closed from 9:00 p.m. to 7:00 a.m.
+
+5.6.8 Overnight parking is prohibited unless approved by the Building
+Management Office.
+
+5.6.9 After three (3) parking violations, the owner forfeits parking
+privileges.
+
+5.6.10 All deliveries and pulling out of materials from the basement
+parking lot must be coordinated with the Building Management Office
+for the issuance of a Gate Pass and/or Entry Pass.
 
 #### Issuance of Parking Stickers
 
-> 5.6.11 To avail a slot for the whole term, APC employees, students,
-> dormers, and tenants can secure a parking sticker for a fee as set by
-> the Building Management Office.
-> 
-> 5.6.12 All payments for the parking sticker are made at the Finance
-> Office. The Official Receipt of payment for parking stickers, together
-> with a copy of the car registration, must be presented at the Building
-> Management Office to avail the sticker.
+5.6.11 To avail a slot for the whole term, APC employees, students,
+dormers, and tenants can secure a parking sticker for a fee as set by
+the Building Management Office.
+
+5.6.12 All payments for the parking sticker are made at the Finance
+Office. The Official Receipt of payment for parking stickers, together
+with a copy of the car registration, must be presented at the Building
+Management Office to avail the sticker.
 
 5.6.13 All parking stickers must be replaced every term.
 
-> 5.6.14 Parking stickers should be placed on the left side of the
-> vehicle’s front windshield.
+5.6.14 Parking stickers should be placed on the left side of the
+vehicle’s front windshield.
 
 #### Issuance of Parking Tickets
 
-> 5.6.15 APC employees, students, tenants, and guests without parking
-> stickers must present a proper Identification Card and pay a parking
-> fee valid for the day. The issued parking ticket must be surrendered
-> upon exit.
+5.6.15 APC employees, students, tenants, and guests without parking
+stickers must present a proper Identification Card and pay a parking
+fee valid for the day. The issued parking ticket must be surrendered
+upon exit.
 
 Required IDs: Employees : APC Employee I.D. Card
 
@@ -6065,19 +6065,19 @@ Tenants : Company I.D. Card
 
 Visitors : Any valid ID
 
-> 5.6.16 Clients and visitors must state their purpose and mention the
-> contact person whom they intend to visit. A Visitor’s Slip will be
-> given to clients and visitors. This must be surrendered along
-> 
-> with the parking ticket upon exiting the basement parking.
+5.6.16 Clients and visitors must state their purpose and mention the
+contact person whom they intend to visit. A Visitor’s Slip will be
+given to clients and visitors. This must be surrendered along
+
+with the parking ticket upon exiting the basement parking.
 
 ### 5.7 Auditorium and other Event Venues
 
-> 5.7.1 All institutional events may be held at the auditorium for free
-> provided that it is for an official non-profit academic purpose.
-> 
-> 5.7.2 Activities that may be allowed in this case shall be limited to
-> the following:
+5.7.1 All institutional events may be held at the auditorium for free
+provided that it is for an official non-profit academic purpose.
+
+5.7.2 Activities that may be allowed in this case shall be limited to
+the following:
 
 1.  Performances/Cinema
 
@@ -6085,53 +6085,53 @@ Visitors : Any valid ID
 
 3.  Meetings/Seminars/Graduation
 
-> 5.7.3 Other activities and events may use other available facilities
-> such as the Seminar Hall, the Multipurpose Hall, the Lecture Halls,
-> and the Art Appreciation Room.
-> 
-> 5.7.4 Activities or events that may require the use of the Auditorium
-> must be endorsed by the Executive Director and/or Student Activities
-> Officer. Approval of the reservation is subject to the availability of
-> the auditorium and approval of the Facilities Administrator.
-> 
-> 5.7.5 Only APC-recognized and accredited student organizations duly
-> endorsed by the Student Activities Office may use the facility as a
-> venue for official profit or non-profit activities.
-> 
-> 5.7.6 Student organizations with profit-oriented activities that
-> involve ticket-selling are entitled to discounts. This is subject to
-> the approval of the College Administration.
-> 
-> 5.7.7 Depending on its availability, tenants or outsiders may also
-> rent the Auditorium as a venue for trainings and seminars.
-> 
-> 5.7.8 Events that are organized by external organizations but are
-> created, adapted, or sponsored by APC, with the approval of the APC
-> President, will be free of charge or will be subject to a 50% discount
-> on the rental rates of the facility. This will depend on the nature of
-> the event. The organizer must submit a Special Permit for concerts,
-> musical programs, literary/oratorical presentations, dramas, film
-> exhibitions, benefit shows, and similar projects.
-> 
-> This Special Permit, issued by the Permit Division of the Makati City
-> Hall, is subject to the Makati Municipal Amusement Tax Code.
-> 
-> 5.7.9 All bookings/reservations should strictly be done in person at
-> the Building Management Office.
+5.7.3 Other activities and events may use other available facilities
+such as the Seminar Hall, the Multipurpose Hall, the Lecture Halls,
+and the Art Appreciation Room.
+
+5.7.4 Activities or events that may require the use of the Auditorium
+must be endorsed by the Executive Director and/or Student Activities
+Officer. Approval of the reservation is subject to the availability of
+the auditorium and approval of the Facilities Administrator.
+
+5.7.5 Only APC-recognized and accredited student organizations duly
+endorsed by the Student Activities Office may use the facility as a
+venue for official profit or non-profit activities.
+
+5.7.6 Student organizations with profit-oriented activities that
+involve ticket-selling are entitled to discounts. This is subject to
+the approval of the College Administration.
+
+5.7.7 Depending on its availability, tenants or outsiders may also
+rent the Auditorium as a venue for trainings and seminars.
+
+5.7.8 Events that are organized by external organizations but are
+created, adapted, or sponsored by APC, with the approval of the APC
+President, will be free of charge or will be subject to a 50% discount
+on the rental rates of the facility. This will depend on the nature of
+the event. The organizer must submit a Special Permit for concerts,
+musical programs, literary/oratorical presentations, dramas, film
+exhibitions, benefit shows, and similar projects.
+
+This Special Permit, issued by the Permit Division of the Makati City
+Hall, is subject to the Makati Municipal Amusement Tax Code.
+
+5.7.9 All bookings/reservations should strictly be done in person at
+the Building Management Office.
 
 ### 6.0 Grievances
 
-> The College provides opportunities for all members of the academic
-> community to air grievances via the proper channels. Following due
-> process, these will be promptly processed and resolved. This includes
-> complaints on sexual harassment which will be dealt in accordance with
-> the policies, rules, and regulations implementing
-> 
-> R.A. 7877, otherwise known as the “Anti-Sexual Harassment Act.”
-> 
-> **Definition of Terms**
-> 
-> 6.1
+The College provides opportunities for all members of the academic
+community to air grievances via the proper channels. Following due
+process, these will be promptly processed and resolved. This includes
+complaints on sexual harassment which will be dealt in accordance with
+the policies, rules, and regulations implementing
+
+R.A. 7877, otherwise known as the “Anti-Sexual Harassment Act.”
+
+**Definition of Terms**
+
+6.1
 
 Grievance - refers to any controversy that a student or employee, as the
 aggrieved party, has against a member of the academic community, as the
@@ -6165,39 +6165,39 @@ It is committed:
 
 #### 6.2.1 Complaint of a Student Against Another Student
 
-> Complaints, or incident reports from a student against another
-> student, must be presented to the Discipline Office, who in turn will
-> follow the due process as specified in the student handbook.
+Complaints, or incident reports from a student against another
+student, must be presented to the Discipline Office, who in turn will
+follow the due process as specified in the student handbook.
 
 #### 6.2.2 Complaint of a Student Against a Faculty/Staff Member
 
-> All grievances of students, either academic or behavioral, against any
-> faculty/staff are referred to the Executive Director/ Director for
-> Senior High School. The Executive Director/Director for Senior High
-> School shall immediately act on the complaint and may coordinate with
-> the Executive Director/Director of the concerned faculty/staff and
-> invite the respondent to discuss the matter. Due process in all cases
-> will be followed.
-> 
-> If necessary, the Executive Director/Director for Senior High School
-> may require the student to submit a formal complaint. The Executive
-> Director/Director for Senior High School may also require the
-> concerned faculty/staff to answer the complaint in writing. Failure of
-> the respondent to provide a written response within the required
-> period shall be considered an admission of the charges. The Executive
-> Director/Director for Senior High School shall resolve the complaint
-> based on the strength of this admission.
-> 
-> The complaint should be resolved by the Executive Director/ Director
-> for Senior High School at the soonest possible time. For formal
-> resolutions, original copies should be provided to the department,
-> student (complainant), and the faculty/staff member (respondent).
-> 
-> A party not satisfied with the decision of the Executive Director may
-> appeal the same to the Student Affairs Director who, upon verifying
-> the merit of the case, may convene the Grievance
-> 
-> Board composed of the following people:
+All grievances of students, either academic or behavioral, against any
+faculty/staff are referred to the Executive Director/ Director for
+Senior High School. The Executive Director/Director for Senior High
+School shall immediately act on the complaint and may coordinate with
+the Executive Director/Director of the concerned faculty/staff and
+invite the respondent to discuss the matter. Due process in all cases
+will be followed.
+
+If necessary, the Executive Director/Director for Senior High School
+may require the student to submit a formal complaint. The Executive
+Director/Director for Senior High School may also require the
+concerned faculty/staff to answer the complaint in writing. Failure of
+the respondent to provide a written response within the required
+period shall be considered an admission of the charges. The Executive
+Director/Director for Senior High School shall resolve the complaint
+based on the strength of this admission.
+
+The complaint should be resolved by the Executive Director/ Director
+for Senior High School at the soonest possible time. For formal
+resolutions, original copies should be provided to the department,
+student (complainant), and the faculty/staff member (respondent).
+
+A party not satisfied with the decision of the Executive Director may
+appeal the same to the Student Affairs Director who, upon verifying
+the merit of the case, may convene the Grievance
+
+Board composed of the following people:
 
   - One (1) Executive Director not involved with the department of the
     parties concerned
@@ -6208,17 +6208,17 @@ It is committed:
 
   - Resource Person (nonvoting) if necessary
 
-> The committee will review the case, conduct a hearing, deliberate, and
-> arrive at a decision. In carrying out this procedure, due process will
-> be carried out to ensure fairness and objectivity. Resolution will be
-> done at the soonest possible time. It will not take more than one week
-> from the start of the appeal. The decision of the Grievance Board is
-> executory unless appealed to the President.
-> 
-> In cases that the complaint is against the Student Affairs Director,
-> appeals will be made to the Human Resources Executive Director who,
-> upon verifying the merit of the case, may convene the Grievance Board
-> composed of the following people:
+The committee will review the case, conduct a hearing, deliberate, and
+arrive at a decision. In carrying out this procedure, due process will
+be carried out to ensure fairness and objectivity. Resolution will be
+done at the soonest possible time. It will not take more than one week
+from the start of the appeal. The decision of the Grievance Board is
+executory unless appealed to the President.
+
+In cases that the complaint is against the Student Affairs Director,
+appeals will be made to the Human Resources Executive Director who,
+upon verifying the merit of the case, may convene the Grievance Board
+composed of the following people:
 
   - Two (2) Executive Directors not involved with the case
 
@@ -6228,25 +6228,25 @@ It is committed:
 
 #### 6.2.3 Complaint of a student against his/her Executive Director/ Director for Senior High School
 
-> A formal letter of complaint must be addressed and handed to the
-> President, who in turn will forward the concern to the Student Affairs
-> Director. The Student Affairs Director will call on the Executive
-> Director/Director for Senior High School to discuss the matter. If
-> necessary, the Student Affairs Director may convene a Grievance Board
-> composed of another Executive Director, the resource person (if
-> necessary; nonvoting), and the Human Resources Executive Director as
-> Chair. Resolution of the case is forwarded by the Board to the
-> President for approval.
+A formal letter of complaint must be addressed and handed to the
+President, who in turn will forward the concern to the Student Affairs
+Director. The Student Affairs Director will call on the Executive
+Director/Director for Senior High School to discuss the matter. If
+necessary, the Student Affairs Director may convene a Grievance Board
+composed of another Executive Director, the resource person (if
+necessary; nonvoting), and the Human Resources Executive Director as
+Chair. Resolution of the case is forwarded by the Board to the
+President for approval.
 
 #### 6.2.4 Complaint of Student/Employee against President
 
-> Complaint of a student will be forwarded to the Executive Director/
-> Director for Senior High School of the student, who in turn will
-> forward the complaint to the Human Resources Executive Director.
-> Complaint of employees against the President will be forwarded to the
-> Human Resources Executive Director. The Human Resources Executive
-> Director may decide to refer the matter to the APC Chairman of the
-> Board.
+Complaint of a student will be forwarded to the Executive Director/
+Director for Senior High School of the student, who in turn will
+forward the complaint to the Human Resources Executive Director.
+Complaint of employees against the President will be forwarded to the
+Human Resources Executive Director. The Human Resources Executive
+Director may decide to refer the matter to the APC Chairman of the
+Board.
 
 ### 6.3 Treatment of Complaint
 
@@ -6264,7 +6264,7 @@ both parties.
 
 ## Guidelines in Writing a Letter of Complaint
 
-> 6.4
+6.4
 
 The Letter of Complaint should be addressed to the student’s Executive
 Director/Director for Senior High School. It must be duly signed by the
@@ -6310,61 +6310,61 @@ One (1) copy – Respondent’s 201 file
 
 ### 7.1 Disciplinary Action and Procedures
 
-> Disciplinary actions are corrective measures imposed upon by the
-> college administration on students who have violated the rules and
-> regulations of the school. The imposed sanctions should not be cruel
-> or physically harmful in nature.
-> 
-> The college has a shared responsibility to shape the character of its
-> students and help them become ethical and socially responsible
-> individuals and members of society.
-> 
-> The disciplinary action and sanctions imposed on erring students are
-> tools to compel them to observe the norms of conduct, whether
-> on-campus or off-campus, as expected of members of the academic
-> community.
-> 
-> The Discipline Office is tasked with the implementation of school
-> policies and regulations concerning student behavior and conduct. A
-> Discipline Head is mandated by the college to carry out the policies
-> and procedures required to maintain peace and discipline among
-> students.
-> 
-> The College shall have the right to promulgate reasonable norms,
-> rules, and regulations as it may deem necessary. This must be
-> 
-> consistent and in accordance with the minimum standards as provided by
-> CHED regulations and the Philippine law.
-> 
-> A student’s liability shall not be confined to the offenses
-> specifically identified and defined in the school’s rules or code of
-> discipline. Several offenses may be generally worded as to encompass a
-> number of related wrongdoings. Such rules and regulations shall be
-> made effective upon its promulgation via an appropriate school
-> issuance or publication (See Section 103, Authority to Promulgate
-> Institutional Policies, Rules and Regulations; Manual of Regulation
-> for Private Schools).
+Disciplinary actions are corrective measures imposed upon by the
+college administration on students who have violated the rules and
+regulations of the school. The imposed sanctions should not be cruel
+or physically harmful in nature.
+
+The college has a shared responsibility to shape the character of its
+students and help them become ethical and socially responsible
+individuals and members of society.
+
+The disciplinary action and sanctions imposed on erring students are
+tools to compel them to observe the norms of conduct, whether
+on-campus or off-campus, as expected of members of the academic
+community.
+
+The Discipline Office is tasked with the implementation of school
+policies and regulations concerning student behavior and conduct. A
+Discipline Head is mandated by the college to carry out the policies
+and procedures required to maintain peace and discipline among
+students.
+
+The College shall have the right to promulgate reasonable norms,
+rules, and regulations as it may deem necessary. This must be
+
+consistent and in accordance with the minimum standards as provided by
+CHED regulations and the Philippine law.
+
+A student’s liability shall not be confined to the offenses
+specifically identified and defined in the school’s rules or code of
+discipline. Several offenses may be generally worded as to encompass a
+number of related wrongdoings. Such rules and regulations shall be
+made effective upon its promulgation via an appropriate school
+issuance or publication (See Section 103, Authority to Promulgate
+Institutional Policies, Rules and Regulations; Manual of Regulation
+for Private Schools).
 
 ### 7.2 Disciplinary Due Process
 
-> It is the right of the school to impose disciplinary actions and
-> corresponding sanctions on students who are found to be violating
-> rules and regulations as specified and contained in this student
-> handbook.
-> 
-> In exercising its right, it is the duty and responsibility of the
-> school to provide due process to both violator and complainant, so as
-> to ensure fairness and objectivity in the carrying out and imposing or
-> implementing school policies. The student respondent is to be given
-> opportunities to explain, contest, and present evidence within
-> reasonable time to answer the charges against his/her actions. This in
-> accordance with the minimum standards of due process as provided by
-> CHED regulations and the Philippine law.
-> 
-> In cases wherein the student is accused of the commission of major
-> offenses and upon having a minimum recommended sanction of
-> dismissal/exclusion, non-readmission, or expulsion from the Discipline
-> Office:
+It is the right of the school to impose disciplinary actions and
+corresponding sanctions on students who are found to be violating
+rules and regulations as specified and contained in this student
+handbook.
+
+In exercising its right, it is the duty and responsibility of the
+school to provide due process to both violator and complainant, so as
+to ensure fairness and objectivity in the carrying out and imposing or
+implementing school policies. The student respondent is to be given
+opportunities to explain, contest, and present evidence within
+reasonable time to answer the charges against his/her actions. This in
+accordance with the minimum standards of due process as provided by
+CHED regulations and the Philippine law.
+
+In cases wherein the student is accused of the commission of major
+offenses and upon having a minimum recommended sanction of
+dismissal/exclusion, non-readmission, or expulsion from the Discipline
+Office:
 
 1.  The student must be informed via e-mail or Teams chat of the nature
     and cause of any of the accusation against him. The student is given
@@ -6410,122 +6410,122 @@ E. Selected Faculty Members
     punishment imposed by the Discipline Board shall be commensurate
     with the nature and gravity of the offense.
 
-> The minimum sanction for major offenses is suspension for no less than
-> five (5) days or up to twenty percent (20%) of the prescribed total
-> class days for the school term. The maximum sanction to be imposed is
-> dismissal/exclusion, non-readmission, or expulsion (for offenses or
-> acts that involve moral turpitude or constituting gross misconduct,
-> which are considered as criminal, pursuant to existing penal laws).
-> 
-> Major Offenses that are to be sanctioned with the maximum penalty of
-> dismissal/exclusion, non-readmission, or expulsion shall be thoroughly
-> investigated and decided upon by the College Discipline Board composed
-> of five members from the administration and faculty who are duly
-> appointed by the President of the College. Other major offenses that
-> have a recommended sanction of suspension shall be decided upon and
-> implemented by the Discipline Head.
-> 
-> This is in accordance with the provisions in the Manual of Regulations
-> for Private Schools (Section 106, Preventive Suspension and Categories
-> of Administrative Penalties).
+The minimum sanction for major offenses is suspension for no less than
+five (5) days or up to twenty percent (20%) of the prescribed total
+class days for the school term. The maximum sanction to be imposed is
+dismissal/exclusion, non-readmission, or expulsion (for offenses or
+acts that involve moral turpitude or constituting gross misconduct,
+which are considered as criminal, pursuant to existing penal laws).
+
+Major Offenses that are to be sanctioned with the maximum penalty of
+dismissal/exclusion, non-readmission, or expulsion shall be thoroughly
+investigated and decided upon by the College Discipline Board composed
+of five members from the administration and faculty who are duly
+appointed by the President of the College. Other major offenses that
+have a recommended sanction of suspension shall be decided upon and
+implemented by the Discipline Head.
+
+This is in accordance with the provisions in the Manual of Regulations
+for Private Schools (Section 106, Preventive Suspension and Categories
+of Administrative Penalties).
 
 ## Preventive Suspension
 
-> A student under investigation may be preventively suspended from
-> entering school premises and from attending classes when the evidence
-> of guilt is strong. This is also done when the responsible school
-> official is morally convinced that the continued stay of the student
-> would cause sufficient distraction to the normal operations of the
-> institution, or would pose real or imminent threat or danger to people
-> or property inside the institution’s premises.
+A student under investigation may be preventively suspended from
+entering school premises and from attending classes when the evidence
+of guilt is strong. This is also done when the responsible school
+official is morally convinced that the continued stay of the student
+would cause sufficient distraction to the normal operations of the
+institution, or would pose real or imminent threat or danger to people
+or property inside the institution’s premises.
 
 ## Suspension
 
-> This is a sanction where the college deprives or denies the erring
-> student from attending classes for a period not exceeding twenty
-> percent (20%) of the prescribed total class days for the school term.
-> The erring student will be required to render student assistant (SA)
-> duties for the duration of the suspension.
+This is a sanction where the college deprives or denies the erring
+student from attending classes for a period not exceeding twenty
+percent (20%) of the prescribed total class days for the school term.
+The erring student will be required to render student assistant (SA)
+duties for the duration of the suspension.
 
 ## Non-Readmission
 
 **7.3 List of Offenses**
 
-> This is a sanction that allows the college to deny admission or
-> enrollment of an erring student for the school term immediately
-> following the term when the resolution or decision regarding the
-> student being guilty of the offense is charged against him/her, and
-> when the imposition of the sanction of non-readmission was
-> promulgated. Unlike the penalty of dismissal/exclusion, the student is
-> allowed to complete the current school term when the resolution for
-> non-readmission was promulgated. Transfer credentials shall be issued
-> upon promulgation. This is subject to the provisions of the current
-> Manual of Regulations for Private Schools.
+This is a sanction that allows the college to deny admission or
+enrollment of an erring student for the school term immediately
+following the term when the resolution or decision regarding the
+student being guilty of the offense is charged against him/her, and
+when the imposition of the sanction of non-readmission was
+promulgated. Unlike the penalty of dismissal/exclusion, the student is
+allowed to complete the current school term when the resolution for
+non-readmission was promulgated. Transfer credentials shall be issued
+upon promulgation. This is subject to the provisions of the current
+Manual of Regulations for Private Schools.
 
 ## Dismissal/Exclusion
 
-> This is a sanction that allows the college to exclude/dismiss the name
-> of the erring student from the roll of students immediately upon the
-> promulgation of the resolution for dismissal/ exclusion.
-> 
-> The college shall preserve a complete record of the proceedings for a
-> period of one (1) year in order to afford the Commission on Higher
-> Education (for college) and Department of Education (for SHS) with
-> time to review the case in the event that the student files and
-> appeals with CHED or DepEd.
+This is a sanction that allows the college to exclude/dismiss the name
+of the erring student from the roll of students immediately upon the
+promulgation of the resolution for dismissal/ exclusion.
+
+The college shall preserve a complete record of the proceedings for a
+period of one (1) year in order to afford the Commission on Higher
+Education (for college) and Department of Education (for SHS) with
+time to review the case in the event that the student files and
+appeals with CHED or DepEd.
 
 ## Expulsion
 
-> This is a sanction wherein the college declares an erring student to
-> be disqualified for admission to any public or private higher
-> education institution in the Philippines. In any case, the penalty of
-> expulsion cannot be imposed without the approval of the Chairman of
-> the Commission on Higher Education (for college) and Secretary of the
-> Deparment of Education (for SHS).
-> 
-> This sanction may be imposed (for offenses or acts that involve moral
-> turpitude or constitute gross misconduct, which are considered as
-> criminal and pursuant to existing penal laws).
-> 
-> The institution shall forward a complete record of the proceedings to
-> the CHED Regional Office (for college) or DepEd Regional Office (for
-> SHS) concerned within ten (10) days from the termination of the
-> investigation of each case.
+This is a sanction wherein the college declares an erring student to
+be disqualified for admission to any public or private higher
+education institution in the Philippines. In any case, the penalty of
+expulsion cannot be imposed without the approval of the Chairman of
+the Commission on Higher Education (for college) and Secretary of the
+Deparment of Education (for SHS).
+
+This sanction may be imposed (for offenses or acts that involve moral
+turpitude or constitute gross misconduct, which are considered as
+criminal and pursuant to existing penal laws).
+
+The institution shall forward a complete record of the proceedings to
+the CHED Regional Office (for college) or DepEd Regional Office (for
+SHS) concerned within ten (10) days from the termination of the
+investigation of each case.
 
 ## Appeals
 
 **7.4 Major Offenses**
 
-> Sanctions imposed on students by the Discipline Head or the Discipline
-> Board may be appealed for in writing through the Office of the
-> Director for Student Affairs within three (3) days after the student
-> has received the promulgated sanction from either the Discipline
-> Office or the Discipline Board.
-> 
-> Once the Director for Student Affairs (SA) receives a written appeal
-> from a student, the Director will then convene a committee composed of
-> three members (including the SA Director as Chair and two Executive
-> Directors as members, one of which should be the Executive Director of
-> the student concerned).
-> 
-> The committee may call upon faculty, school administrators, students,
-> and staff as resource persons during the review and deliberation of
-> each case.
-> 
-> Decisions of the Appeals Committee are considered final.
-> 
-> The College reserves the right to drop, dismiss/exclude, non-readmit,
-> impose expulsion, suspend, or impose other sanctions that it may deem
-> necessary, consistent, and in accordance with the minimum standards as
-> provided by CHED regulations and the Philippine law; or suspend a
-> student at any time if found, after due investigation of the
-> discipline board, to have seriously violated the rules and regulations
-> of the College.
+Sanctions imposed on students by the Discipline Head or the Discipline
+Board may be appealed for in writing through the Office of the
+Director for Student Affairs within three (3) days after the student
+has received the promulgated sanction from either the Discipline
+Office or the Discipline Board.
+
+Once the Director for Student Affairs (SA) receives a written appeal
+from a student, the Director will then convene a committee composed of
+three members (including the SA Director as Chair and two Executive
+Directors as members, one of which should be the Executive Director of
+the student concerned).
+
+The committee may call upon faculty, school administrators, students,
+and staff as resource persons during the review and deliberation of
+each case.
+
+Decisions of the Appeals Committee are considered final.
+
+The College reserves the right to drop, dismiss/exclude, non-readmit,
+impose expulsion, suspend, or impose other sanctions that it may deem
+necessary, consistent, and in accordance with the minimum standards as
+provided by CHED regulations and the Philippine law; or suspend a
+student at any time if found, after due investigation of the
+discipline board, to have seriously violated the rules and regulations
+of the College.
 
 ## Disciplinary Sanctions for Major Offenses
 
-> Depending on the gravity of the incident, the following major offenses
-> will merit its corresponding penalties:
+Depending on the gravity of the incident, the following major offenses
+will merit its corresponding penalties:
 
 1.  Written warning from the Discipline Head (in the form of a letter or
     a violation slip)
@@ -7145,13 +7145,13 @@ E. Selected Faculty Members
 
 **7.5 Minor Offenses**
 
-> A student will be given written notices for minor offenses. The
-> student may be suspended from classes for a prescribed period of time
-> and shall report to the Discipline Office for serious infractions of
-> school rules and regulations if he is found to have committed three
-> (3) minor offenses of the same nature or five (5) minor of a different
-> nature for the term. Parents may be notified and/or summoned when
-> necessary.
+A student will be given written notices for minor offenses. The
+student may be suspended from classes for a prescribed period of time
+and shall report to the Discipline Office for serious infractions of
+school rules and regulations if he is found to have committed three
+(3) minor offenses of the same nature or five (5) minor of a different
+nature for the term. Parents may be notified and/or summoned when
+necessary.
 
 **Table of Sanctions for Minor Offenses**
 
@@ -7437,9 +7437,9 @@ situations, should use the following rules, regulations, and guidelines:
 3.  Prior to testing, the selected students shall be asked to reveal the
     prescription medicines, vitamins, and food supplements that they
 
-> had ingested within the past five (5) days. The APC-DOH-accredited
-> laboratory who will conduct the test shall keep the listing and
-> utilize this in the evaluation of the confirmatory drug test.
+had ingested within the past five (5) days. The APC-DOH-accredited
+laboratory who will conduct the test shall keep the listing and
+utilize this in the evaluation of the confirmatory drug test.
 
 4.  The laboratory shall follow the DOH prescribed guidelines in the
     collection of urine specimens. Universal precautions shall be
@@ -7495,27 +7495,27 @@ situations, should use the following rules, regulations, and guidelines:
     the student referred to a DOH-accredited facility suited to the
     student’s level of dependency.
 
-> The parent and student may choose to enroll the student in a private
-> rehabilitation center or program or opt to avail of the rehabilitation
-> services of the government through a DOH-accredited facility.
-> 
-> If the parents refuse to act, the school shall proceed in accordance
-> with Section 61 of R.A. 9165 without prejudice to the provision of
-> Section 73 of R.A. 9165.
-> 
-> At this time, the student will be taking a leave of absence and will
-> be allowed to re-enroll if the student is later on found to have been
-> rehabilitated. Once allowed to enroll, the student will be under the
-> school monitoring phase for a year.
+The parent and student may choose to enroll the student in a private
+rehabilitation center or program or opt to avail of the rehabilitation
+services of the government through a DOH-accredited facility.
+
+If the parents refuse to act, the school shall proceed in accordance
+with Section 61 of R.A. 9165 without prejudice to the provision of
+Section 73 of R.A. 9165.
+
+At this time, the student will be taking a leave of absence and will
+be allowed to re-enroll if the student is later on found to have been
+rehabilitated. Once allowed to enroll, the student will be under the
+school monitoring phase for a year.
 
 6.  Students who will be found only as Recreational Users, as per the
     DDA result, will be under the school monitoring phase for a year.
 
-> During this phase, a maximum of six (6) drug tests at the expense of
-> the student shall be conducted (still randomly chosen, catching
-> students off-guard). A process of observation and counseling during
-> this phase shall be done in coordination with the parent and the Drug
-> Counselor of the school.
+During this phase, a maximum of six (6) drug tests at the expense of
+the student shall be conducted (still randomly chosen, catching
+students off-guard). A process of observation and counseling during
+this phase shall be done in coordination with the parent and the Drug
+Counselor of the school.
 
 7.  In the event that the student is confirmed positive for any
     dangerous drugs in the confirmatory drug test result while in the
@@ -7658,10 +7658,10 @@ of said Act.
     4.  When the sexual advances result in an intimidating, hostile or
         offensive environment for the student, trainee or apprentice.
 
-> Any person who directs or induces another to commit any act of sexual
-> harassment as herein defined, or who cooperates in the commission
-> thereof by another without which it would not have been committed,
-> shall also be held liable under this Act.
+Any person who directs or induces another to commit any act of sexual
+harassment as herein defined, or who cooperates in the commission
+thereof by another without which it would not have been committed,
+shall also be held liable under this Act.
 
 **SEC. 4.**
 
@@ -7679,12 +7679,12 @@ office shall:
     procedure for the investigation of sexual harassment cases and the
     administrative sanctions therefor.
 
-> Administrative sanctions shall not be a bar to prosecution in the
-> proper courts for unlawful acts of sexual harassment.
-> 
-> The said rules and regulations issued pursuant to this subsection (a)
-> shall include, among others, guidelines on proper decorum in the
-> workplace and educational or training institutions.
+Administrative sanctions shall not be a bar to prosecution in the
+proper courts for unlawful acts of sexual harassment.
+
+The said rules and regulations issued pursuant to this subsection (a)
+shall include, among others, guidelines on proper decorum in the
+workplace and educational or training institutions.
 
 2)  Create a committee on decorum and investigation of cases on sexual
     harassment. The committee shall conduct meetings, as the case may
@@ -7998,70 +7998,70 @@ meaning:
 
 171.1 “Author” is the natural person who has created the work;
 
-> 171.2 A “collective work” is a work which has been created by two (2)
-> or more natural persons at the initiative and under the direction of
-> another with the understanding that it will be disclosed by the latter
-> under his own name and that contributing natural persons will not be
-> identified;
-> 
-> 171.3 “Communication to the public” or “communicate to the public”
-> means the making of a work available to the public by wire or wireless
-> means in such a way that members of the public may access these works
-> from a place and time individually chosen by them;
-> 
-> 171.4 A “computer” is an electronic or similar device having
-> informationprocessing capabilities, and a “computer program” is a set
-> of instructions expressed in words, codes, schemes or in any other
-> form, which is capable when incorporated in a medium that the computer
-> can read, of causing the computer to perform or achieve a particular
-> task or result;
-> 
-> 171.5 “Public lending” is the transfer of possession of the original
-> or a copy of a work or sound recording for a limited period, for
-> non-profit purposes, by an institution the services of which are
-> 
-> available to the public, such as public library or archive;
-> 
-> 171.6 “Public performance,” in the case of a work other than an
-> audiovisual work, is the recitation, playing, dancing, acting or
-> otherwise performing the work, either directly or by means of any
-> device or process; in the case of an audiovisual work, the showing of
-> its images in sequence and the making of the sounds accompanying it
-> audible; and, in the case of a sound recording, making the recorded
-> sounds audible at a place or at places where persons outside the
-> normal circle of a family and that family’s closest social
-> acquaintances are or can be present, irrespective of whether they are
-> or can be present at the same place and at the same time, or at
-> different places and/or at different times, and where the performance
-> can be perceived without the need for communication within the meaning
-> of Subsection 171.3;
-> 
-> 171.7 “Published works” means works, which, with the consent of the
-> authors, are made available to the public by wire or wireless means in
-> such a way that members of the public may access these works from a
-> place and time individually chosen by them: Provided, That
-> availability of such copies has been such, as to satisfy the
-> reasonable requirements of the public, having regard to the nature of
-> the work;
-> 
-> 171.8 “Rental” is the transfer of the possession of the original or a
-> copy of a work or a sound recording for a limited period of time, for
-> profit-making purposes;
-> 
-> 171.9 “Reproduction” is the making of one (1) or more copies of a work
-> or a sound recording in any manner or form (Sec. 41 \[E\], P.D. No.
-> 49a);
+171.2 A “collective work” is a work which has been created by two (2)
+or more natural persons at the initiative and under the direction of
+another with the understanding that it will be disclosed by the latter
+under his own name and that contributing natural persons will not be
+identified;
+
+171.3 “Communication to the public” or “communicate to the public”
+means the making of a work available to the public by wire or wireless
+means in such a way that members of the public may access these works
+from a place and time individually chosen by them;
+
+171.4 A “computer” is an electronic or similar device having
+informationprocessing capabilities, and a “computer program” is a set
+of instructions expressed in words, codes, schemes or in any other
+form, which is capable when incorporated in a medium that the computer
+can read, of causing the computer to perform or achieve a particular
+task or result;
+
+171.5 “Public lending” is the transfer of possession of the original
+or a copy of a work or sound recording for a limited period, for
+non-profit purposes, by an institution the services of which are
+
+available to the public, such as public library or archive;
+
+171.6 “Public performance,” in the case of a work other than an
+audiovisual work, is the recitation, playing, dancing, acting or
+otherwise performing the work, either directly or by means of any
+device or process; in the case of an audiovisual work, the showing of
+its images in sequence and the making of the sounds accompanying it
+audible; and, in the case of a sound recording, making the recorded
+sounds audible at a place or at places where persons outside the
+normal circle of a family and that family’s closest social
+acquaintances are or can be present, irrespective of whether they are
+or can be present at the same place and at the same time, or at
+different places and/or at different times, and where the performance
+can be perceived without the need for communication within the meaning
+of Subsection 171.3;
+
+171.7 “Published works” means works, which, with the consent of the
+authors, are made available to the public by wire or wireless means in
+such a way that members of the public may access these works from a
+place and time individually chosen by them: Provided, That
+availability of such copies has been such, as to satisfy the
+reasonable requirements of the public, having regard to the nature of
+the work;
+
+171.8 “Rental” is the transfer of the possession of the original or a
+copy of a work or a sound recording for a limited period of time, for
+profit-making purposes;
+
+171.9 “Reproduction” is the making of one (1) or more copies of a work
+or a sound recording in any manner or form (Sec. 41 \[E\], P.D. No.
+49a);
 
 171.10 A “work of applied art” is an artistic creation with utilitarian
 
-> functions or incorporated in a useful article, whether made by hand or
-> produced on an industrial scale;
-> 
-> 171.11 A “work of the Government of the Philippines” is a work created
-> by an officer or employee of the Philippine Government or any of its
-> subdivisions and instrumentalities, including government-owned or
-> controlled corporations as part of his regularly prescribed official
-> duties.
+functions or incorporated in a useful article, whether made by hand or
+produced on an industrial scale;
+
+171.11 A “work of the Government of the Philippines” is a work created
+by an officer or employee of the Philippine Government or any of its
+subdivisions and instrumentalities, including government-owned or
+controlled corporations as part of his regularly prescribed official
+duties.
 
 ### Chapter II. ORIGINAL WORKS
 
@@ -8171,23 +8171,23 @@ dissertations, pronounced, read or rendered in courts of justice, before
 administrative agencies, in deliberative assemblies and in meetings of
 public character. (Sec. 9, First Par., P. D. No. 49)
 
-> 176.1
+176.1
 
 176.2 The author of speeches, lectures, sermons, addresses, and
 
-> dissertations mentioned in the preceding paragraphs shall have the
-> exclusive right of making a collection of his works. (n)
-> 
-> 176.3 Notwithstanding the foregoing provisions, the Government is not
-> precluded from receiving and holding copyrights transferred to it by
-> assignment, bequest or otherwise; nor shall publication or
-> republication by the Government in a public document of any work in
-> which copy right is subsisting be taken to cause any
+dissertations mentioned in the preceding paragraphs shall have the
+exclusive right of making a collection of his works. (n)
+
+176.3 Notwithstanding the foregoing provisions, the Government is not
+precluded from receiving and holding copyrights transferred to it by
+assignment, bequest or otherwise; nor shall publication or
+republication by the Government in a public document of any work in
+which copy right is subsisting be taken to cause any
 
 176.4 abridgment or annulment of the copyright or to authorize any use
 
-> or appropriation of such work without the consent of the copyright
-> owner. (Sec. 9, Third Par., P. D. No. 49)
+or appropriation of such work without the consent of the copyright
+owner. (Sec. 9, Third Par., P. D. No. 49)
 
 **Chapter V. COPYRIGHT OR ECONOMIC RIGHTS**
 
@@ -8199,24 +8199,24 @@ the following acts:
 
 177.1. Reproduction of the work or substantial portion of the work;
 
-> 177.2 Dramatization, translation, adaptation, abridgment, arrangement
-> or other transformation of the work;
-> 
-> 177.3. The first public distribution of the original and each copy of
-> the work by sale or other forms of transfer of ownership;
-> 
-> 177.4. Rental of the original or a copy of an audiovisual or
-> cinematographic work, a work embodied in a sound recording, a computer
-> program, a compilation of data and other materials or a musical work
-> in graphic form, irrespective of the ownership of the original or the
-> copy which is the subject of the rental; (n)
+177.2 Dramatization, translation, adaptation, abridgment, arrangement
+or other transformation of the work;
+
+177.3. The first public distribution of the original and each copy of
+the work by sale or other forms of transfer of ownership;
+
+177.4. Rental of the original or a copy of an audiovisual or
+cinematographic work, a work embodied in a sound recording, a computer
+program, a compilation of data and other materials or a musical work
+in graphic form, irrespective of the ownership of the original or the
+copy which is the subject of the rental; (n)
 
 177.5. Public display of the original or a copy of the work;
 
 177.6. Public performance of the work; and
 
-> 177.7. Other communication to the public of the work (Sec. 5, P. D.
-> No. 49a)
+177.7. Other communication to the public of the work (Sec. 5, P. D.
+No. 49a)
 
 **Chapter VI. OWNERSHIP OF COPYRIGHT**
 
@@ -8224,20 +8224,20 @@ the following acts:
 
 Copyright ownership shall be governed by the following rules:
 
-> 178.1. Subject to the provisions of this section, in the case of
-> original literary and artistic works, copyright shall belong to the
-> author of the work;
-> 
-> 178.2. In the case of works of joint authorship, the co-authors shall
-> be the original owners of the copyright and in the absence of
-> agreement, their rights shall be governed by the rules on
-> co-ownership. If, however, a work of joint authorship consists of
-> parts that can be used separately and the author of each part can be
-> identified, the author of each part shall be the original owner of the
-> copyright in the part that he has created;
-> 
-> 178.3. In the case of work created by an author during and in the
-> course of his employment, the copyright shall belong to:
+178.1. Subject to the provisions of this section, in the case of
+original literary and artistic works, copyright shall belong to the
+author of the work;
+
+178.2. In the case of works of joint authorship, the co-authors shall
+be the original owners of the copyright and in the absence of
+agreement, their rights shall be governed by the rules on
+co-ownership. If, however, a work of joint authorship consists of
+parts that can be used separately and the author of each part can be
+identified, the author of each part shall be the original owner of the
+copyright in the part that he has created;
+
+178.3. In the case of work created by an author during and in the
+course of his employment, the copyright shall belong to:
 
 1.  The employee, if the creation of the object of copyright is not a
     part of his regular duties even if the employee uses the time,
@@ -8268,7 +8268,7 @@ Copyright ownership shall be governed by the following rules:
         subject to the provisions of Article 723 of the Civil Code.
         (Sec. 6,
 
-> P. D. No. 49a)
+P. D. No. 49a)
 
 **SEC. 179. Anonymous and Pseudonymous Works.**
 
@@ -8282,20 +8282,20 @@ P. D. 49)
 **Chapter VII. TRANSFER OR ASSIGNMENT OF COPYRIGHT SEC. 180. Rights of
 Assignee.**
 
-> 180.1. The copyright may be assigned in whole or in part. Within the
-> scope of the assignment, the assignee is entitled to all the rights
-> and remedies which the assignor had with respect to the copyright.
-> 
-> 180.2. The copyright is not deemed assigned inter vivos in whole or in
-> part unless there is a written indication of such intention.
-> 
-> 180.3. The submission of a literary, photographic or artistic work to
-> a newspaper, magazine or periodical for publication shall constitute
-> only a license to make a single publication unless a greater right is
-> expressly granted. If two (2) or more persons jointly own a copyright
-> or any part thereof, neither of the owners shall be entitled to grant
-> licenses without the prior written consent of the other owner or
-> owners. (Sec. 15, P. D. No. 49a)
+180.1. The copyright may be assigned in whole or in part. Within the
+scope of the assignment, the assignee is entitled to all the rights
+and remedies which the assignor had with respect to the copyright.
+
+180.2. The copyright is not deemed assigned inter vivos in whole or in
+part unless there is a written indication of such intention.
+
+180.3. The submission of a literary, photographic or artistic work to
+a newspaper, magazine or periodical for publication shall constitute
+only a license to make a single publication unless a greater right is
+expressly granted. If two (2) or more persons jointly own a copyright
+or any part thereof, neither of the owners shall be entitled to grant
+licenses without the prior written consent of the other owner or
+owners. (Sec. 15, P. D. No. 49a)
 
 **SEC. 181. Copyright and Material Object.**
 
@@ -8325,8 +8325,8 @@ on their behalf. (Sec. 32, P. D. No. 49a)
 
 **SEC. 184. Limitations on Copyright.**
 
-> 184.1. Notwithstanding the provisions of Chapter V, the following acts
-> shall not constitute infringement of copyright:
+184.1. Notwithstanding the provisions of Chapter V, the following acts
+shall not constitute infringement of copyright:
 
 1.  The recitation or performance of a work, once it has been lawfully
     made accessible to the public, if done privately and free of charge
@@ -8340,7 +8340,7 @@ on their behalf. (Sec. 32, P. D. No. 49a)
     source and the name of the author, if appearing on the work, are
     mentioned; (Sec. 11, Third Par., P. D. No.
 
-> 49\)
+49\)
 
 3.  The reproduction or communication to the public by mass media of
     articles on current political, social, economic, scientific or
@@ -8354,7 +8354,7 @@ on their behalf. (Sec. 32, P. D. No. 49a)
     means of photography, cinematography or broadcasting to the extent
     necessary for the purpose;
 
-> (Sec. 12, P. D. No. 49)
+(Sec. 12, P. D. No. 49)
 
 5.  The inclusion of a work in a publication, broadcast, or other
     communication to the public, sound recording or film; if such
@@ -8395,22 +8395,22 @@ on their behalf. (Sec. 32, P. D. No. 49a)
 11. Any use made of a work for the purpose of any judicial proceedings
     or for the giving of professional advice by a legal practitioner.
 
-> 184.2. The provisions of this section shall be interpreted in such a
-> way as to allow the work to be used in a manner which does not
-> conflict with the normal exploitation of the work and does not
-> unreasonably prejudice the right holder’s legitimate interests.
+184.2. The provisions of this section shall be interpreted in such a
+way as to allow the work to be used in a manner which does not
+conflict with the normal exploitation of the work and does not
+unreasonably prejudice the right holder’s legitimate interests.
 
 **SEC. 185. Fair Use of a Copyrighted Work.**
 
-> 185.1. The fair use of a copyrighted work for criticism, comment, news
-> reporting, teaching including multiple copies for classroom use,
-> scholarship, research, and similar purposes is not an infringement of
-> copyright. Decompilation, which is understood here to be the
-> reproduction of the code and translation of the forms of the computer
-> program to achieve the inter-operability of an independently created
-> computer program with other programs may also constitute fair use. In
-> determining whether the use made of a work in any particular case is
-> fair use, the factors to be considered shall include:
+185.1. The fair use of a copyrighted work for criticism, comment, news
+reporting, teaching including multiple copies for classroom use,
+scholarship, research, and similar purposes is not an infringement of
+copyright. Decompilation, which is understood here to be the
+reproduction of the code and translation of the forms of the computer
+program to achieve the inter-operability of an independently created
+computer program with other programs may also constitute fair use. In
+determining whether the use made of a work in any particular case is
+fair use, the factors to be considered shall include:
 
 1.  The purpose and character of the use, including whether such use is
     of a commercial nature or is for non-profit education purposes;
@@ -8423,11 +8423,11 @@ on their behalf. (Sec. 32, P. D. No. 49a)
 4.  The effect of the use upon the potential market for or value of the
     copyrighted work.
 
-> 185.2.
-> 
-> The fact that a work is unpublished shall not by itself bar a finding
-> of fair use if such finding is made upon consideration of all the
-> above factors.
+185.2.
+
+The fact that a work is unpublished shall not by itself bar a finding
+of fair use if such finding is made upon consideration of all the
+above factors.
 
 **SEC. 186. Work of Architecture.**
 
@@ -8441,15 +8441,15 @@ that copyright relates. (n)
 
 **SEC. 187. Reproduction of Published Work.**
 
-> 187.1. Notwithstanding the provision of Section 177, and subject to
-> the provisions of Subsection 187.2, the private reproduction of a
-> published work in a single copy, where the reproduction is made by a
-> natural person exclusively for research and private study, shall be
-> permitted, without the authorization of the owner of copyright in the
-> work.
-> 
-> 187.2. The permission granted under Subsection 187.1 shall not extend
-> to the reproduction of:
+187.1. Notwithstanding the provision of Section 177, and subject to
+the provisions of Subsection 187.2, the private reproduction of a
+published work in a single copy, where the reproduction is made by a
+natural person exclusively for research and private study, shall be
+permitted, without the authorization of the owner of copyright in the
+work.
+
+187.2. The permission granted under Subsection 187.1 shall not extend
+to the reproduction of:
 
 1.  A work of architecture in the form of building or other
     construction;
@@ -8467,10 +8467,10 @@ that copyright relates. (n)
 
 **SEC. 188. Reprographic Reproduction by Libraries.**
 
-> 188.1. Notwithstanding the provisions of Subsection 177.6, any library
-> or archive whose activities are not for profit may, without the
-> authorization of the author of copyright owner, make a single copy of
-> the work by reprographic reproduction:
+188.1. Notwithstanding the provisions of Subsection 177.6, any library
+or archive whose activities are not for profit may, without the
+authorization of the author of copyright owner, make a single copy of
+the work by reprographic reproduction:
 
 1.  Where the works by reason of its fragile character or rarity cannot
     be lent to user in its original form;
@@ -8488,24 +8488,24 @@ that copyright relates. (n)
     destroyed or rendered unusable and copies are not available with the
     publisher.
 
-> 188.2. Notwithstanding the above provisions, it shall not be
-> permissible to produce a volume of a work published in several volumes
-> or to produce missing tomes or pages of magazines or similar works,
-> unless the volume, tome or part is out of stock. Provided, That every
-> library which, by law, is entitled to receive copies of a printed
-> work, shall be entitled, when special reasons so require, to reproduce
-> a copy of a published work which is considered necessary for the
-> collection of the library but which is out of stock. (Sec. 13, P. D.
-> 49a)
+188.2. Notwithstanding the above provisions, it shall not be
+permissible to produce a volume of a work published in several volumes
+or to produce missing tomes or pages of magazines or similar works,
+unless the volume, tome or part is out of stock. Provided, That every
+library which, by law, is entitled to receive copies of a printed
+work, shall be entitled, when special reasons so require, to reproduce
+a copy of a published work which is considered necessary for the
+collection of the library but which is out of stock. (Sec. 13, P. D.
+49a)
 
 **SEC. 189. Reproduction of Computer Program.**
 
-> 189.1. Notwithstanding the provisions of Section 177, the reproduction
-> in one (1) back-up copy or adaptation of a computer program shall be
-> permitted, without the authorization of the author of, or other owner
-> of copyright in, a computer program, by the lawful owner of that
-> computer program: Provided, That the copy or adaptation is necessary
-> for:
+189.1. Notwithstanding the provisions of Section 177, the reproduction
+in one (1) back-up copy or adaptation of a computer program shall be
+permitted, without the authorization of the author of, or other owner
+of copyright in, a computer program, by the lawful owner of that
+computer program: Provided, That the copy or adaptation is necessary
+for:
 
 1.  The use of the computer program in conjunction with a computer for
     the purpose, and to the extent, for which the computer program has
@@ -8527,11 +8527,11 @@ that copyright relates. (n)
 
 **SEC. 190. Importation for Personal Purposes.**
 
-> 190.1. Notwithstanding the provision of Subsection 177.6, but subject
-> to the limitation under the Subsection 185.2, the importation of a
-> copy of a work by an individual for his personal purposes shall be
-> permitted without the authorization of the author of, or other owner
-> of copyright in, the work under the following circumstances:
+190.1. Notwithstanding the provision of Subsection 177.6, but subject
+to the limitation under the Subsection 185.2, the importation of a
+copy of a work by an individual for his personal purposes shall be
+permitted without the authorization of the author of, or other owner
+of copyright in, the work under the following circumstances:
 
 1.  When copies of the work are not available in the Philippines and:
     
@@ -8613,24 +8613,24 @@ The author of a work shall, independently of the economic rights in
 Section 177 or the grant of an assignment or license with respect to
 such right, have the right:
 
-> 193.1. To require that the authorship of the works be attributed to
-> him, in particular, the right that his name, as far as practicable, be
-> indicated in a prominent way on the copies, and in connection with the
-> public use of his work;
-> 
-> 193.2. To make any alterations of his work prior to, or to withhold it
-> from publication;
+193.1. To require that the authorship of the works be attributed to
+him, in particular, the right that his name, as far as practicable, be
+indicated in a prominent way on the copies, and in connection with the
+public use of his work;
+
+193.2. To make any alterations of his work prior to, or to withhold it
+from publication;
 
 193.3. To object to any distortion, mutilation or other modification of,
 or
 
-> other derogatory action in relation to, his work which would be
-> prejudicial to his honor or reputation; and
-> 
-> 193.4. To restrain the use of his name with respect to any work not of
-> his own creation or in a distorted version of his work. (Sec. 34,
-> 
-> P. D. No. 49)
+other derogatory action in relation to, his work which would be
+prejudicial to his honor or reputation; and
+
+193.4. To restrain the use of his name with respect to any work not of
+his own creation or in a distorted version of his work. (Sec. 34,
+
+P. D. No. 49)
 
 **SEC. 194. Breach of Contract.**
 
@@ -8645,14 +8645,14 @@ An author may waive his rights mentioned in Section 193 by a written
 instrument, but no such waiver shall be valid where its effects is to
 permit another:
 
-> 195.1. To use the name of the author, or the title of his work, or
-> otherwise to make use of his reputation with respect to any version or
-> adaptation of his work which, because of alterations therein, would
-> substantially tend to injure the literary or artistic reputation of
-> another author; or
-> 
-> 195.2. To use the name of the author with respect to a work he did not
-> create. (Sec. 36, P. D. No. 49)
+195.1. To use the name of the author, or the title of his work, or
+otherwise to make use of his reputation with respect to any version or
+adaptation of his work which, because of alterations therein, would
+substantially tend to injure the literary or artistic reputation of
+another author; or
+
+195.2. To use the name of the author with respect to a work he did not
+create. (Sec. 36, P. D. No. 49)
 
 **SEC. 196. Contribution to Collective Work.**
 
@@ -8674,20 +8674,20 @@ be deemed to violate such rights. (Sec. 38, P. D. No. 49)
 
 **SEC. 198. Term of Moral Rights.**
 
-> 198.1. The rights of an author under this chapter shall last during
-> the lifetime of the author and for fifty (50) years after his death
-> and shall not be assignable or subject to license. The person or
-> persons to be charged with the posthumous enforcement of these rights
-> shall be named in writing to be filed with the National Library. In
-> default of such person or persons, such enforcement shall devolve upon
-> either the author’s heirs, and in default of the heirs, the Director
-> of the National Library.
-> 
-> 198.2. For purposes of this Section, “Person” shall mean any
-> individual, partnership, corporation, association, or society. The
-> Director of the National Library may prescribe reasonable fees to be
-> charged for his services in the application of provisions of this
-> Section. (Sec. 39, P. D. No. 49)
+198.1. The rights of an author under this chapter shall last during
+the lifetime of the author and for fifty (50) years after his death
+and shall not be assignable or subject to license. The person or
+persons to be charged with the posthumous enforcement of these rights
+shall be named in writing to be filed with the National Library. In
+default of such person or persons, such enforcement shall devolve upon
+either the author’s heirs, and in default of the heirs, the Director
+of the National Library.
+
+198.2. For purposes of this Section, “Person” shall mean any
+individual, partnership, corporation, association, or society. The
+Director of the National Library may prescribe reasonable fees to be
+charged for his services in the application of provisions of this
+Section. (Sec. 39, P. D. No. 49)
 
 **Sec. 199. Enforcement Remedies.**
 
@@ -8729,50 +8729,50 @@ following meanings:
 
 202.1. “Performers” are actors, singers, musicians, dancers, and other
 
-> persons who act, sing, declaim, play in, interpret, or otherwise
-> perform literary and artistic work;
-> 
-> 202.2. “Sound recording” means the fixation of the sounds of a
-> performance or of other sounds, or representation of sound, other than
-> in the form of a fixation incorporated in a cinematographic or other
-> audiovisual work;
-> 
-> 202.3. An “audiovisual work or fixation” is a work that consists of a
-> series of related images which impart the impression of motion, with
-> or without accompanying sounds, susceptible of being made visible and,
-> where accompanied by sounds, susceptible of being made audible;
+persons who act, sing, declaim, play in, interpret, or otherwise
+perform literary and artistic work;
+
+202.2. “Sound recording” means the fixation of the sounds of a
+performance or of other sounds, or representation of sound, other than
+in the form of a fixation incorporated in a cinematographic or other
+audiovisual work;
+
+202.3. An “audiovisual work or fixation” is a work that consists of a
+series of related images which impart the impression of motion, with
+or without accompanying sounds, susceptible of being made visible and,
+where accompanied by sounds, susceptible of being made audible;
 
 202.4. “Fixation” means the embodiment of sounds, or of the
 
-> representations thereof, from which they can be perceived, reproduced
-> or communicated through a device;
-> 
-> 202.5. “Producer of a sound recording” means the person, or the legal
-> entity, who or which takes the initiative and has the responsibility
-> for the first fixation of the sounds of a performance or other sounds,
-> or the representation of sounds;
-> 
-> 202.6. “Publication of a fixed performance or a sound recording” means
-> the offering of copies of the fixed performance or the sound recording
-> to the public, with the consent of the right holder: Provided, That
-> copies are offered to the public in reasonable quality;
-> 
-> 202.7. “Broadcasting” means the transmission by wireless means for the
-> public reception of sounds or of images or of representations thereof;
-> such transmission by satellite is also “broadcasting” where the means
-> for decrypting are provided to the public by the broadcasting
-> organization or with its consent;
-> 
-> 202.8. “Broadcasting organization” shall include a natural person or a
-> juridical entity duly authorized to engage in broadcasting; and
-> 
-> 202.9. “Communication to the public of a performance or a sound
-> recording” means the transmission to the public, by any medium,
-> otherwise than by broadcasting, of sounds of a performance or the
-> representations of sounds fixed in a sound recording. For purposes of
-> Section 209, “communication to the public” includes making the sounds
-> or representations of sounds fixed in a sound recording audible to the
-> public.
+representations thereof, from which they can be perceived, reproduced
+or communicated through a device;
+
+202.5. “Producer of a sound recording” means the person, or the legal
+entity, who or which takes the initiative and has the responsibility
+for the first fixation of the sounds of a performance or other sounds,
+or the representation of sounds;
+
+202.6. “Publication of a fixed performance or a sound recording” means
+the offering of copies of the fixed performance or the sound recording
+to the public, with the consent of the right holder: Provided, That
+copies are offered to the public in reasonable quality;
+
+202.7. “Broadcasting” means the transmission by wireless means for the
+public reception of sounds or of images or of representations thereof;
+such transmission by satellite is also “broadcasting” where the means
+for decrypting are provided to the public by the broadcasting
+organization or with its consent;
+
+202.8. “Broadcasting organization” shall include a natural person or a
+juridical entity duly authorized to engage in broadcasting; and
+
+202.9. “Communication to the public of a performance or a sound
+recording” means the transmission to the public, by any medium,
+otherwise than by broadcasting, of sounds of a performance or the
+representations of sounds fixed in a sound recording. For purposes of
+Section 209, “communication to the public” includes making the sounds
+or representations of sounds fixed in a sound recording audible to the
+public.
 
 **SEC. 203. Scope of Performers’ Rights.**
 
@@ -8789,7 +8789,7 @@ following exclusive rights:
     2.  The right of authorizing the direct or indirect reproduction of
         their
 
-> performances fixed in sound recordings, in any manner or form;
+performances fixed in sound recordings, in any manner or form;
 
 3.  Subject to the provisions of Section 206, the right of authorizing
     the first public distribution of the original and copies of their
@@ -8853,20 +8853,20 @@ them in respect of any use of their performance. (n)
 Subject to the provisions of Section 212, producers of sound recordings
 shall enjoy the following exclusive rights:
 
-> 208.1. The right to authorize the direct or indirect reproduction of
-> their sound recordings, in any manner or form; the placing of these
-> reproductions in the market and the right of rental or lending;
+208.1. The right to authorize the direct or indirect reproduction of
+their sound recordings, in any manner or form; the placing of these
+reproductions in the market and the right of rental or lending;
 
 208.2 The right to authorize the first public distribution of the
 original
 
-> and copies of their sound recordings through sale or rental or other
-> forms of transferring ownership; and
-> 
-> 208.3. The right to authorize the commercial rental to the public of
-> the original and copies of their sound recordings, even after
-> distribution by them by or pursuant to authorization by the producer.
-> (Sec. 46, P. D. No. 49a)
+and copies of their sound recordings through sale or rental or other
+forms of transferring ownership; and
+
+208.3. The right to authorize the commercial rental to the public of
+the original and copies of their sound recordings, even after
+distribution by them by or pursuant to authorization by the producer.
+(Sec. 46, P. D. No. 49a)
 
 ## APPENDIX D - DATA PRIVACY POLICY
 
@@ -8944,7 +8944,7 @@ The following are types of “personal data” collected in APC:
     
     1.  Government-issued accounts, such as, but not limited to, SSS,
 
-> TIN, PhilHealth, HDMF
+TIN, PhilHealth, HDMF
 
 2.  Membership Information on SM-SLA and PERAA
 
@@ -9003,7 +9003,7 @@ The following are types of “personal data” collected in APC:
 
 **LAWS**
 
-> **Article I**
+**Article I**
 
 ## Name and Purpose
 
@@ -9014,7 +9014,7 @@ of Regents (SOAR).
 
 **SEC. 2. Official Seal.**
 
-> ![](media/image13.png)
+![](media/image13.png)
 
 ### 2.1 Symbolism
 
@@ -9078,7 +9078,7 @@ leaders and/or student organizations.
 4.6 To serve not only the students’ organization but also the APC
 Community.
 
-> **Article II**
+**Article II**
 
 ## Membership
 
@@ -9222,7 +9222,7 @@ Affairs
 
 ## Article IV
 
-> **Executive Board and Officers**
+**Executive Board and Officers**
 
 **SEC 1. Definition.**
 
@@ -9421,7 +9421,7 @@ SOAR Meeting
 4.2 The Board of Consultants must conduct a meeting once every academic
 term.
 
-> **Article VI**
+**Article VI**
 
 ## Adviser
 
@@ -9437,7 +9437,7 @@ College.
 
 ## Article VII
 
-> **Sanctions and Offenses**
+**Sanctions and Offenses**
 
 **SEC. 1. Alignment with other school policies.**
 
@@ -9451,7 +9451,7 @@ Executive Board and his/her penalties from the organization, and is
 separated from the set of penalties of APC SOAR, SAO and Asia Pacific
 College.
 
-> **Article VIII**
+**Article VIII**
 
 ## Implementing Rules and Procedures
 
@@ -9521,7 +9521,7 @@ in question may defend himself/herself.
 
 4.2.3 The officer shall settle all accounts with SOAR within a week.
 
-> **Article XI**
+**Article XI**
 
 ## Amendments and Revisions
 
@@ -9555,7 +9555,7 @@ the meetings and proceedings following the revision process shall
 determine the decision for the acceptance and/or refusal of the
 revision.
 
-> **Article XII**
+**Article XII**
 
 ## Implementation
 
