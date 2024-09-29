@@ -20,3 +20,12 @@ Run:
 ```
 python app.py
 ```
+
+---
+
+Codebase:
+
+1. `app.py` - contains the server code.
+2. `chat.py` - contains the language model.
+3. `chain.py` - contains the chain for retrieval-augmented-generation.
+4. `embed.py` - contains the embedding and index (vector database) code.
