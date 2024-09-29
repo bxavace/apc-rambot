@@ -12,7 +12,7 @@ class GreetTest(Resource):
     def get(self):
         return jsonify({'message': 'Server operational'})
 
-class Chat(Resource):
+class Chatbot(Resource):
     """
         Main endpoint of the API.
         This will call '/api/v1/save' to save the user message and bot response.
