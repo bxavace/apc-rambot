@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 import os
 import threading
+import time
 
 load_dotenv()
 
@@ -31,7 +32,7 @@ class Conversation(db.Model):
     bot_response = db.Column(db.Text, nullable=False)
     timestamp = db.Column(db.DateTime, server_default=db.func.now())
     latency = db.Column(db.Float, default=0.5)
-    
+
     def __repr__(self):
         return f'<Conversation {self.id}>'
 
@@ -47,15 +48,18 @@ class Chatbot(Resource):
     def post(self):
         data = request.json
         user_message = data.get('user_message')
+        time_start = time.time()
         response = gpt4om.invoke(user_message)
+        time_end = time.time()
+        latency = time_end - time_start
 
-        threading.Thread(target=save_message, args=(user_message, response.content)).start()
+        threading.Thread(target=save_message, args=(user_message, response.content, latency)).start()
 
         return jsonify({'response': str(response.content)})
 
-def save_message(user_message, bot_response):
+def save_message(user_message, bot_response, latency):
     with app.app_context():
-        conversation = Conversation(user_message=user_message, bot_response=bot_response)
+        conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency)
         db.session.add(conversation)
         db.session.commit()
         print('Conversation saved.')
