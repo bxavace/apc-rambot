@@ -30,6 +30,7 @@ class Conversation(db.Model):
     user_message = db.Column(db.Text, nullable=False)
     bot_response = db.Column(db.Text, nullable=False)
     timestamp = db.Column(db.DateTime, server_default=db.func.now())
+    latency = db.Column(db.Float, default=0.5)
     
     def __repr__(self):
         return f'<Conversation {self.id}>'
