@@ -11,7 +11,7 @@ AZ_OAI_KEY = os.getenv('AZ_OAI_KEY')
 VECTOR_STORE_ADDR= os.environ.get('VECTOR_STORE_ADDR')
 VECTOR_STORE_KEY= os.environ.get('VECTOR_STORE_KEY')
 AZ_OAI_DEPLOYMENT= os.environ.get('AZ_OAI_DEPLOYMENT')
-INDEX_NAME = os.environ.get('INDEX_NAME')
+INDEX_NAME_DEV = os.environ.get('INDEX_NAME_DEV')
 
 embeddings = AzureOpenAIEmbeddings(
     azure_deployment=AZ_OAI_DEPLOYMENT,
@@ -23,7 +23,7 @@ embeddings = AzureOpenAIEmbeddings(
 datastore = AzureSearch(
     azure_search_endpoint=VECTOR_STORE_ADDR,
     azure_search_key=VECTOR_STORE_KEY,
-    index_name=INDEX_NAME,
+    index_name=INDEX_NAME_DEV,
     embedding_function=embeddings.embed_query,
 )
 
