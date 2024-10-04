@@ -3,8 +3,8 @@ from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Development, Production
-from chat import gpt4om
 from dotenv import load_dotenv
+from chain import model
 
 import os
 import threading
@@ -49,13 +49,13 @@ class Chatbot(Resource):
         data = request.json
         user_message = data.get('user_message')
         time_start = time.time()
-        response = gpt4om.invoke(user_message)
+        response = model.invoke(user_message)
         time_end = time.time()
         latency = time_end - time_start
 
-        threading.Thread(target=save_message, args=(user_message, response.content, latency)).start()
+        threading.Thread(target=save_message, args=(user_message, response, latency)).start()
 
-        return jsonify({'response': str(response.content), 'responded_in': latency})
+        return jsonify({'response': str(response), 'responded_in': latency})
 
 def save_message(user_message, bot_response, latency):
     with app.app_context():
