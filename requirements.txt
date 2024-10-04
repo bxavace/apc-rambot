@@ -4,6 +4,7 @@ Flask-Migrate
 flask-sqlalchemy
 python-dotenv
 azure-identity
+azure-search-documents
 langchain
 langchain-openai
 langchain-community
