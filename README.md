@@ -16,9 +16,16 @@ AZ_OAI_VER=2024-02-01
 AZ_OAI_DEPLOYMENT=<azure_openai_embeddings_deployment_name>
 ```
 
-Run:
+Run (dev):
 ```
-python app.py
+export FLASK_ENV=development
+flask run
+```
+
+Run (prod):
+```
+export FLASK_ENV=production
+gunicorn -w 4 app:app
 ```
 
 ---
@@ -29,3 +36,4 @@ Codebase:
 2. `chat.py` - contains the language model.
 3. `chain.py` - contains the chain for retrieval-augmented-generation.
 4. `embed.py` - contains the embedding and index (vector database) code.
+5. `config.py` - for development/production purposes
