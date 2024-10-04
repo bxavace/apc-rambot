@@ -1,7 +1,8 @@
-from .chat import gpt4om
+from chat import gpt4om
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+from embed import retriever
 
 parser = StrOutputParser()
 
@@ -18,6 +19,17 @@ prompt = """
 """
 
 template = ChatPromptTemplate.from_template(prompt)
+
+
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
+
+model = (
+    {"context": retriever | format_docs, "inquiry": RunnablePassthrough()}
+    | template
+    | gpt4om
+    | StrOutputParser()
+)
 
 if __name__ == "__main__":
     pass
