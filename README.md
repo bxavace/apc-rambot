@@ -21,6 +21,10 @@ Run (dev):
 export FLASK_ENV=development
 flask run
 ```
+or
+```
+python app.py
+```
 
 Run (prod):
 ```
