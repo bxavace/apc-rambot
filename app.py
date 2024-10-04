@@ -55,7 +55,7 @@ class Chatbot(Resource):
 
         threading.Thread(target=save_message, args=(user_message, response.content, latency)).start()
 
-        return jsonify({'response': str(response.content)})
+        return jsonify({'response': str(response.content), 'responded_in': latency})
 
 def save_message(user_message, bot_response, latency):
     with app.app_context():
