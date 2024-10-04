@@ -1,12 +1,19 @@
 from flask import Flask, jsonify, request
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from config import Development, Production
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///log.db'
+
+if app.env == 'development':
+    app.config.from_object(Development)
+else:
+    app.config.from_object(Production)
 
 db = SQLAlchemy(app)
 api = Api(app)
+migrate = Migrate(app, db)
 
 class GreetTest(Resource):
     def get(self):
@@ -28,6 +35,9 @@ class SaveMessage(Resource):
     """
     def post(self):
         return jsonify({'message': 'User message saved.'})
+
+with app.app_context():
+    db.create_all()
 
 api.add_resource(GreetTest, '/test')
 api.add_resource(SaveMessage, '/api/v1/save')
