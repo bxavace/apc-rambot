@@ -1,5 +1,6 @@
 Flask
 Flask-RESTful
+Flask-Migrate
 flask-sqlalchemy
 python-dotenv
 azure-identity
