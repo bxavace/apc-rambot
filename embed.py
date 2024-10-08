@@ -27,7 +27,7 @@ datastore = AzureSearch(
     embedding_function=embeddings.embed_query,
 )
 
-retriever = datastore.as_retriever()
+retriever = datastore.as_retriever(k=5)
 
 if __name__ == "__main__":
     pass
