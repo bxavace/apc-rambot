@@ -1,14 +1,16 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session, flash
 from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Development, Production
 from dotenv import load_dotenv
 from chain import model
+from functools import wraps
 
 import os
 import threading
 import time
+import json
 
 load_dotenv()
 
@@ -24,6 +26,7 @@ else:
 db = SQLAlchemy(app)
 api = Api(app)
 migrate = Migrate(app, db)
+admin_bp = Blueprint('admin', __name__, template_folder='templates')
 
 class Conversation(db.Model):
     __tablename__ = 'conversations'
@@ -63,6 +66,67 @@ def save_message(user_message, bot_response, latency):
         db.session.add(conversation)
         db.session.commit()
         print('Conversation saved.')
+
+###################
+### ADMIN PANEL ###
+###################
+def check_auth(username, password):
+    env_username = os.getenv('ADMIN_USERNAME')
+    env_password = os.getenv('ADMIN_PASSWORD')
+    return username == env_username and password == env_password
+
+def login_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if 'authenticated' not in session:
+            return redirect(url_for('admin.login', next=url_for('admin.admin')))
+        return f(*args, **kwargs)
+    return decorated
+
+@admin_bp.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if check_auth(username, password):
+            session['authenticated'] = True
+            return redirect(url_for('admin.admin'))
+        else:
+            flash('Invalid credentials.')
+    return render_template('login.html')
+
+@admin_bp.route('/logout')
+def logout():
+    session.pop('authenticated', None)
+    flash('You have been logged out.')
+    return redirect(url_for('admin.login'))
+
+@admin_bp.route('/')
+@login_required
+def admin():
+    conversations = Conversation.query.all()
+    return render_template('admin.html', conversations=conversations)
+
+@admin_bp.route('/admin/export', methods=['GET'])
+@login_required
+def export_data():
+    return export_json()
+
+def export_json():
+    conversations = Conversation.query.all()
+    data = []
+    for conversation in conversations:
+        data.append({
+            'user_message': conversation.user_message,
+            'bot_response': conversation.bot_response,
+            'timestamp': conversation.timestamp,
+            'latency': conversation.latency
+        })
+    json_data = json.dumps(data, default=str)
+    response = Response(json_data, mimetype='application/json', headers={'Content-Disposition': 'attachment;filename=conversations.json'})
+    return response
+
+app.register_blueprint(admin_bp, url_prefix='/admin')
 
 with app.app_context():
     db.create_all()
