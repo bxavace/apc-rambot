@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rambot Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>User Message</th>
+            <th>Bot Response</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for convo in conversations %}
+        <tr>
+            <td>{{ convo.id }}</td>
+            <td>{{ convo.user_message }}</td>
+            <td>{{ convo.bot_response }}</td>
+            <td>{{ convo.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('admin.export_data') }}">Export Data</a>
+</body>
+</html>
