@@ -83,6 +83,14 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated
 
+@app.route('/')
+def index():
+    return redirect(url_for('admin.login'))
+
+@app.route('/<path:path>')
+def catch_all(path):
+    return redirect(url_for('admin.login'))
+
 @admin_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
