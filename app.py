@@ -112,7 +112,7 @@ def logout():
 @admin_bp.route('/')
 @login_required
 def admin():
-    conversations = Conversation.query.all()
+    conversations = Conversation.query.order_by(Conversation.timestamp.desc()).all()
     return render_template('admin.html', conversations=conversations)
 
 @admin_bp.route('/admin/export', methods=['GET'])
