@@ -4,8 +4,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Development, Production
 from dotenv import load_dotenv
-from chain import model
+from chain import rag_chain
 from functools import wraps
+from langchain_core.messages import HumanMessage, AIMessage
 
 import os
 import threading
@@ -49,14 +50,25 @@ class Chatbot(Resource):
         Update: The saving of the conversation is now done in a separate thread under one resource.
     """
     def post(self):
+        conversation = session.get('conversation', [])
         data = request.json
         user_message = data.get('user_message')
         time_start = time.time()
-        response = model.invoke(user_message)
+        response = rag_chain.invoke({
+            'input': user_message,
+            'chat_history': conversation
+        })
+        response = response['answer']
         time_end = time.time()
         latency = time_end - time_start
 
         threading.Thread(target=save_message, args=(user_message, response, latency)).start()
+
+        conversation.extend([
+            {'role': 'human', 'content': user_message},
+            {'role': 'ai', 'content': response}
+        ])
+        session['conversation'] = conversation
 
         return jsonify({'response': str(response), 'responded_in': latency})
 
