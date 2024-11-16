@@ -109,7 +109,7 @@
             </div> -->
         </div>
         <div class="chat-input form-control">
-            <input type="text" id="user-input" class="form-control" placeholder="Type a message..." onkeypress="if(event.Code == 'Enter') sendMessage()">
+            <input type="text" id="user-input" class="form-control" placeholder="Type a message..." onkeypress="if(event.key == 'Enter') sendMessage()">
             <button class="btn btn-primary" onclick="sendMessage()">Send</button>
         </div>
     </div>
