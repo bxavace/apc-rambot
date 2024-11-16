@@ -2,6 +2,8 @@ index_chromatic.ipynb
 handbook_excerpt.md
 tuition2024.md
 contact_details.md
+Dockerfile
+.dockerignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
