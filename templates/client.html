@@ -49,6 +49,7 @@
             border-radius: 5px;
             display: inline-block;
             max-width: 80%;
+            min-width: 50px;
         }
         .bubble-text.bot {
             background-color: #f7d336;
@@ -127,6 +128,22 @@
                     </div>
                 `;
                 chatMessages.innerHTML += userMessage;
+
+                const generatingResponse = document.createElement('div');
+                generatingResponse.className = 'bot-response';
+                generatingResponse.innerHTML = `
+                    <div class="logo-bot">
+                        <img src="static/rambot_logo.png" alt="Rambot" style="width: 70px; height: 70px; border-radius: 50%;">
+                    </div>
+                    <div class="bubble bubble-bot">
+                        <div class="bubble-text bot">
+                            <div class="spinner-grow" role="status">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                chatMessages.appendChild(generatingResponse);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
                 fetch('/api/v1/chat', {
                     method: 'POST',
                     headers: {
@@ -149,6 +166,7 @@
                             </div>
                         </div>
                     `;
+                    chatMessages.removeChild(generatingResponse);
                     chatMessages.innerHTML += botMessage;
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 });
