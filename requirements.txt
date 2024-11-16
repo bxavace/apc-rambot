@@ -8,3 +8,4 @@ azure-search-documents
 langchain
 langchain-openai
 langchain-community
+gunicorn
