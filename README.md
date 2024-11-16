@@ -26,12 +26,6 @@ or
 python app.py
 ```
 
-Run (prod):
-```
-export FLASK_ENV=production
-gunicorn -w 4 app:app
-```
-
 ---
 
 Codebase:
