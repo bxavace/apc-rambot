@@ -26,9 +26,6 @@ new_template = ChatPromptTemplate.from_messages(
     ]
 )
 
-question_answer_chain = create_stuff_documents_chain(gpt4om, new_template)
-rag_chain = create_retrieval_chain(retriever, question_answer_chain)
-
 get_history_system_prompt = (
     "Given a chat history and the latest user question "
     "which might reference context in the chat history, "
