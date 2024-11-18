@@ -1,0 +1,181 @@
+{% extends 'layout.html' %}
+
+{% block title %}Chatbot UI - Without Chat History{% endblock %}
+
+{% block content %}
+    <style>
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+        .chat-header {
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #ccc;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-y: auto;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bubble-text {
+            margin-top: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            max-width: 80%;
+            min-width: 50px;
+        }
+        .bubble-text.bot {
+            background-color: #f7d336;
+        }
+        .bubble-text.user {
+            max-width: 65%;
+            color: #fff;
+            background-color: #1366ff;
+        }
+        .bubble-user {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .bot-response {
+            display: flex;
+        }
+        .logo-bot {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .chat-container {
+                height: 100vh;
+                width: 100%;
+            }
+            .chat-header, .chat-input {
+                padding: 5px;
+            }
+            .chat-messages {
+                padding: 5px;
+            }
+            .chat-input input {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat with Rambot</h2>
+            <div class="alert alert-warning" role="alert">This chat endpoint has no history! Proceed <a href="{{ url_for('client') }}">here</a> if you'd like to chat with history.</div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="bot-response">
+                <div class="logo-bot">
+                    <img src="static/rambot_logo.png" alt="Rambot" style="width: 70px; height: 70px; border-radius: 50%;">
+                </div>
+                <div class="bubble bubble-bot">
+                    <div class="bubble-text bot">
+                        Welcome to <strong>Asia Pacific College</strong>! I am Rambot, your 24/7 Ram assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            <!--  Uncomment for testing -->
+            <!-- <div class="bubble bubble-user">
+                <div class="bubble-text user">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus dictum rhoncus. Vivamus iaculis fringilla tempor. Aenean non volutpat erat. Fusce maximus, mauris vitae tincidunt condimentum, neque libero imperdiet libero, sed elementum felis turpis eu enim. Mauris sagittis nibh leo, vel aliquet nisl pharetra a. Duis ullamcorper sapien a ex ultrices luctus. Aliquam hendrerit mauris non aliquam consequat. In turpis nisl, sagittis sit amet purus non, tempus lacinia quam. Vivamus fermentum, turpis in egestas varius, elit nisi iaculis orci, a dictum odio augue et urna. Pellentesque quis tortor vitae ipsum egestas tristique. Aliquam convallis leo ac libero pretium, et vehicula erat aliquet. Quisque auctor, orci a molestie suscipit, purus turpis dictum mi, sed consequat dolor ipsum eget sapien. 
+                </div>
+            </div> -->
+        </div>
+        <div class="chat-input form-control">
+            <input type="text" id="user-input" class="form-control" placeholder="Type a message..." onkeypress="if(event.key == 'Enter') sendMessage()">
+            <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        var converter = new showdown.Converter();
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            if (userInput.value.trim() !== '') {
+                const userMessage = `
+                    <div class="bubble bubble-user">
+                        <div class="bubble-text user">
+                            ${userInput.value}
+                        </div>
+                    </div>
+                `;
+                chatMessages.innerHTML += userMessage;
+
+                const generatingResponse = document.createElement('div');
+                generatingResponse.className = 'bot-response';
+                generatingResponse.innerHTML = `
+                    <div class="logo-bot">
+                        <img src="static/rambot_logo.png" alt="Rambot" style="width: 70px; height: 70px; border-radius: 50%;">
+                    </div>
+                    <div class="bubble bubble-bot">
+                        <div class="bubble-text bot">
+                            <div class="spinner-grow" role="status">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                chatMessages.appendChild(generatingResponse);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                fetch('/api/v1/chat-no-history', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ user_message: userInput.value })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    let htmlized = converter.makeHtml(data.response); 
+                    const botMessage = `
+                        <div class="bot-response">
+                            <div class="logo-bot">
+                                <img src="static/rambot_logo.png" alt="Rambot" style="width: 70px; height: 70px; border-radius: 50%;">
+                            </div>
+                            <div class="bubble bubble-bot">
+                                <div class="bubble-text bot">
+                                    ${htmlized}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    chatMessages.removeChild(generatingResponse);
+                    chatMessages.innerHTML += botMessage;
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                });
+
+                userInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+    </script>
+{% endblock %}

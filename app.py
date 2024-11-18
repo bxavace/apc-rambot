@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from config import Development, Production
 from dotenv import load_dotenv
 from chain import rag_chain
+from chain_nh import model
 from functools import wraps
 from langchain_core.messages import HumanMessage, AIMessage
 
@@ -60,6 +61,9 @@ class Chatbot(Resource):
             'input': user_message,
             'chat_history': conversation
         })
+        for doc in response["context"]:
+            print(doc)
+            print()
         response = response['answer']
         time_end = time.time()
         latency = time_end - time_start
@@ -71,6 +75,19 @@ class Chatbot(Resource):
             {'role': 'ai', 'content': response}
         ])
         session['conversation'] = conversation
+
+        return jsonify({'response': str(response), 'responded_in': latency})
+
+class ChatbotNoHistory(Resource):
+    def post(self):
+        data = request.json
+        user_message = data.get('user_message')
+        time_start = time.time()
+        response = model.invoke(user_message)
+        time_end = time.time()
+        latency = time_end - time_start
+
+        threading.Thread(target=save_message, args=(user_message, response, latency)).start()
 
         return jsonify({'response': str(response), 'responded_in': latency})
 
@@ -135,6 +152,10 @@ def export_data():
 def client():
     return render_template('client.html')
 
+@app.route('/client-no-history')
+def client_no_history():
+    return render_template('client_nh.html')
+
 @app.route('/<path:path>')
 def catch_all(path):
     return render_template('404.html')
@@ -160,6 +181,7 @@ with app.app_context():
 
 api.add_resource(GreetTest, '/api/v1/test')
 api.add_resource(Chatbot, '/api/v1/chat')
+api.add_resource(ChatbotNoHistory, '/api/v1/chat-no-history')
 
 if __name__ == '__main__':
     app.run(debug=True)
