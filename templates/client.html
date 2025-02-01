@@ -177,5 +177,15 @@
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
         }
+
+        async function testSession() {
+            try {
+                const response = await fetch('/test_session');
+                const data = await response.json();
+                console.log("Session value:", data.counter);
+            } catch (error) {
+                console.error("Error testing session:", error);
+            }
+        }
     </script>
 {% endblock %}

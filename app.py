@@ -8,6 +8,8 @@ from chain import rag_chain
 from chain_nh import model
 from functools import wraps
 from langchain_core.messages import HumanMessage, AIMessage
+from flask_cors import CORS, cross_origin
+from datetime import datetime
 
 import os
 import threading
@@ -27,6 +29,8 @@ else:
 
 db = SQLAlchemy(app)
 api = Api(app)
+# TODO: Set the allowed CORS for the admin endpoint
+CORS(app, resources={r"/api/*": {"origins": "*"}, r"/client": {"origins": "*"}, r"/test_session": {"origins": "*"}}, supports_credentials=True)
 migrate = Migrate(app, db)
 admin_bp = Blueprint('admin', __name__, template_folder='templates')
 
@@ -41,7 +45,18 @@ class Conversation(db.Model):
     def __repr__(self):
         return f'<Conversation {self.id}>'
 
+class Feedback(db.Model):
+    __tablename__ = 'feedback'
+    id = db.Column(db.Integer, primary_key=True)
+    message_id = db.Column(db.Integer, db.ForeignKey('conversations.id'), nullable=False)
+    feedback = db.Column(db.Boolean, nullable=False)
+    timestamp = db.Column(db.DateTime, server_default=db.func.now())
+
+    def __repr__(self):
+        return f'<Feedback {self.id}>'
+
 class GreetTest(Resource):
+    @cross_origin()
     def get(self):
         return jsonify({'message': 'Everything is absurd. And since everything is absurd, we should try to live as happily as possible.'})
 
@@ -50,7 +65,9 @@ class Chatbot(Resource):
         Main endpoint of the API.
         Update: The saving of the conversation is now done in a separate thread under one resource.
     """
+    @cross_origin(supports_credentials=True)
     def post(self):
+        # print the session to check if it's working, storing the conversation
         conversation = session.get('conversation', [
             {'role': 'ai', 'content': 'Welcome to Asia Pacific College! I am Rambot, your 24/7 Ram assistant. How can I help you today?'}
         ])
@@ -61,9 +78,6 @@ class Chatbot(Resource):
             'input': user_message,
             'chat_history': conversation
         })
-        for doc in response["context"]:
-            print(doc)
-            print()
         response = response['answer']
         time_end = time.time()
         latency = time_end - time_start
@@ -76,9 +90,24 @@ class Chatbot(Resource):
         ])
         session['conversation'] = conversation
 
-        return jsonify({'response': str(response), 'responded_in': latency})
+        conversation_id = Conversation.query.order_by(Conversation.id.desc()).first().id
+        return jsonify({'response': str(response), 'responded_in': latency, 'conversation_id': conversation_id})
+
+class FeedbackResource(Resource):
+    @cross_origin(supports_credentials=True)
+    def put(self):
+        data = request.json
+        message_id = data.get('messageId')
+        is_like = data.get('isLike')
+        timestamp = datetime.now()
+        feedback = Feedback(message_id=message_id, feedback=is_like, timestamp=timestamp)
+        db.session.add(feedback)
+        db.session.commit()
+
+        return jsonify({'message': 'Feedback received'})
 
 class ChatbotNoHistory(Resource):
+    @cross_origin()
     def post(self):
         data = request.json
         user_message = data.get('user_message')
@@ -97,6 +126,14 @@ def save_message(user_message, bot_response, latency):
         db.session.add(conversation)
         db.session.commit()
         print('Conversation saved.')
+
+# Session Testing
+@app.route('/test_session')
+@cross_origin(supports_credentials=True)
+def test_session():
+    print(f"Secret Key in test_session: {app.secret_key}")
+    session['counter'] = session.get('counter', 0) + 1
+    return jsonify({'message': 'Counter incremented.', 'counter': session['counter']})
 
 ###################
 ### ADMIN PANEL ###
@@ -181,6 +218,7 @@ with app.app_context():
 
 api.add_resource(GreetTest, '/api/v1/test')
 api.add_resource(Chatbot, '/api/v1/chat')
+api.add_resource(FeedbackResource, '/api/feedback')
 api.add_resource(ChatbotNoHistory, '/api/v1/chat-no-history')
 
 if __name__ == '__main__':
