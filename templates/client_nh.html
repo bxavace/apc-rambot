@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}Chatbot UI - With Chat History{% endblock %}
+{% block title %}Chatbot UI - Without Chat History{% endblock %}
 
 {% block content %}
     <style>
@@ -89,7 +89,7 @@
     <div class="chat-container">
         <div class="chat-header">
             <h2>Chat with Rambot</h2>
-            <div class="alert alert-primary" role="alert">Proceed <a href="{{ url_for('client_no_history') }}">here</a> if you'd like to chat without history.</div>
+            <div class="alert alert-warning" role="alert">This chat endpoint has no history! Proceed <a href="{{ url_for('client') }}">here</a> if you'd like to chat with history.</div>
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="bot-response">
@@ -146,7 +146,7 @@
                 `;
                 chatMessages.appendChild(generatingResponse);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
-                fetch('/api/v1/chat', {
+                fetch('/api/v1/chat-no-history', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -175,16 +175,6 @@
 
                 userInput.value = '';
                 chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        }
-
-        async function testSession() {
-            try {
-                const response = await fetch('/test_session');
-                const data = await response.json();
-                console.log("Session value:", data.counter);
-            } catch (error) {
-                console.error("Error testing session:", error);
             }
         }
     </script>

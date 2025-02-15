@@ -1,5 +1,6 @@
 Flask
 Flask-RESTful
+Flask-Cors
 Flask-Migrate
 flask-sqlalchemy
 python-dotenv
