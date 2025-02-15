@@ -84,10 +84,10 @@ class FeedbackResource(Resource):
     @cross_origin(supports_credentials=True)
     def put(self):
         data = request.json
-        message_id = data.get('messageId')
+        session_id = data.get('session_id')
         is_like = data.get('isLike')
         timestamp = datetime.now()
-        feedback = Feedback(message_id=message_id, feedback=is_like, timestamp=timestamp)
+        feedback = Feedback(session_id=session_id, feedback=is_like, timestamp=timestamp)
         db.session.add(feedback)
         db.session.commit()
 
