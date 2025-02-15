@@ -10,7 +10,7 @@ from functools import wraps
 from langchain_core.messages import HumanMessage, AIMessage
 from flask_cors import CORS, cross_origin
 from datetime import datetime
-from models import db, Conversation, Session
+from models import db, Conversation, Session, Feedback
 
 import os
 import threading
@@ -34,16 +34,6 @@ api = Api(app)
 CORS(app, resources={r"/api/*": {"origins": "*"}, r"/client": {"origins": "*"}, r"/test_session": {"origins": "*"}}, supports_credentials=True)
 migrate = Migrate(app, db)
 admin_bp = Blueprint('admin', __name__, template_folder='templates')
-
-class Feedback(db.Model):
-    __tablename__ = 'feedback'
-    id = db.Column(db.Integer, primary_key=True)
-    message_id = db.Column(db.Integer, db.ForeignKey('conversations.id'), nullable=False)
-    feedback = db.Column(db.Boolean, nullable=False)
-    timestamp = db.Column(db.DateTime, server_default=db.func.now())
-
-    def __repr__(self):
-        return f'<Feedback {self.id}>'
 
 class GreetTest(Resource):
     @cross_origin()
@@ -129,8 +119,8 @@ def save_message(user_message, bot_response, latency, session_id):
 @cross_origin(supports_credentials=True)
 def test_session():
     print(f"Secret Key in test_session: {app.secret_key}")
-    session['counter'] = session.get('counter', 0) + 1
-    return jsonify({'message': 'Counter incremented.', 'counter': session['counter']})
+    flask_session['counter'] = flask_session.get('counter', 0) + 1
+    return jsonify({'message': 'Counter incremented.', 'counter': flask_session['counter']})
 
 ###################
 ### ADMIN PANEL ###
