@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session, flash
+from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session as flask_session, flash
 from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from chain import rag_chain
 from functools import wraps
 from langchain_core.messages import HumanMessage, AIMessage
+from models import db, Conversation, Session
 
 import os
 import threading
@@ -24,21 +25,10 @@ if env == 'development':
 else:
     app.config.from_object(Production)
 
-db = SQLAlchemy(app)
+db.init_app(app)
 api = Api(app)
 migrate = Migrate(app, db)
 admin_bp = Blueprint('admin', __name__, template_folder='templates')
-
-class Conversation(db.Model):
-    __tablename__ = 'conversations'
-    id = db.Column(db.Integer, primary_key=True)
-    user_message = db.Column(db.Text, nullable=False)
-    bot_response = db.Column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, server_default=db.func.now())
-    latency = db.Column(db.Float, default=0.5)
-
-    def __repr__(self):
-        return f'<Conversation {self.id}>'
 
 class GreetTest(Resource):
     def get(self):
@@ -50,7 +40,15 @@ class Chatbot(Resource):
         Update: The saving of the conversation is now done in a separate thread under one resource.
     """
     def post(self):
-        conversation = session.get('conversation', [
+        session_id = flask_session.get('session_id')
+        if not session_id:
+            new_session = Session()
+            db.session.add(new_session)
+            db.session.commit()
+            session_id = new_session.id
+            flask_session['session_id'] = session_id
+
+        conversation = flask_session.get('conversation', [
             {'role': 'ai', 'content': 'Welcome to Asia Pacific College! I am Rambot, your 24/7 Ram assistant. How can I help you today?'}
         ])
         data = request.json
@@ -64,19 +62,19 @@ class Chatbot(Resource):
         time_end = time.time()
         latency = time_end - time_start
 
-        threading.Thread(target=save_message, args=(user_message, response, latency)).start()
+        threading.Thread(target=save_message, args=(user_message, response, latency, session_id)).start()
 
         conversation.extend([
             {'role': 'human', 'content': user_message},
             {'role': 'ai', 'content': response}
         ])
-        session['conversation'] = conversation
+        flask_session['conversation'] = conversation
 
         return jsonify({'response': str(response), 'responded_in': latency})
 
-def save_message(user_message, bot_response, latency):
+def save_message(user_message, bot_response, latency, session_id):
     with app.app_context():
-        conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency)
+        conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency, session_id=session_id)
         db.session.add(conversation)
         db.session.commit()
         print('Conversation saved.')
@@ -92,7 +90,7 @@ def check_auth(username, password):
 def login_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        if 'authenticated' not in session:
+        if 'authenticated' not in flask_session:
             return redirect(url_for('admin.login', next=url_for('admin.admin')))
         return f(*args, **kwargs)
     return decorated
@@ -107,7 +105,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         if check_auth(username, password):
-            session['authenticated'] = True
+            flask_session['authenticated'] = True
             return redirect(url_for('admin.admin'))
         else:
             flash('Invalid credentials.')
@@ -115,7 +113,7 @@ def login():
 
 @admin_bp.route('/logout')
 def logout():
-    session.pop('authenticated', None)
+    flask_session.pop('authenticated', None)
     flash('You have been logged out.')
     return redirect(url_for('admin.login'))
 
