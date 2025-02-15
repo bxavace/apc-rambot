@@ -1,5 +1,5 @@
 # Rambot
-Generative AI __Chatbot__ of the Rams with Naive RAG and Azure
+Generative AI __Chatbot__ of the Rams with Naive RAG and Azure!
 
 Install dependencies:
 ```
