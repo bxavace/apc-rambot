@@ -12,7 +12,7 @@ from flask_cors import CORS, cross_origin
 from datetime import datetime
 from models import db, Conversation, Session, Feedback
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from embed import datastore
 
 import os
@@ -218,12 +218,17 @@ def process_file(filepath):
     if not os.path.isfile(filepath):
         print(f"Error: File does not exist: {filepath}")
         return False
-    if not filepath.lower().endswith('.pdf'):
-        print(f"Error: Invalid file type. Expected a PDF: {filepath}")
+    if not (filepath.lower().endswith('.pdf') or filepath.lower().endswith('.md')):
+        print(f"Error: Invalid file type. Expected a PDF or Markdown: {filepath}")
         return False
     try:
-        loader = PyPDFLoader(filepath)
-        data = loader.load()
+        if filepath.lower().endswith('.pdf'):
+            loader = PyPDFLoader(filepath)
+            data = loader.load()
+        else:  # if markdown file
+            loader = TextLoader(filepath, encoding="utf-8")
+            data = loader.load()
+            
         if not data:
             print(f"Warning: No data loaded from file: {filepath}")
             return False
