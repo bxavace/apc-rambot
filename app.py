@@ -11,11 +11,16 @@ from langchain_core.messages import HumanMessage, AIMessage
 from flask_cors import CORS, cross_origin
 from datetime import datetime
 from models import db, Conversation, Session, Feedback
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader
+from embed import datastore
 
 import os
 import threading
 import time
 import json
+import hashlib
+import glob
 
 load_dotenv()
 
@@ -118,7 +123,6 @@ def save_message(user_message, bot_response, latency, session_id):
 @app.route('/test_session')
 @cross_origin(supports_credentials=True)
 def test_session():
-    print(f"Secret Key in test_session: {app.secret_key}")
     flask_session['counter'] = flask_session.get('counter', 0) + 1
     return jsonify({'message': 'Counter incremented.', 'counter': flask_session['counter']})
 
@@ -170,6 +174,72 @@ def admin():
 @login_required
 def export_data():
     return export_json()
+
+@admin_bp.route('/upload', methods=['GET', 'POST'])
+@login_required
+def upload():
+    if request.method == 'GET':
+        return render_template('upload.html')
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+    file = request.files['file']
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+    
+    upload_folder = app.config['UPLOAD_FOLDER']
+    
+    base, ext = os.path.splitext(file.filename)
+    new_filename = f"{base}{ext}"
+    filepath = os.path.join(upload_folder, new_filename)
+    
+    # If a file with the same name exists, append a timestamp to the filename
+    if os.path.exists(filepath):
+        timestr = time.strftime("%Y%m%d%H%M%S")
+        new_filename = f"{base}_{timestr}{ext}"
+        filepath = os.path.join(upload_folder, new_filename)
+        
+    file.save(filepath)
+
+    if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+        success = process_file(filepath)
+        if success:
+            flash('Upload complete.')
+            return jsonify({'message': 'ok'})
+        else:
+            flash('Upload failed during processing!')
+            return jsonify({'message': 'failed'})
+    else:
+        flash('Saving failed.')
+        return jsonify({'message': 'failed'})
+
+def process_file(filepath):
+    if not os.path.isfile(filepath):
+        print(f"Error: File does not exist: {filepath}")
+        return False
+    if not filepath.lower().endswith('.pdf'):
+        print(f"Error: Invalid file type. Expected a PDF: {filepath}")
+        return False
+    try:
+        loader = PyPDFLoader(filepath)
+        data = loader.load()
+        if not data:
+            print(f"Warning: No data loaded from file: {filepath}")
+            return False
+
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+        docs = text_splitter.split_documents(data)
+        if not docs:
+            print(f"Warning: No documents were split from the file: {filepath}")
+            return False
+
+        datastore.add_documents(documents=docs)
+        return True
+
+    except Exception as e:
+        print(f"Error processing file {filepath}: {e}")
+        return False
 
 ### CLIENT VIEW TEST ###
 @app.route('/client')

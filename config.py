@@ -10,6 +10,7 @@ class Config:
     TESTING = False
     SESSION_COOKIE_SECURE = True
     SESSION_COOKIE_SAMESITE = 'None'
+    UPLOAD_FOLDER = 'uploads'
 
 class Development(Config):
     DEBUG = True
