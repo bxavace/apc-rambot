@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Upload{% endblock %}
+{% block content %}
+<div class="main mt-5">
+    <h3>Upload your admissions-based document here.</h3>
+    <small>Accepted filetypes: .pdf, Maximum file size: 10MB</small>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning message" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="upload">
+        <form id="uploadForm" action="{{ url_for('admin.upload') }}" method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+                <input type="file" name="file" class="form-control" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload">
+                <button class="btn btn-outline-primary" type="submit" id="inputGroupFileAddon">Upload</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="loading-component" style="display: none;">
+        <div id="loader" class="spinner-border" role="status">
+        </div>
+        <span>Submitting...</span>
+    </div>
+</div>
+<script>
+    const form = document.getElementById('uploadForm');
+    form.addEventListener('submit', function(event) {
+        // hide the form and show the loader
+        document.getElementById('uploadForm').style.display = 'none';
+        document.getElementById('loading-component').style.display = 'block';
+    });
+</script>
+{% endblock %}
