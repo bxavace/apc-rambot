@@ -11,3 +11,5 @@ langchain-openai
 langchain-community
 gunicorn
 pypdf
+html2text
+spacy

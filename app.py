@@ -11,7 +11,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 from flask_cors import CORS, cross_origin
 from datetime import datetime
 from models import db, Conversation, Session, Feedback
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_text_splitters import SpacyTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from embed import datastore
 
@@ -233,7 +233,7 @@ def process_file(filepath):
             print(f"Warning: No data loaded from file: {filepath}")
             return False
 
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+        text_splitter = SpacyTextSplitter()
         docs = text_splitter.split_documents(data)
         if not docs:
             print(f"Warning: No documents were split from the file: {filepath}")
