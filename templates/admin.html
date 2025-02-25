@@ -20,6 +20,9 @@
 <body>
     <div class="container">
         <h1>Admin Panel</h1>
+        <div class="nav">
+            <a class="btn btn-link btn-sm" href="{{ url_for('admin.get_documents') }}">See Documents</a>
+        </div>
         <div class="export">
             <a class="btn btn-primary btn-sm" href="{{ url_for('admin.export_data') }}">Export Data</a>
         </div>
@@ -28,17 +31,18 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">User Message</th>
-                        <th scope="col">Bot Response</th>
-                        <th scope="col">Timestamp</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Conversation</th>
                     </tr>
                 </thead>
-                {% for convo in conversations %}
+                {% for session in sessions %}
                 <tr>
-                    <td>{{ convo.id }}</td>
-                    <td>{{ convo.user_message }}</td>
-                    <td>{{ convo.bot_response }}</td>
-                    <td>{{ convo.timestamp }}</td>
+                    <td>{{ session.id }}</td>
+                    <td>{{ session.start_time }}</td>
+                    <td>
+                        <!-- link to the conversations -->
+                        <a href="{{ url_for('admin.view_session', session_id=session.id) }}">View Conversation</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
