@@ -12,6 +12,7 @@ class Config:
     SESSION_COOKIE_SAMESITE = 'None'
     UPLOAD_FOLDER = 'uploads'
     PERMANENT_SESSION_LIFETIME = 3600
+    MAX_FILE_SIZE = 10 * 1024 * 1024
 
 class Development(Config):
     DEBUG = True

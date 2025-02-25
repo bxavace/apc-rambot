@@ -205,6 +205,10 @@ def view_session(session_id):
 def export_data():
     return export_csv()
 
+def allowed_file(filename):
+    ALLOWED_EXTENSIONS = {'pdf', 'md'}
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 @admin_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():
@@ -227,7 +231,19 @@ def upload():
         if file.filename == '':
             responses.append({'filename': None, 'message': 'No filename provided'})
             continue
-            
+
+        if not allowed_file(file.filename):
+            responses.append({'filename': file.filename, 'message': 'Invalid file type'})
+            continue
+
+        file.seek(0, os.SEEK_END)
+        file_size = file.tell()
+        file.seek(0)
+
+        if file_size > app.config['MAX_FILE_SIZE']:
+            responses.append({'filename': file.filename, 'message': 'File too large'})
+            continue
+
         base, ext = os.path.splitext(file.filename)
         new_filename = f"{base}{ext}"
         filepath = os.path.join(upload_folder, new_filename)
