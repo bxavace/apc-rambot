@@ -2,6 +2,8 @@
 
     function markdownToHTML(markdown) {
         return markdown
+          .replace(/^##### (.*$)/gim, '<h5>$1</h5>') // H5
+          .replace(/^#### (.*$)/gim, '<h4>$1</h4>')  // H4
           .replace(/^### (.*$)/gim, '<h3>$1</h3>')  // H3
           .replace(/^## (.*$)/gim, '<h2>$1</h2>')   // H2
           .replace(/^# (.*$)/gim, '<h1>$1</h1>')    // H1
