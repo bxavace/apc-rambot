@@ -40,6 +40,23 @@ CORS(app, resources={r"/api/*": {"origins": "*"}, r"/client": {"origins": "*"}, 
 migrate = Migrate(app, db)
 admin_bp = Blueprint('admin', __name__, template_folder='templates')
 
+@app.after_request
+def add_security_headers(response):
+    # TODO: Adjust headers when deploying to production
+    # response.headers['Content-Security-Policy'] = (
+    #     "default-src 'self'; "
+    #     "script-src 'self' 'unsafe-inline' https://*.your-cms-domain.com; " # Add your CMS domain
+    #     "style-src 'self' 'unsafe-inline' https://*.your-cms-domain.com; "  # Add your CMS domain
+    #     "connect-src 'self' https://*.your-api-domain.com; "                # Add your API domain
+    #     "font-src 'self' data:; "
+    #     "img-src 'self' data:; "
+    #     "frame-src 'self' https://*.your-cms-domain.com"                    # If using iframes
+    # )
+    # response.headers['X-Content-Type-Options'] = 'nosniff'
+    # response.headers['X-Frame-Options'] = 'ALLOW-FROM https://your-cms-domain.com'  # Adjust for your CMS
+    # response.headers['X-XSS-Protection'] = '1; mode=block'
+    # return response
+
 class GreetTest(Resource):
     @cross_origin()
     def get(self):
