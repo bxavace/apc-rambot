@@ -14,6 +14,8 @@ from langchain_text_splitters import SpacyTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from embed import datastore
 from markdown import markdown
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 import os
 import threading
@@ -35,6 +37,14 @@ else:
 
 db.init_app(app)
 api = Api(app)
+
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="redis://localhost:6379"
+)
+
 # TODO: Set the allowed CORS for the admin endpoint
 CORS(app, resources={r"/api/*": {"origins": "*"}, r"/client": {"origins": "*"}, r"/test_session": {"origins": "*"}}, supports_credentials=True)
 migrate = Migrate(app, db)
@@ -152,6 +162,7 @@ def index():
     return redirect(url_for('admin.login'))
 
 @admin_bp.route('/login', methods=['GET', 'POST'])
+@limiter.limit("5 per minute")
 def login():
     if request.method == 'POST':
         username = request.form['username']

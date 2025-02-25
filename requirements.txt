@@ -14,3 +14,4 @@ pypdf
 html2text
 spacy
 markdown
+Flask-Limiter
