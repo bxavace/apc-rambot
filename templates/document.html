@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}Document {{ document.id }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between">
+        <h2>Document Details</h2>
+        <a class="btn btn-primary mb-2" href="{{ url_for('admin.get_documents') }}">Go back</a>
+    </div>
+    <small><strong>Note:</strong> You can <strong style="color: maroon;">NOT</strong> modify this document any further, since this is indexed.</small>
+    <div class="card">
+        <div class="card-header">
+            <strong>File ID:</strong> {{ document.document_id }}
+        </div>
+        <div class="card-body">
+            {{ content | safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
