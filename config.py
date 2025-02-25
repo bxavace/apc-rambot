@@ -11,6 +11,7 @@ class Config:
     SESSION_COOKIE_SECURE = True
     SESSION_COOKIE_SAMESITE = 'None'
     UPLOAD_FOLDER = 'uploads'
+    PERMANENT_SESSION_LIFETIME = 3600
 
 class Development(Config):
     DEBUG = True

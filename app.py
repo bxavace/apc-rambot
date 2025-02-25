@@ -130,6 +130,15 @@ def test_session():
     flask_session['counter'] = flask_session.get('counter', 0) + 1
     return jsonify({'message': 'Counter incremented.', 'counter': flask_session['counter']})
 
+@app.route('/clear_session', methods=['GET'])
+@cross_origin(supports_credentials=True)
+def clear_session():
+    flask_session.clear()
+    for key in flask_session.keys():
+        flask_session.pop(key, None)
+    flask_session.modified = True
+    return jsonify({'status': 'ok', 'message': 'Session cleared.'}), 200
+
 ###################
 ### ADMIN PANEL ###
 ###################
