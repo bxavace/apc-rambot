@@ -77,6 +77,30 @@
         }
     }
 
+    const resetSession = async function() {
+        try {
+            const response = await fetch('/clear_session', {
+                method: 'GET',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        
+            if (!response.ok) {
+                throw new Error('Failed to reset session');
+            }
+
+            console.log(response);
+
+            localStorage.removeItem('session_id');
+            const messages = document.querySelector('.messages');
+            messages.innerHTML = '';
+        } catch (error) {
+            console.error('Error resetting session:', error);
+        }
+    }
+
     const createMessage = function(text, isUser, conversationId) {
         const message = document.createElement('div');
         const messages = document.querySelector('.messages');
@@ -130,6 +154,7 @@
     window.createMessage = createMessage;
     window.handleFeedback = handleFeedback;
     window.sendMessage = sendMessage;
+    window.resetSession = resetSession;
 
     const createWidget = () => {
         const container = document.createElement('div');
@@ -149,6 +174,7 @@
                     <div class="chat-header">
                         Chat with RamBot
                         <span class="pill">Experimental</span>
+                        <button class="reset" onclick="resetSession()">Reset</button>
                     </div>
                     <div class="chat-info">
                         RamBot is an experimental chatbot for Asia Pacific College developed by <a href="https://www.apc.edu.ph/programs/socit/">SoCIT</a> students. Powered by Azure OpenAI and Python.
@@ -392,6 +418,22 @@
                 border-radius: 10px;
                 outline: none;
                 background: white;
+            }
+
+            .reset {
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 0.8em;
+                padding: 4px 8px;
+                border-radius: 20px;
+                transition: background 0.3s;
+                float: right;
+            }
+
+            .reset:hover {
+                background: rgba(255, 255, 255, 0.1);
             }
 
             .disclaimer {
