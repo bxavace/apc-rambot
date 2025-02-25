@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session as flask_session, flash
 from flask_restful import Api, Resource
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Development, Production
 from dotenv import load_dotenv
@@ -10,17 +9,18 @@ from functools import wraps
 from langchain_core.messages import HumanMessage, AIMessage
 from flask_cors import CORS, cross_origin
 from datetime import datetime
-from models import db, Conversation, Session, Feedback
+from models import db, Conversation, Session, Feedback, Document
 from langchain_text_splitters import SpacyTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from embed import datastore
+from markdown import markdown
 
 import os
 import threading
 import time
 import json
-import hashlib
-import glob
+import csv
+from io import StringIO
 
 load_dotenv()
 
@@ -54,7 +54,7 @@ class Chatbot(Resource):
     def post(self):
         session_id = flask_session.get('session_id')
         if not session_id:
-            new_session = Session()
+            new_session = Session(start_time=datetime.now())
             db.session.add(new_session)
             db.session.commit()
             session_id = new_session.id
@@ -83,7 +83,7 @@ class Chatbot(Resource):
         flask_session['conversation'] = conversation
 
         conversation_id = Conversation.query.order_by(Conversation.id.desc()).first().id
-        return jsonify({'response': str(response), 'responded_in': latency, 'conversation_id': conversation_id})
+        return jsonify({'response': str(response), 'responded_in': latency, 'conversation_id': conversation_id, 'session_id': session_id})
 
 class FeedbackResource(Resource):
     @cross_origin(supports_credentials=True)
@@ -117,7 +117,11 @@ def save_message(user_message, bot_response, latency, session_id):
         conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency, session_id=session_id)
         db.session.add(conversation)
         db.session.commit()
-        print('Conversation saved.')
+
+# markdown template filter
+@app.template_filter('markdown')
+def convert_markdown(text):
+    return markdown(text, extensions=['extra', 'codehilite'])
 
 # Session Testing
 @app.route('/test_session')
@@ -132,7 +136,8 @@ def test_session():
 def check_auth(username, password):
     env_username = os.getenv('ADMIN_USERNAME')
     env_password = os.getenv('ADMIN_PASSWORD')
-    return username == env_username and password == env_password
+    from hmac import compare_digest
+    return compare_digest(username, env_username) and compare_digest(password, env_password)
 
 def login_required(f):
     @wraps(f)
@@ -167,52 +172,129 @@ def logout():
 @admin_bp.route('/')
 @login_required
 def admin():
-    conversations = Conversation.query.order_by(Conversation.timestamp.desc()).all()
-    return render_template('admin.html', conversations=conversations)
+    sessions = Session.query.order_by(Session.start_time.desc()).all()
+    return render_template('admin.html', sessions=sessions)
+
+@admin_bp.route('/admin/session/<int:session_id>', methods=['GET'])
+@login_required
+def view_session(session_id):
+    session = Session.query\
+        .options(db.joinedload(Session.conversations))\
+        .filter_by(id=session_id)\
+        .first()
+    if session:
+        # Sort conversations after fetching since they're already loaded
+        conversations = sorted(session.conversations, key=lambda x: x.timestamp)
+        print(f"Conversations: {conversations}")
+        return render_template('session.html', session=session, conversations=conversations)
+    
+    flash('Session not found.', 'danger')
+    return redirect(url_for('admin.admin'))
 
 @admin_bp.route('/admin/export', methods=['GET'])
 @login_required
 def export_data():
-    return export_json()
+    return export_csv()
 
 @admin_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():
     if request.method == 'GET':
         return render_template('upload.html')
+    
     if 'file' not in request.files:
-        flash('No file part')
+        flash('No file part', 'warning')
         return redirect(request.url)
-    file = request.files['file']
-    if file.filename == '':
-        flash('No selected file')
+    
+    files = request.files.getlist('file')
+    if not files or all(file.filename == '' for file in files):
+        flash('No selected files', 'warning')
         return redirect(request.url)
     
     upload_folder = app.config['UPLOAD_FOLDER']
+    responses = []
     
-    base, ext = os.path.splitext(file.filename)
-    new_filename = f"{base}{ext}"
-    filepath = os.path.join(upload_folder, new_filename)
-    
-    # If a file with the same name exists, append a timestamp to the filename
-    if os.path.exists(filepath):
-        timestr = time.strftime("%Y%m%d%H%M%S")
-        new_filename = f"{base}_{timestr}{ext}"
+    for file in files:
+        if file.filename == '':
+            responses.append({'filename': None, 'message': 'No filename provided'})
+            continue
+            
+        base, ext = os.path.splitext(file.filename)
+        new_filename = f"{base}{ext}"
         filepath = os.path.join(upload_folder, new_filename)
         
-    file.save(filepath)
-
-    if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
-        success = process_file(filepath)
-        if success:
-            flash('Upload complete.')
-            return jsonify({'message': 'ok'})
+        # If a file with the same name exists, append a timestamp to the filename
+        if os.path.exists(filepath):
+            timestr = time.strftime("%Y%m%d%H%M%S")
+            new_filename = f"{base}_{timestr}{ext}"
+            filepath = os.path.join(upload_folder, new_filename)
+        
+        file.save(filepath)
+        
+        if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+            success = process_file(filepath)
+            if success:
+                responses.append({'filename': new_filename, 'message': 'Upload complete.'})
+            else:
+                responses.append({'filename': new_filename, 'message': 'Upload failed during processing!'})
         else:
-            flash('Upload failed during processing!')
-            return jsonify({'message': 'failed'})
-    else:
-        flash('Saving failed.')
-        return jsonify({'message': 'failed'})
+            responses.append({'filename': new_filename, 'message': 'Saving failed.'})
+    
+    for r in responses:
+        flash(f"{r['filename'] or 'Unnamed file'}: {r['message']}", 'info')
+    return redirect(url_for('admin.upload'))
+
+@admin_bp.route('/documents', methods=['GET'])
+@login_required
+def get_documents():
+    page = request.args.get('page', 1, type=int)  # Get page number from query params
+    per_page = 15  # Number of items per page
+    documents = Document.query.paginate(
+        page=page, 
+        per_page=per_page, 
+        error_out=False
+    )
+    return render_template('documents.html', documents=documents)
+
+@admin_bp.route('/documents/<int:id>', methods=['GET'])
+@login_required
+def get_document(id):
+    document = Document.query.get(id)
+    if document:
+        try:
+            with open(document.document_name, 'r', encoding='utf-8') as file:
+                content = file.read()
+                if document.document_name.lower().endswith('.md'):
+                    html_content = markdown(content)
+                return render_template('document.html', document=document, content=html_content)
+        except Exception as e:
+            print(f"Error reading file: {e}")
+            document.content = None
+            flash(f'Error reading file: {e}', 'danger')
+            return redirect(url_for('admin.get_documents'))
+    flash('Document not found.', 'danger')
+    return redirect(url_for('admin.get_documents'))
+
+@admin_bp.route('/documents/delete/<int:id>', methods=['POST'])
+@login_required
+def delete_document(id):
+    document = Document.query.get(id)
+    delete_embeddings(document.document_id)
+    # NOTE: the document_name is the filepath
+    if os.path.exists(document.document_name):
+        os.remove(document.document_name)    
+    db.session.delete(document)
+    db.session.commit()
+    flash('Document deleted successfully.', 'success')
+    return redirect(url_for('admin.get_documents'))
+
+def delete_embeddings(document_id):
+    try:
+        datastore.delete([document_id])
+        return True
+    except Exception as e:
+        print(f"Error deleting document from Azure Search: {e}")
+        return False
 
 def process_file(filepath):
     if not os.path.isfile(filepath):
@@ -238,8 +320,11 @@ def process_file(filepath):
         if not docs:
             print(f"Warning: No documents were split from the file: {filepath}")
             return False
-
-        datastore.add_documents(documents=docs)
+        ids = datastore.add_documents(documents=docs)
+        for doc_id in ids:
+            document = Document(document_id=doc_id, document_name=filepath)
+            db.session.add(document)
+        db.session.commit()
         return True
 
     except Exception as e:
@@ -259,18 +344,31 @@ def client_no_history():
 def catch_all(path):
     return render_template('404.html')
 
-def export_json():
+def export_csv():
     conversations = Conversation.query.all()
-    data = []
+    
+    # Create a CSV in memory
+    csv_output = StringIO()
+    csv_writer = csv.writer(csv_output)
+    
+    # Write header
+    csv_writer.writerow(['user_message', 'bot_response', 'timestamp', 'latency'])
+    
+    # Write data rows
     for conversation in conversations:
-        data.append({
-            'user_message': conversation.user_message,
-            'bot_response': conversation.bot_response,
-            'timestamp': conversation.timestamp,
-            'latency': conversation.latency
-        })
-    json_data = json.dumps(data, default=str)
-    response = Response(json_data, mimetype='application/json', headers={'Content-Disposition': 'attachment;filename=conversations.json'})
+        csv_writer.writerow([
+            conversation.user_message,
+            conversation.bot_response,
+            conversation.timestamp,
+            conversation.latency
+        ])
+    
+    # Create response
+    response = Response(
+        csv_output.getvalue(), 
+        mimetype='text/csv', 
+        headers={'Content-Disposition': 'attachment;filename=conversations.csv'}
+    )
     return response
 
 app.register_blueprint(admin_bp, url_prefix='/admin')
