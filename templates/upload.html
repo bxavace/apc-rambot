@@ -4,18 +4,21 @@
 {% block content %}
 <div class="main mt-5">
     <h3>Upload your admissions-based document here.</h3>
-    <small>Accepted filetypes: .pdf, Maximum file size: 10MB</small>
-    {% with messages = get_flashed_messages() %}
+    <div class="d-flex justify-content-between mb-3">
+        <small>Accepted filetypes: <code>.pdf</code>, <code>.md</code>. Maximum individual file size: 10MB. Multiple files allowed.</small>
+        <a class="btn btn-primary" href="{{ url_for('admin.get_documents') }}">Uploaded Documents</a>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-warning message" role="alert">{{ message }}</div>
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}} message" role="alert">{{ message }}</div>
             {% endfor %}
         {% endif %}
     {% endwith %}
     <div class="upload">
         <form id="uploadForm" action="{{ url_for('admin.upload') }}" method="POST" enctype="multipart/form-data">
             <div class="input-group">
-                <input type="file" name="file" class="form-control" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload">
+                <input type="file" name="file" class="form-control" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload" multiple>
                 <button class="btn btn-outline-primary" type="submit" id="inputGroupFileAddon">Upload</button>
             </div>
         </form>
@@ -24,7 +27,7 @@
     <div id="loading-component" style="display: none;">
         <div id="loader" class="spinner-border" role="status">
         </div>
-        <span>Submitting...</span>
+        <span>Uploading...</span>
     </div>
 </div>
 <script>
