@@ -13,3 +13,4 @@ gunicorn
 pypdf
 html2text
 spacy
+markdown
