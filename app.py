@@ -11,7 +11,7 @@ from flask_cors import CORS, cross_origin
 from datetime import datetime
 from models import db, Conversation, Session, Feedback, Document
 from langchain_text_splitters import SpacyTextSplitter
-from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, WebBaseLoader
 from embed import datastore
 from markdown import markdown
 
@@ -267,6 +267,34 @@ def upload():
     
     for r in responses:
         flash(f"{r['filename'] or 'Unnamed file'}: {r['message']}", 'info')
+    return redirect(url_for('admin.upload'))
+
+@admin_bp.route('/upload-web', methods=['POST'])
+@login_required
+def upload_web():
+    url = request.form.get('url')
+    if not url:
+        flash('No URL provided.', 'warning')
+        return redirect(url_for('admin.upload'))
+    
+    loader = WebBaseLoader(url)
+    data = loader.load()
+    if not data:
+        flash('No data loaded from URL.', 'warning')
+        return redirect(url_for('admin.upload'))
+    
+    text_splitter = SpacyTextSplitter()
+    docs = text_splitter.split_documents(data)
+    if not docs:
+        flash('No documents were split from the URL.', 'warning')
+        return redirect(url_for('admin.upload'))
+    
+    ids = datastore.add_documents(documents=docs)
+    for doc_id in ids:
+        document = Document(document_id=doc_id, document_name=url)
+        db.session.add(document)
+    db.session.commit()
+    flash('Upload complete.', 'info')
     return redirect(url_for('admin.upload'))
 
 @admin_bp.route('/documents', methods=['GET'])
