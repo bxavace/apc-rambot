@@ -120,7 +120,7 @@ class LeadResource(Resource):
         if not data.get('name') or not data.get('email'):
             return jsonify({'message': 'Name and email are required.'}), 400
         
-        valid_types = ['student', 'parent', 'alumni', 'staff', 'other']
+        valid_types = ['student', 'applicant', 'parent', 'alumni', 'staff', 'other']
         lead_type = data.get('type', 'other')
         if lead_type not in valid_types:
             return jsonify({'message': 'Invalid lead type.'}), 400

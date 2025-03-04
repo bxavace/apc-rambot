@@ -173,18 +173,47 @@
                     </svg>
                 </div>
                 <div class="chat-container">
-                    <div class="chat-header">
-                        Chat with RamBot
-                        <span class="pill">Experimental</span>
-                        <button class="reset" onclick="resetSession()">Reset</button>
+                <div id="modal">
+                    <h3>Send us your contact details!</h3>
+                    <p>Would you like to receive updates from Asia Pacific College?</p>
+                    <form id="lead-form">
+                        <div class="input-wrapper">
+                            <input type="text" name="name" class="chat-input" placeholder="Name" required>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="email" name="email" class="chat-input" placeholder="Email" required>
+                        </div>
+                        <div class="input-wrapper">
+                        <input type="tel" name="phone" class="chat-input" placeholder="Phone">
+                        </div>
+                        <div class="select-wrapper">
+                            <label for="type">I am a...</label>
+                            <select id="type" name="type" required>
+                                <option value="student">Student</option>
+                                <option value="applicant">Applicant</option>
+                                <option value="parent">Parent</option>
+                                <option value="staff">Staff</option>
+                                <option value="alumni">Alumni</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                        </form>
+                        <button type="button" onclick="document.getElementById('modal').remove()" class="cancel-btn">No thanks, I just want to chat</button>
+                </div>
+                <div class="chat-header">
+                Chat with RamBot
+                <span class="pill">Experimental</span>
+                <button class="reset" onclick="resetSession()">Reset</button>
+                </div>
+                <div class="chat-info">
+                RamBot is an experimental chatbot for Asia Pacific College developed by <a href="https://www.apc.edu.ph/programs/socit/">SoCIT</a> students. Powered by Azure OpenAI and Python.
+                </div>
+                <div class="messages">
                     </div>
-                    <div class="chat-info">
-                        RamBot is an experimental chatbot for Asia Pacific College developed by <a href="https://www.apc.edu.ph/programs/socit/">SoCIT</a> students. Powered by Azure OpenAI and Python.
-                    </div>
-                    <div class="messages"></div>
                     <div class="input-container">
                         <div class="input-wrapper">
-                            <input type="text" class="chat-input" placeholder="Type a message...">
+                            <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
                         </div>
                         <div class="send-button" onclick="sendMessage()">
                             <svg id='Send_Letter_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
@@ -270,6 +299,66 @@
                 display: flex;
                 flex-direction: column;
                 transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            }
+
+            #modal {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(12px);
+                width: 100%;
+                height: 100%;
+                z-index: 999;
+                border-radius: 20px;
+                /* border-radius: 0 0 20px 20px;
+                margin-top: 45px; */
+                padding: 2rem;
+                color: white;
+            }
+
+            #lead-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin: 0 auto;
+            }
+
+            .submit-btn {
+                width: 100%;
+                background: #35438c;
+                color: white;
+                border: none;
+                border-radius: 12px;
+                padding: 12px;
+                cursor: pointer;
+                transition: background 0.3s;
+                margin-bottom: 1rem;
+            }
+
+            select#type {
+                width: 100%;
+                padding: 12px 20px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                outline: none;
+            }
+
+            .submit-btn:hover {
+                background: #4d69f1;
+            }
+
+            .cancel-btn {
+                width: 100%;
+                background:rgb(148, 144, 144);
+                color: rgb(219, 219, 219);
+                border: none;
+                border-radius: 12px;
+                padding: 12px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            .cancel-btn:hover {
+                background:rgb(136, 135, 135);
             }
 
             .chat-container.active {
@@ -463,20 +552,48 @@
         const initWidget = () => {
             const chatHead = document.querySelector('.chat-head');
             const chatContainer = document.querySelector('.chat-container');
-            const input = document.querySelector('.chat-input');
+            const input = document.querySelector('#chat-input');
             const messages = document.querySelector('.messages');
-    
+            const leadForm = container.querySelector('#lead-form');
+
             chatHead.addEventListener('click', () => {
                 chatContainer.classList.toggle('active');
             });
         
             input.addEventListener('keypress', (e) => {
+                console.log(e.key);
                 if (e.key === 'Enter') sendMessage();
+            });
+
+            leadForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const formData = new FormData(event.target);
+                const data = Object.fromEntries(formData.entries());
+    
+                try {
+                    const response = await fetch('/api/v1/lead', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+    
+                    if (!response.ok) {
+                        throw new Error('Failed to submit lead');
+                    }
+    
+                    const modal = document.getElementById('modal');
+                    modal.remove();
+                } catch (error) {
+                    console.error('Error submitting lead:', error);
+                }
             });
         };
 
         document.body.appendChild(container);
         document.head.appendChild(styles);
+
         initWidget();
     }
 
