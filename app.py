@@ -9,9 +9,9 @@ from functools import wraps
 from langchain_core.messages import HumanMessage, AIMessage
 from flask_cors import CORS, cross_origin
 from datetime import datetime
-from models import db, Conversation, Session, Feedback, Document
+from models import db, Conversation, Session, Feedback, Document, Lead
 from langchain_text_splitters import SpacyTextSplitter
-from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, WebBaseLoader
 from embed import datastore
 from markdown import markdown
 
@@ -111,6 +111,72 @@ class ChatbotNoHistory(Resource):
         threading.Thread(target=save_message, args=(user_message, response, latency)).start()
 
         return jsonify({'response': str(response), 'responded_in': latency})
+
+class LeadResource(Resource):
+    @cross_origin(supports_credentials=True)
+    def post(self):
+        data = request.json
+
+        if not data.get('name') or not data.get('email'):
+            return jsonify({'message': 'Name and email are required.'}), 400
+        
+        valid_types = ['student', 'parent', 'alumni', 'staff', 'other']
+        lead_type = data.get('type', 'other')
+        if lead_type not in valid_types:
+            return jsonify({'message': 'Invalid lead type.'}), 400
+        
+        lead = Lead(name=data.get('name'), email=data.get('email'), phone=data.get('phone'), type=lead_type)
+
+        db.session.add(lead)
+        db.session.commit()
+
+        return jsonify({'message': 'Lead added successfully.'}, 201)
+    
+    @cross_origin(supports_credentials=True)
+    def get(self, lead_id=None):
+        if lead_id:
+            lead = Lead.query.get(lead_id)
+            if not lead:
+                return jsonify({'message': 'Lead not found.'}), 404
+            
+            return jsonify({
+                'id': lead.id,
+                'name': lead.name,
+                'email': lead.email,
+                'phone': lead.phone,
+                'type': lead.type
+            })
+        else:
+            page = request.args.get('page', 1, type=int)
+            per_page = 10
+
+            leads = Lead.query.paginate(page=page, per_page=per_page, error_out=False)
+
+            leads_data = [{
+                'id': lead.id,
+                'name': lead.name,
+                'email': lead.email,
+                'phone': lead.phone,
+                'type': lead.type
+            } for lead in leads.items]
+
+            return jsonify({
+                'leads': leads_data,
+                'total_pages': leads.pages,
+                'total_items': leads.total,
+                'current_page': leads.page
+            })
+    
+    @cross_origin(supports_credentials=True)
+    def delete(self, lead_id):
+        lead = Lead.query.get(lead_id)
+        if not lead:
+            return jsonify({'message': 'Lead not found.'}), 404
+        
+        db.session.delete(lead)
+        db.session.commit()
+
+        return jsonify({'message': 'Lead deleted successfully.'})
 
 def save_message(user_message, bot_response, latency, session_id):
     with app.app_context():
@@ -269,6 +335,34 @@ def upload():
         flash(f"{r['filename'] or 'Unnamed file'}: {r['message']}", 'info')
     return redirect(url_for('admin.upload'))
 
+@admin_bp.route('/upload-web', methods=['POST'])
+@login_required
+def upload_web():
+    url = request.form.get('url')
+    if not url:
+        flash('No URL provided.', 'warning')
+        return redirect(url_for('admin.upload'))
+    
+    loader = WebBaseLoader(url)
+    data = loader.load()
+    if not data:
+        flash('No data loaded from URL.', 'warning')
+        return redirect(url_for('admin.upload'))
+    
+    text_splitter = SpacyTextSplitter()
+    docs = text_splitter.split_documents(data)
+    if not docs:
+        flash('No documents were split from the URL.', 'warning')
+        return redirect(url_for('admin.upload'))
+    
+    ids = datastore.add_documents(documents=docs)
+    for doc_id in ids:
+        document = Document(document_id=doc_id, document_name=url)
+        db.session.add(document)
+    db.session.commit()
+    flash('Upload complete.', 'info')
+    return redirect(url_for('admin.upload'))
+
 @admin_bp.route('/documents', methods=['GET'])
 @login_required
 def get_documents():
@@ -405,6 +499,7 @@ api.add_resource(GreetTest, '/api/v1/test')
 api.add_resource(Chatbot, '/api/v1/chat')
 api.add_resource(FeedbackResource, '/api/feedback')
 api.add_resource(ChatbotNoHistory, '/api/v1/chat-no-history')
+api.add_resource(LeadResource, '/api/v1/lead', '/api/v1/lead/<int:lead_id>')
 
 if __name__ == '__main__':
     app.run(debug=True)

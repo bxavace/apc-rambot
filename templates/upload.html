@@ -23,6 +23,20 @@
             </div>
         </form>
     </div>
+    <div class="or my-3">
+        <small>
+            Alternatively, you can upload a document by providing a link to the file. This is useful for web-based documents.
+        </small>
+    </div>
+    <div class="upload-web">
+        <form id="uploadForm" action="{{ url_for('admin.upload_web') }}" method="POST">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Link</span>
+                <input name="url" id="url" type="text" class="form-control" placeholder="apc.edu.ph/..." aria-label="uri" aria-describedby="addon-wrapping">
+                <button class="btn btn-outline-primary" type="submit">Upload</button>
+            </div>
+        </form>
+    </div>
 
     <div id="loading-component" style="display: none;">
         <div id="loader" class="spinner-border" role="status">
