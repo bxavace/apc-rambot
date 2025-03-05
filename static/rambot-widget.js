@@ -79,6 +79,43 @@
         }
     }
 
+    const streamChatMessage = function() {
+        const input = document.querySelector('.chat-input');
+        const text = input.value.trim();
+        if (!text) return;
+
+        createMessage(text, true);
+        input.value = '';
+
+        const messages = document.querySelector('.messages');
+        const loader = document.createElement('div');
+        loader.className = 'loader';
+        messages.appendChild(loader);
+        messages.scrollTop = messages.scrollHeight;
+
+        let partialResponse = '';
+        const session_id = localStorage.getItem('session_id') || '';
+        const eventSource = new EventSource(`/api/v1/chat-stream?session_id=${encodeURIComponent(session_id)}&message=${encodeURIComponent(text)}`);
+
+        eventSource.onmessage = (event) => {
+            if (event.data === '[DONE]') {
+                eventSource.close();
+                const botResponse = markdownToHTML(partialResponse);
+                createMessage(botResponse, false);
+                loader.remove();
+            } else {
+                partialResponse += event.data;
+            }
+        };
+
+        eventSource.onerror = (error) => {
+            console.error('Streaming error:', error);
+            createMessage('Sorry, there was an error processing your request.', false);
+            loader.remove();
+            eventSource.close();
+        };
+    }
+
     const resetSession = async function() {
         try {
             const response = await fetch('/clear_session', {
@@ -92,8 +129,6 @@
             if (!response.ok) {
                 throw new Error('Failed to reset session');
             }
-
-            console.log(response);
 
             localStorage.removeItem('session_id');
             const messages = document.querySelector('.messages');
@@ -149,6 +184,7 @@
 
             bubble.appendChild(feedback);
         }
+
         messages.appendChild(message);
         messages.scrollTop = messages.scrollHeight;
     }

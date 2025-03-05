@@ -93,7 +93,7 @@ question_answer_chain = create_stuff_documents_chain(gpt4om, qa_prompt)
 rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 
 async def generate_response(message):
-    async for chunk in rag_chain.astream(message):
+    async for chunk in rag_chain.astream({"input": message, "chat_history": []}):
         content = markdown.markdown(chunk)
         yield content
 

@@ -1,9 +1,9 @@
-from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session as flask_session, flash
+from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session as flask_session, flash, stream_with_context
 from flask_restful import Api, Resource
 from flask_migrate import Migrate
 from config import Development, Production
 from dotenv import load_dotenv
-from chain import rag_chain
+from chain import rag_chain, generate_response
 from chain_nh import model
 from functools import wraps
 from langchain_core.messages import HumanMessage, AIMessage
@@ -84,6 +84,50 @@ class Chatbot(Resource):
 
         conversation_id = Conversation.query.order_by(Conversation.id.desc()).first().id
         return jsonify({'response': str(response), 'responded_in': latency, 'conversation_id': conversation_id, 'session_id': session_id})
+    
+class ChatbotStream(Resource):
+    @cross_origin(supports_credentials=True)
+    def get(self):
+        session_id = request.args.get('session_id')
+        user_message = request.args.get('message')
+
+        if not session_id:
+            new_session = Session(start_time=datetime.now())
+            db.session.add(new_session)
+            db.session.commit()
+            session_id = new_session.id
+            flask_session['session_id'] = session_id
+
+        conversation = flask_session.get('conversation', [
+            {'role': 'ai', 'content': 'Welcome to Asia Pacific College! I am Rambot, your 24/7 Ram assistant. How can I help you today?'}
+        ])
+
+        time_start = time.time()
+        response = rag_chain.invoke({
+            'input': user_message,
+            'chat_history': conversation
+        })
+        response = response['answer']
+        time_end = time.time()
+        latency = time_end - time_start
+
+        threading.Thread(
+            target=save_message,
+            args=(user_message, response, latency, session_id)
+        ).start()
+
+        conversation.extend([
+            {'role': 'human', 'content': user_message},
+            {'role': 'ai', 'content': response}
+        ])
+        flask_session['conversation'] = conversation
+
+        conversation_id = Conversation.query.order_by(Conversation.id.desc()).first().id
+
+        return Response(
+            stream_with_context(generate_response(user_message)),
+            content_type="text/event-stream"
+        )
 
 class FeedbackResource(Resource):
     @cross_origin(supports_credentials=True)
@@ -500,6 +544,7 @@ api.add_resource(Chatbot, '/api/v1/chat')
 api.add_resource(FeedbackResource, '/api/feedback')
 api.add_resource(ChatbotNoHistory, '/api/v1/chat-no-history')
 api.add_resource(LeadResource, '/api/v1/lead', '/api/v1/lead/<int:lead_id>')
+api.add_resource(ChatbotStream, '/api/v1/chat-stream')
 
 if __name__ == '__main__':
     app.run(debug=True)
