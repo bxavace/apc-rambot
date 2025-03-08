@@ -453,7 +453,7 @@ def process_file(filepath):
 ### CLIENT VIEW TEST ###
 @app.route('/client')
 def client():
-    return render_template('client.html')
+    return render_template('client_test.html')
 
 @app.route('/client-no-history')
 def client_no_history():
