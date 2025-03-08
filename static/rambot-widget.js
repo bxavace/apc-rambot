@@ -7,7 +7,7 @@
     fontAwesomeCss.referrerPolicy = 'no-referrer';
     document.head.appendChild(fontAwesomeCss);
 
-    // const apiBaseUrl = 'https://<API_GOES_HERE>';
+    // API URL GOES HERE!
     const apiBaseUrlDev = '';
 
     function markdownToHTML(markdown) {
