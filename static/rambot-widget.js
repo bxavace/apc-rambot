@@ -167,7 +167,7 @@
     const createWidget = () => {
         const container = document.createElement('div');
         container.id = 'widget-container';
-
+        // Developed 2025 by an SF student! 
         container.innerHTML = `
             <div class="parent-chatbot-interface">
                 <div class="chat-head">
