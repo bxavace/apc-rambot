@@ -27,7 +27,6 @@
     const handleFeedback = async function (isLike, messageId, event) {
         try {
             const session_id = localStorage.getItem('session_id');
-            console.log('session_id:', session_id);
             const response = await fetch(apiBaseUrlDev + '/api/v1/feedback', {
                 method: 'PUT',
                 headers: {
@@ -102,9 +101,6 @@
             if (!response.ok) {
                 throw new Error('Failed to reset session');
             }
-
-            console.log(response);
-
             localStorage.removeItem('session_id');
             const messages = document.querySelector('.messages');
             messages.innerHTML = '';
@@ -668,7 +664,6 @@
             });
         
             input.addEventListener('keypress', (e) => {
-                console.log(e.key);
                 if (e.key === 'Enter') sendMessage();
             });
 
