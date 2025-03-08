@@ -180,7 +180,7 @@
                 </div>
                 <div class="chat-container">
                     <div id="modal">
-                        <h3>Send us your contact details!</h3>
+                        <h3 style="color:white;">Send us your contact details!</h3>
                         <p>Would you like to receive updates from Asia Pacific College?</p>
                         <form id="lead-form">
                             <div class="input-wrapper">
@@ -277,14 +277,18 @@
                 position: fixed;
                 bottom: 5rem;
                 right: 3rem;
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 70px;
                 background: #35438c;
                 border-radius: 50%;
                 cursor: pointer;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 z-index: 9999;
-                transition: transform 0.2s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transition: transform 0.3s ease;
             }
 
             .chat-head:hover {
@@ -294,8 +298,69 @@
             .chat-head svg {
                 width: 30px;
                 height: 30px;
-                margin: 15px;
+                z-index: 2;
+                position: relative;
             }
+
+            /* Create gradient background */
+            .chat-head::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(45deg, 
+                        #ff7ab6, #b073ff,#5b3a99, #35438c, #4361ee, #4cf0bf);
+                background-size: 400% 400%;
+                z-index: 1;
+                animation: gradientStatic 15s ease infinite;
+                opacity: 0;
+                transition: opacity 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            }
+
+            .chat-head:hover::before {
+                opacity: 1;
+                animation: gradientMove 3s ease infinite;
+            }
+
+            /* SVG fill animation */
+            .chat-head:hover svg path {
+                fill: white;
+                transition: fill 0.3s ease;
+                filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+            }
+
+            /* Define gradient animations */
+            @keyframes gradientStatic {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            @keyframes gradientMove {
+                0% { 
+                    background-position: 0% 50%; 
+                    transform: rotate(0deg);
+                }
+                50% { 
+                    background-position: 100% 50%; 
+                    transform: rotate(180deg);
+                }
+                100% { 
+                    background-position: 0% 50%; 
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Add glow effect on hover */
+            .chat-head:hover {
+                box-shadow: 0 0 15px rgba(53, 67, 140, 0.6);
+            }
+
+
+
+
 
             .chat-container {
                 position: fixed;
