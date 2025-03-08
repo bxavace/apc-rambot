@@ -7,6 +7,9 @@
     fontAwesomeCss.referrerPolicy = 'no-referrer';
     document.head.appendChild(fontAwesomeCss);
 
+    // const apiBaseUrl = 'https://<API_GOES_HERE>';
+    const apiBaseUrlDev = '';
+
     function markdownToHTML(markdown) {
         return markdown
           .replace(/^##### (.*$)/gim, '<h5>$1</h5>') // H5
@@ -25,7 +28,7 @@
         try {
             const session_id = localStorage.getItem('session_id');
             console.log('session_id:', session_id);
-            const response = await fetch('/api/feedback', {
+            const response = await fetch(apiBaseUrlDev + '/api/v1/feedback', {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/json'
@@ -65,7 +68,7 @@
             messages.scrollTop = messages.scrollHeight;
 
             try {
-                const response = await fetch('/api/v1/chat', {
+                const response = await fetch(apiBaseUrlDev + '/api/v1/chat', {
                     method: 'POST',
                     credentials: 'include',
                     headers: {
@@ -88,7 +91,7 @@
 
     const resetSession = async function() {
         try {
-            const response = await fetch('/clear_session', {
+            const response = await fetch(apiBaseUrlDev + '/clear_session', {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -675,7 +678,7 @@
                 const data = Object.fromEntries(formData.entries());
     
                 try {
-                    const response = await fetch('/api/v1/lead', {
+                    const response = await fetch(apiBaseUrlDev + '/api/v1/lead', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
