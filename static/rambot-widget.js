@@ -1,4 +1,11 @@
 (function() {
+    const fontAwesomeCss = document.createElement('link');
+    fontAwesomeCss.rel = 'stylesheet';
+    fontAwesomeCss.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+    fontAwesomeCss.integrity = 'sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==';
+    fontAwesomeCss.crossOrigin = 'anonymous';
+    fontAwesomeCss.referrerPolicy = 'no-referrer';
+    document.head.appendChild(fontAwesomeCss);
 
     function markdownToHTML(markdown) {
         return markdown
@@ -173,59 +180,63 @@
                     </svg>
                 </div>
                 <div class="chat-container">
-                <div id="modal">
-                    <h3>Send us your contact details!</h3>
-                    <p>Would you like to receive updates from Asia Pacific College?</p>
-                    <form id="lead-form">
-                        <div class="input-wrapper">
-                            <input type="text" name="name" class="chat-input" placeholder="Name" required>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="email" name="email" class="chat-input" placeholder="Email" required>
-                        </div>
-                        <div class="input-wrapper">
-                        <input type="tel" name="phone" class="chat-input" placeholder="Phone">
-                        </div>
-                        <div class="select-wrapper">
-                            <label for="type">I am a...</label>
-                            <select id="type" name="type" required>
-                                <option value="student">Student</option>
-                                <option value="applicant">Applicant</option>
-                                <option value="parent">Parent</option>
-                                <option value="staff">Staff</option>
-                                <option value="alumni">Alumni</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="submit-btn">Submit</button>
-                        </form>
-                        <button type="button" onclick="document.getElementById('modal').remove()" class="cancel-btn">No thanks, I just want to chat</button>
-                </div>
-                <div class="chat-header">
-                Chat with RamBot
-                <span class="pill">Experimental</span>
-                <button class="reset" onclick="resetSession()">Reset</button>
-                </div>
-                <div class="chat-info">
-                RamBot is an experimental chatbot for Asia Pacific College developed by <a href="https://www.apc.edu.ph/programs/socit/">SoCIT</a> students. Powered by Azure OpenAI and Python.
-                </div>
-                <div class="messages">
-                    </div>
-                    <div class="input-container">
-                        <div class="input-wrapper">
-                            <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
-                        </div>
-                        <div class="send-button" onclick="sendMessage()">
-                            <svg id='Send_Letter_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
-
-
-                                <g transform="matrix(1 0 0 1 12 12)" >
-                                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 6.486000000000001 17.514 2 12 2 z M 15.293 12.707 L 13 10.414 L 13 17 L 11 17 L 11 10.414 L 8.707 12.707 L 7.293000000000001 11.293000000000001 L 12 6.586 L 16.707 11.293 L 15.293 12.707 z" stroke-linecap="round" />
-                                </g>
-                                </svg>
+                    <div id="modal">
+                        <h3>Send us your contact details!</h3>
+                        <p>Would you like to receive updates from Asia Pacific College?</p>
+                        <form id="lead-form">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" class="chat-input" placeholder="Name" required>
                             </div>
+                            <div class="input-wrapper">
+                                <input type="email" name="email" class="chat-input" placeholder="Email" required>
+                            </div>
+                            <div class="input-wrapper">
+                            <input type="tel" name="phone" class="chat-input" placeholder="Phone">
+                            </div>
+                            <div class="select-wrapper">
+                                <label for="type">I am a...</label>
+                                <select id="type" name="type" required>
+                                    <option value="student">Student</option>
+                                    <option value="applicant">Applicant</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="staff">Staff</option>
+                                    <option value="alumni">Alumni</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit</button>
+                            </form>
+                            <button type="button" onclick="document.getElementById('modal').remove()" class="cancel-btn">No thanks, I just want to chat</button>
                     </div>
-                    <div class="disclaimer">RamBot might make mistakes. Verify important information.</div>
+                    <div class="chat-header">
+                    Chat with APC RamBot
+                    <span class="pill">Experimental</span>
+                    <button class="reset" onclick="resetSession()">Reset</button>
+                    </div>
+                    <div class="chat-info">
+                    <div class="info-text">
+                    RamBot is an experimental chatbot for Asia Pacific College developed by <a href="https://www.apc.edu.ph/programs/socit/">SoCIT</a> students. Powered by Azure OpenAI and Python.
+                    </div>
+                    <i class="fa fa-close"></i>
+                    </div>
+                    <div class="messages">
+                        </div>
+                        <div class="input-container">
+                            <div class="input-wrapper">
+                                <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
+                            </div>
+                            <div class="send-button" onclick="sendMessage()">
+                                <svg id='Send_Letter_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+                                    <g transform="matrix(1 0 0 1 12 12)" >
+                                    <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 6.486000000000001 17.514 2 12 2 z M 15.293 12.707 L 13 10.414 L 13 17 L 11 17 L 11 10.414 L 8.707 12.707 L 7.293000000000001 11.293000000000001 L 12 6.586 L 16.707 11.293 L 15.293 12.707 z" stroke-linecap="round" />
+                                    </g>
+                                    </svg>
+                            </div>
+                        </div>
+                    <div class="disclaimer">RamBot might make mistakes. Verify important information. Contact <a href="mailto:admissions@apc.edu.ph">admissions</a> for official inquiries.</div>
+                    </div>  
                 </div>
             </div>
         `;
@@ -265,15 +276,15 @@
 
             .chat-head {
                 position: fixed;
-                bottom: 2rem;
-                right: 2rem;
+                bottom: 5rem;
+                right: 3rem;
                 width: 60px;
                 height: 60px;
                 background: #35438c;
                 border-radius: 50%;
                 cursor: pointer;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                z-index: 999;
+                z-index: 9999;
                 transition: transform 0.2s ease;
             }
 
@@ -290,7 +301,7 @@
             .chat-container {
                 position: fixed;
                 right: -45vw;
-                bottom: 100px;
+                bottom: 150px;
                 width: 30vw;
                 height: 70vh;
                 background: white;
@@ -299,6 +310,102 @@
                 display: flex;
                 flex-direction: column;
                 transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+                z-index: 999;
+            }
+
+            .chat-container.active {
+                right: 2rem;
+            }
+
+            .chat-header {
+                padding: 10px 20px;
+                background: #35438c;
+                border-radius: 20px 20px 0 0;
+                font-weight: 600;
+                color: white;
+            }
+
+            .pill {
+                background: #ffce47;
+                color: #806715;
+                padding: 4px 8px;
+                border-radius: 20px;
+                display: inline-block;
+                margin: 0 5px;
+                font-size: 0.8rem;
+            }
+
+            /* Media Query for Mobile */
+            @media (max-width: 768px) {
+                .chat-container {
+                    width: 100vw;
+                    height: 80vh;
+                    right: -100vw;
+                }
+
+                .chat-container.active {
+                    right: 0;
+                }
+
+                .chat-head {
+                    bottom: 2rem;
+                    right: 2rem;
+                }
+
+                #modal {
+                    padding: 1rem;
+                }
+
+                #modal h3 {
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                }
+
+                #modal p {
+                    font-size: 0.9rem;
+                }
+            }
+
+            @media (max-height: 800px) {
+                #modal {
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                }
+                
+                #lead-form {
+                    gap: 0.5rem; /* Reduce spacing between form elements */
+                }
+                
+                .submit-btn {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            @media (max-height: 600px) {
+                #modal h3 {
+                    margin-top: 0;
+                    margin-bottom: 0.5rem;
+                }
+                
+                #modal p {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            /* Media Query for Smaller Screens */
+            @media (max-width: 480px) {
+                .chat-container {
+                    height: 70vh;
+                }
+
+                .chat-head {
+                    bottom: 1rem;
+                    right: 1rem;
+                }
+
+                .chat-header {
+                    font-size: 0.9rem;
+                }
             }
 
             #modal {
@@ -309,9 +416,8 @@
                 height: 100%;
                 z-index: 999;
                 border-radius: 20px;
-                /* border-radius: 0 0 20px 20px;
-                margin-top: 45px; */
                 padding: 2rem;
+                overflow-y: auto;
                 color: white;
             }
 
@@ -359,28 +465,6 @@
 
             .cancel-btn:hover {
                 background:rgb(136, 135, 135);
-            }
-
-            .chat-container.active {
-                right: 2rem;
-            }
-
-            .chat-header {
-                padding: 10px 20px;
-                background: #35438c;
-                border-radius: 20px 20px 0 0;
-                font-weight: 600;
-                color: white;
-            }
-
-            .pill {
-                background: #ffce47;
-                color: #806715;
-                padding: 4px 8px;
-                border-radius: 20px;
-                display: inline-block;
-                margin: 0 5px;
-                font-size: 0.8rem;
             }
 
             .messages {
@@ -540,6 +624,13 @@
                 font-size: 0.8em;
                 text-align: center;
                 color: #666;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .chat-info i {
+                cursor: pointer;
+                font-size: 1.5em;
             }
 
             .feedback-thankyou {
@@ -555,6 +646,19 @@
             const input = document.querySelector('#chat-input');
             const messages = document.querySelector('.messages');
             const leadForm = container.querySelector('#lead-form');
+            const closeInfoBtn = document.querySelector('.chat-info i');
+            const chatInfo = document.querySelector('.chat-info');
+
+            if (closeInfoBtn && chatInfo) {
+                closeInfoBtn.addEventListener('click', () => {
+                    chatInfo.style.display = 'none';
+                    localStorage.setItem('chatInfoClosed', 'true');
+                });
+            }
+
+            if (localStorage.getItem('chatInfoClosed')) {
+                chatInfo.style.display = 'none';
+            }
 
             chatHead.addEventListener('click', () => {
                 chatContainer.classList.toggle('active');
