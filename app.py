@@ -298,7 +298,13 @@ def logout():
 @admin_bp.route('/')
 @login_required
 def admin():
-    sessions = Session.query.order_by(Session.start_time.desc()).all()
+    page = request.args.get('page', 1, type=int)
+    per_page = 15  # Number of sessions per page
+    sessions = Session.query.order_by(Session.start_time.desc()).paginate(
+        page=page,
+        per_page=per_page,
+        error_out=False
+    )
     return render_template('admin.html', sessions=sessions)
 
 @admin_bp.route('/admin/session/<int:session_id>', methods=['GET'])
@@ -324,6 +330,30 @@ def export_data():
 def allowed_file(filename):
     ALLOWED_EXTENSIONS = {'pdf', 'md'}
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@admin_bp.route('/leads', methods=['GET'])
+@login_required
+def get_leads():
+    page = request.args.get('page', 1, type=int)
+    per_page = 15
+    leads = Lead.query.paginate(
+        page=page,
+        per_page=per_page,
+        error_out=False
+    )
+    return render_template('leads.html', leads=leads)
+
+@admin_bp.route('/leads/<int:id>', methods=['POST'])
+@login_required
+def delete_lead(id):
+    lead = Lead.query.get(id)
+    if lead:
+        db.session.delete(lead)
+        db.session.commit()
+        flash('Lead deleted successfully.', 'success')
+    else:
+        flash('Lead not found.', 'danger')
+    return redirect(url_for('admin.get_leads'))
 
 @admin_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
@@ -503,7 +533,7 @@ def process_file(filepath):
 ### CLIENT VIEW TEST ###
 @app.route('/client')
 def client():
-    return render_template('client.html')
+    return render_template('client_test.html')
 
 @app.route('/client-no-history')
 def client_no_history():

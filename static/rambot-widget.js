@@ -1,4 +1,14 @@
 (function() {
+    const fontAwesomeCss = document.createElement('link');
+    fontAwesomeCss.rel = 'stylesheet';
+    fontAwesomeCss.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+    fontAwesomeCss.integrity = 'sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==';
+    fontAwesomeCss.crossOrigin = 'anonymous';
+    fontAwesomeCss.referrerPolicy = 'no-referrer';
+    document.head.appendChild(fontAwesomeCss);
+
+    // API URL GOES HERE!
+    const apiBaseUrlDev = '';
 
     function markdownToHTML(markdown) {
         return markdown
@@ -17,8 +27,7 @@
     const handleFeedback = async function (isLike, messageId, event) {
         try {
             const session_id = localStorage.getItem('session_id');
-            console.log('session_id:', session_id);
-            const response = await fetch('/api/feedback', {
+            const response = await fetch(apiBaseUrlDev + '/api/feedback', {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/json'
@@ -37,10 +46,22 @@
             console.error('Error submitting feedback:', error);
         } finally {
             const feedbackContainer = event.target.parentElement;
-            feedbackContainer.innerText = 'Thank you for your feedback!';
+            const thankYouElement = document.createElement('div');
+            thankYouElement.className = 'feedback-thankyou';
+            thankYouElement.innerText = 'Thank you for your feedback!';
+            thankYouElement.style.opacity = '0';
+            feedbackContainer.innerHTML = '';
+            feedbackContainer.appendChild(thankYouElement);
             setTimeout(() => {
-                feedbackContainer.innerText = '';
-            }, 5000);
+                thankYouElement.style.transition = 'opacity 0.5s ease';
+                thankYouElement.style.opacity = '1';
+            }, 10);            
+            setTimeout(() => {
+                thankYouElement.style.opacity = '0';
+                setTimeout(() => {
+                    feedbackContainer.innerHTML = '';
+                }, 500);
+            }, 4500);
         }
     }
 
@@ -58,7 +79,7 @@
             messages.scrollTop = messages.scrollHeight;
 
             try {
-                const response = await fetch('/api/v1/chat', {
+                const response = await fetch(apiBaseUrlDev + '/api/v1/chat', {
                     method: 'POST',
                     credentials: 'include',
                     headers: {
@@ -177,7 +198,7 @@
 
     const resetSession = async function() {
         try {
-            const response = await fetch('/clear_session', {
+            const response = await fetch(apiBaseUrlDev + '/clear_session', {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -188,7 +209,6 @@
             if (!response.ok) {
                 throw new Error('Failed to reset session');
             }
-
             localStorage.removeItem('session_id');
             const messages = document.querySelector('.messages');
             messages.innerHTML = '';
@@ -225,7 +245,6 @@
             const feedbackQuestion = document.createElement('div');
             feedbackQuestion.className = 'feedback-question';
             feedbackQuestion.innerText = 'How was the response?';
-            bubble.appendChild(feedbackQuestion);
 
             const feedback = document.createElement('div');
             feedback.className = 'feedback';
@@ -233,6 +252,7 @@
             likeButton.className = 'like-btn';
             likeButton.textContent = '👍';
             likeButton.addEventListener('click', (event) => handleFeedback(true, conversationId, event));
+            feedback.appendChild(feedbackQuestion);
             feedback.appendChild(likeButton);
 
             const dislikeButton = document.createElement('button');
@@ -259,7 +279,7 @@
     const createWidget = () => {
         const container = document.createElement('div');
         container.id = 'widget-container';
-
+        // Developed 2025 by an SF student! 
         container.innerHTML = `
             <div class="parent-chatbot-interface">
                 <div class="chat-head">
@@ -271,59 +291,67 @@
                     </svg>
                 </div>
                 <div class="chat-container">
-                <div id="modal">
-                    <h3>Send us your contact details!</h3>
-                    <p>Would you like to receive updates from Asia Pacific College?</p>
-                    <form id="lead-form">
-                        <div class="input-wrapper">
-                            <input type="text" name="name" class="chat-input" placeholder="Name" required>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="email" name="email" class="chat-input" placeholder="Email" required>
-                        </div>
-                        <div class="input-wrapper">
-                        <input type="tel" name="phone" class="chat-input" placeholder="Phone">
-                        </div>
-                        <div class="select-wrapper">
-                            <label for="type">I am a...</label>
-                            <select id="type" name="type" required>
-                                <option value="student">Student</option>
-                                <option value="applicant">Applicant</option>
-                                <option value="parent">Parent</option>
-                                <option value="staff">Staff</option>
-                                <option value="alumni">Alumni</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="submit-btn">Submit</button>
-                        </form>
-                        <button type="button" onclick="document.getElementById('modal').remove()" class="cancel-btn">No thanks, I just want to chat</button>
-                </div>
-                <div class="chat-header">
-                Chat with RamBot
-                <span class="pill">Experimental</span>
-                <button class="reset" onclick="resetSession()">Reset</button>
-                </div>
-                <div class="chat-info">
-                RamBot is an experimental chatbot for Asia Pacific College developed by <a href="https://www.apc.edu.ph/programs/socit/">SoCIT</a> students. Powered by Azure OpenAI and Python.
-                </div>
-                <div class="messages">
-                    </div>
-                    <div class="input-container">
-                        <div class="input-wrapper">
-                            <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
-                        </div>
-                        <div class="send-button" onclick="streamChatMessage()">
-                            <svg id='Send_Letter_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
-
-
-                                <g transform="matrix(1 0 0 1 12 12)" >
-                                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 6.486000000000001 17.514 2 12 2 z M 15.293 12.707 L 13 10.414 L 13 17 L 11 17 L 11 10.414 L 8.707 12.707 L 7.293000000000001 11.293000000000001 L 12 6.586 L 16.707 11.293 L 15.293 12.707 z" stroke-linecap="round" />
-                                </g>
-                                </svg>
+                    <div id="modal">
+                        <h3 style="color:white;">Send us your contact details!</h3>
+                        <p>Would you like to receive updates from Asia Pacific College?</p>
+                        <form id="lead-form">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" class="chat-input" placeholder="Name" required>
                             </div>
+                            <div class="input-wrapper">
+                                <input type="email" name="email" class="chat-input" placeholder="Email" required>
+                            </div>
+                            <div class="input-wrapper">
+                            <input type="tel" name="phone" class="chat-input" placeholder="Phone">
+                            </div>
+                            <div class="select-wrapper">
+                                <label for="type">I am a...</label>
+                                <select id="type" name="type" required>
+                                    <option value="student">Student</option>
+                                    <option value="applicant">Applicant</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="staff">Staff</option>
+                                    <option value="alumni">Alumni</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit</button>
+                            </form>
+                            <button type="button" onclick="document.getElementById('modal').remove()" class="cancel-btn">No thanks, I just want to chat</button>
                     </div>
-                    <div class="disclaimer">RamBot might make mistakes. Verify important information.</div>
+                    <div class="chat-header">
+                        <div class="left">
+                        <span>
+                        Chat with APC RamBot
+                        </span>
+                        <span class="pill">Experimental</span>
+                        </div>
+                        <div class="right">
+                        <button class="reset" onclick="resetSession()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="chat-info">
+                    <div class="info-text">
+                    RamBot is an experimental chatbot for Asia Pacific College developed by <a href="https://www.apc.edu.ph/programs/socit/">SoCIT</a> students. Powered by Azure OpenAI and Python.
+                    </div>
+                    <i class="fa fa-close"></i>
+                    </div>
+                    <div class="messages">
+                        </div>
+                        <div class="input-container">
+                            <div class="input-wrapper">
+                                <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
+                            </div>
+                            <div class="send-button" onclick="streamChatMessage()">
+                                <svg id='Send_Letter_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+                                    <g transform="matrix(1 0 0 1 12 12)" >
+                                    <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 6.486000000000001 17.514 2 12 2 z M 15.293 12.707 L 13 10.414 L 13 17 L 11 17 L 11 10.414 L 8.707 12.707 L 7.293000000000001 11.293000000000001 L 12 6.586 L 16.707 11.293 L 15.293 12.707 z" stroke-linecap="round" />
+                                    </g>
+                                    </svg>
+                            </div>
+                        </div>
+                    <div class="disclaimer">RamBot might make mistakes. Verify important information. Contact <a href="mailto:admissions@apc.edu.ph">admissions</a> for official inquiries.</div>
+                    </div>  
                 </div>
             </div>
         `;
@@ -363,16 +391,20 @@
 
             .chat-head {
                 position: fixed;
-                bottom: 2rem;
-                right: 2rem;
-                width: 60px;
-                height: 60px;
+                bottom: 5rem;
+                right: 3rem;
+                width: 70px;
+                height: 70px;
                 background: #35438c;
                 border-radius: 50%;
                 cursor: pointer;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-                transition: transform 0.2s ease;
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transition: transform 0.3s ease;
             }
 
             .chat-head:hover {
@@ -382,13 +414,74 @@
             .chat-head svg {
                 width: 30px;
                 height: 30px;
-                margin: 15px;
+                z-index: 2;
+                position: relative;
             }
+
+            /* Create gradient background */
+            .chat-head::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(45deg, 
+                        #ff7ab6, #b073ff,#5b3a99, #35438c, #4361ee, #4cf0bf);
+                background-size: 400% 400%;
+                z-index: 1;
+                animation: gradientStatic 15s ease infinite;
+                opacity: 0;
+                transition: opacity 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            }
+
+            .chat-head:hover::before {
+                opacity: 1;
+                animation: gradientMove 3s ease infinite;
+            }
+
+            /* SVG fill animation */
+            .chat-head:hover svg path {
+                fill: white;
+                transition: fill 0.3s ease;
+                filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+            }
+
+            /* Define gradient animations */
+            @keyframes gradientStatic {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            @keyframes gradientMove {
+                0% { 
+                    background-position: 0% 50%; 
+                    transform: rotate(0deg);
+                }
+                50% { 
+                    background-position: 100% 50%; 
+                    transform: rotate(180deg);
+                }
+                100% { 
+                    background-position: 0% 50%; 
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Add glow effect on hover */
+            .chat-head:hover {
+                box-shadow: 0 0 15px rgba(53, 67, 140, 0.6);
+            }
+
+
+
+
 
             .chat-container {
                 position: fixed;
                 right: -45vw;
-                bottom: 100px;
+                bottom: 150px;
                 width: 30vw;
                 height: 70vh;
                 background: white;
@@ -397,6 +490,105 @@
                 display: flex;
                 flex-direction: column;
                 transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+                z-index: 999;
+            }
+
+            .chat-container.active {
+                right: 2rem;
+            }
+
+            .chat-header {
+                padding: 10px 20px;
+                background: #35438c;
+                border-radius: 20px 20px 0 0;
+                font-weight: 600;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .pill {
+                background: #ffce47;
+                color: #806715;
+                padding: 4px 8px;
+                border-radius: 20px;
+                display: inline-block;
+                margin: 0 5px;
+                font-size: 0.8rem;
+            }
+
+            /* Media Query for Mobile */
+            @media (max-width: 768px) {
+                .chat-container {
+                    width: 100vw;
+                    height: 80vh;
+                    right: -100vw;
+                }
+
+                .chat-container.active {
+                    right: 0;
+                }
+
+                .chat-head {
+                    bottom: 2rem;
+                    right: 2rem;
+                }
+
+                #modal {
+                    padding: 1rem;
+                }
+
+                #modal h3 {
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                }
+
+                #modal p {
+                    font-size: 0.9rem;
+                }
+            }
+
+            @media (max-height: 800px) {
+                #modal {
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                }
+                
+                #lead-form {
+                    gap: 0.5rem; /* Reduce spacing between form elements */
+                }
+                
+                .submit-btn {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            @media (max-height: 600px) {
+                #modal h3 {
+                    margin-top: 0;
+                    margin-bottom: 0.5rem;
+                }
+                
+                #modal p {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            /* Media Query for Smaller Screens */
+            @media (max-width: 480px) {
+                .chat-container {
+                    height: 70vh;
+                }
+
+                .chat-head {
+                    bottom: 1rem;
+                    right: 1rem;
+                }
+
+                .chat-header {
+                    font-size: 0.9rem;
+                }
             }
 
             #modal {
@@ -407,9 +599,8 @@
                 height: 100%;
                 z-index: 999;
                 border-radius: 20px;
-                /* border-radius: 0 0 20px 20px;
-                margin-top: 45px; */
                 padding: 2rem;
+                overflow-y: auto;
                 color: white;
             }
 
@@ -457,28 +648,6 @@
 
             .cancel-btn:hover {
                 background:rgb(136, 135, 135);
-            }
-
-            .chat-container.active {
-                right: 2rem;
-            }
-
-            .chat-header {
-                padding: 10px 20px;
-                background: #35438c;
-                border-radius: 20px 20px 0 0;
-                font-weight: 600;
-                color: white;
-            }
-
-            .pill {
-                background: #ffce47;
-                color: #806715;
-                padding: 4px 8px;
-                border-radius: 20px;
-                display: inline-block;
-                margin: 0 5px;
-                font-size: 0.8rem;
             }
 
             .messages {
@@ -537,6 +706,11 @@
                 color: #777;
                 margin-bottom: 5px;
                 align-self: flex-start;
+            }
+
+            .feedback {
+                font-size: 0.9em;
+                color: #777;
             }
 
             .feedback button {
@@ -603,8 +777,8 @@
             .chat-input {
                 width: 100%;
                 padding: 12px 20px;
-                border: 1px solid #ddd;
-                border-radius: 10px;
+                border: 1px solid #ddd !important;
+                border-radius: 10px !important;
                 outline: none;
                 background: white;
             }
@@ -630,6 +804,7 @@
                 color: #666;
                 text-align: center;
                 margin-bottom: 16px;
+                padding: 8px;
             }
 
             .chat-info {
@@ -638,6 +813,13 @@
                 font-size: 0.8em;
                 text-align: center;
                 color: #666;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .chat-info i {
+                cursor: pointer;
+                font-size: 1.5em;
             }
 
             .feedback-thankyou {
@@ -653,6 +835,19 @@
             const input = document.querySelector('#chat-input');
             const messages = document.querySelector('.messages');
             const leadForm = container.querySelector('#lead-form');
+            const closeInfoBtn = document.querySelector('.chat-info i');
+            const chatInfo = document.querySelector('.chat-info');
+
+            if (closeInfoBtn && chatInfo) {
+                closeInfoBtn.addEventListener('click', () => {
+                    chatInfo.style.display = 'none';
+                    localStorage.setItem('chatInfoClosed', 'true');
+                });
+            }
+
+            if (localStorage.getItem('chatInfoClosed')) {
+                chatInfo.style.display = 'none';
+            }
 
             chatHead.addEventListener('click', () => {
                 chatContainer.classList.toggle('active');
@@ -660,7 +855,7 @@
         
             input.addEventListener('keypress', (e) => {
                 console.log(e.key);
-                if (e.key === 'Enter') streamChatMessage();
+                if (e.key === 'Enter') streamChatMessage(); // Change back to sendMessage() if necessary
             });
 
             leadForm.addEventListener('submit', async (event) => {
@@ -669,7 +864,7 @@
                 const data = Object.fromEntries(formData.entries());
     
                 try {
-                    const response = await fetch('/api/v1/lead', {
+                    const response = await fetch(apiBaseUrlDev + '/api/v1/lead', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

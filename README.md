@@ -21,9 +21,9 @@ Run (dev):
 export FLASK_ENV=development
 flask run
 ```
-or
+or (prod-linux)
 ```
-python app.py
+gunicorn -c gunicorn.config.py app:app
 ```
 
 ---
