@@ -287,6 +287,18 @@ def get_leads():
     )
     return render_template('leads.html', leads=leads)
 
+@admin_bp.route('/leads/<int:id>', methods=['POST'])
+@login_required
+def delete_lead(id):
+    lead = Lead.query.get(id)
+    if lead:
+        db.session.delete(lead)
+        db.session.commit()
+        flash('Lead deleted successfully.', 'success')
+    else:
+        flash('Lead not found.', 'danger')
+    return redirect(url_for('admin.get_leads'))
+
 @admin_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():

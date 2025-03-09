@@ -16,6 +16,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Phone</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,10 +27,16 @@
                     <td>{{ lead.email }}</td>
                     <td>{{ lead.phone }}</td>
                     <td>{{ lead.type }}</td>
+                    <td>
+                        <form action="{{ url_for('admin.delete_lead', id=lead.id) }}" method="POST" style="display:inline;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="5">No leads found.</td>
+                    <td colspan="6">No leads found.</td>
                 </tr>
                 {% endfor %}
             </tbody>
