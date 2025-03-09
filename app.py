@@ -247,7 +247,13 @@ def logout():
 @admin_bp.route('/')
 @login_required
 def admin():
-    sessions = Session.query.order_by(Session.start_time.desc()).all()
+    page = request.args.get('page', 1, type=int)
+    per_page = 15  # Number of sessions per page
+    sessions = Session.query.order_by(Session.start_time.desc()).paginate(
+        page=page,
+        per_page=per_page,
+        error_out=False
+    )
     return render_template('admin.html', sessions=sessions)
 
 @admin_bp.route('/admin/session/<int:session_id>', methods=['GET'])
