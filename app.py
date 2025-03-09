@@ -104,30 +104,35 @@ class ChatbotStream(Resource):
 
         time_start = time.time()
         full_response = ""  # Accumulate the response for logging
-        def stream_response():
+
+        def generate():
             nonlocal full_response
             for chunk in generate_response(user_message, conversation):
                 full_response += chunk
                 yield f"data: {chunk}\n\n"
+            # yield f"data: [SESSION_ID:{session_id}]\n\n"
+            yield f"data: {{\"type\": \"session_id\", \"value\": \"{session_id}\"}}\n\n"
             yield "data: [DONE]\n\n"
-
-        response_stream = stream_response()
-        time_end = time.time()
-        latency = time_end - time_start
-
-        threading.Thread(
-            target=save_message,
-            args=(user_message, full_response, latency, session_id)
-        ).start()
-
-        conversation.extend([
-            {'role': 'human', 'content': user_message},
-            {'role': 'ai', 'content': full_response}
-        ])
-        flask_session['conversation'] = conversation
+            
+            # Calculate latency after completion
+            time_end = time.time()
+            latency = time_end - time_start
+            
+            # Update conversation in session
+            conversation.extend([
+                {'role': 'human', 'content': user_message},
+                {'role': 'ai', 'content': full_response}
+            ])
+            flask_session['conversation'] = conversation
+            
+            # Save the message to database
+            threading.Thread(
+                target=save_message,
+                args=(user_message, full_response, latency, session_id)
+            ).start()
 
         return Response(
-            stream_with_context(response_stream),
+            stream_with_context(generate()),
             content_type="text/event-stream"
         )
 
@@ -226,6 +231,7 @@ class LeadResource(Resource):
 
 def save_message(user_message, bot_response, latency, session_id):
     with app.app_context():
+        print(f"Saving message: {user_message} | {bot_response} | {latency} | {session_id}")
         conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency, session_id=session_id)
         db.session.add(conversation)
         db.session.commit()
