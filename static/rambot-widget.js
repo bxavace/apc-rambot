@@ -100,6 +100,102 @@
         }
     }
 
+    const streamChatMessage = function() {
+        const input = document.querySelector('.chat-input');
+        const text = input.value.trim();
+        if (!text) return;
+    
+        createMessage(text, true); // Display the user's message
+        input.value = '';
+    
+        const messages = document.querySelector('.messages');
+        const loader = document.createElement('div');
+        loader.className = 'loader';
+        messages.appendChild(loader);
+        messages.scrollTop = messages.scrollHeight;
+    
+        let partialResponse = '';
+        let botMessageElement = null; // Placeholder for the bot's message element
+        const session_id = localStorage.getItem('session_id') || '';
+        const eventSource = new EventSource(`/api/v1/chat-stream?session_id=${encodeURIComponent(session_id)}&message=${encodeURIComponent(text)}`);
+    
+        const streamTimeout = setTimeout(() => {
+            eventSource.close();
+            loader.remove();
+            if (!botMessageElement) {
+                createMessage('Sorry, there was an error processing your request.', false);
+            } else {
+                botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+            }
+        }, 30000);
+
+        eventSource.onmessage = (event) => {
+            try {
+                const jsonData = JSON.parse(event.data);
+                if (jsonData.type === "session_id") {
+                    localStorage.setItem('session_id', jsonData.session_id);
+                    return;
+                }
+            } catch (e) {
+                // Ignore
+            }
+            if (event.data === '[DONE]') {
+                eventSource.close();
+                clearTimeout(streamTimeout);
+                loader.remove();
+
+                if (botMessageElement) {
+                    const finalResponse = markdownToHTML(partialResponse);
+                    botMessageElement.innerHTML = finalResponse;
+
+                    const separator = document.createElement('hr');
+                    separator.className = 'feedback-separator';
+                    botMessageElement.appendChild(separator);
+
+                    const feedbackQuestion = document.createElement('div');
+                    feedbackQuestion.className = 'feedback-question';
+                    feedbackQuestion.innerText = 'How was the response?';
+                    botMessageElement.appendChild(feedbackQuestion);
+
+                    const feedback = document.createElement('div');
+                    feedback.className = 'feedback';
+                    const likeButton = document.createElement('button');
+                    likeButton.className = 'like-btn';
+                    likeButton.textContent = '👍';
+                    likeButton.addEventListener('click', (event) => handleFeedback(true, botMessageElement.dataset.conversationId, event));
+                    feedback.appendChild(likeButton);
+
+                    const dislikeButton = document.createElement('button');
+                    dislikeButton.className = 'dislike-btn';
+                    dislikeButton.textContent = '👎';
+                    dislikeButton.addEventListener('click', (event) => handleFeedback(false, botMessageElement.dataset.conversationId, event));
+                    feedback.appendChild(dislikeButton);
+
+                    botMessageElement.appendChild(feedback);
+                }
+            } else {
+                loader.remove();
+                partialResponse += event.data;
+                if (!botMessageElement) {
+                    botMessageElement = createMessage('', false); 
+                }
+                const botResponse = markdownToHTML(partialResponse);
+                botMessageElement.innerHTML = botResponse;
+                messages.scrollTop = messages.scrollHeight;
+            }
+        };
+    
+        eventSource.onerror = () => {
+            if (!botMessageElement) {
+                createMessage('Sorry, there was an error processing your request.', false);
+            } else {
+                botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+            }
+            loader.remove();
+            eventSource.close();
+        };
+    };
+
     const resetSession = async function() {
         try {
             const response = await fetch(apiBaseUrlDev + '/clear_session', {
@@ -167,14 +263,18 @@
 
             bubble.appendChild(feedback);
         }
+
         messages.appendChild(message);
         messages.scrollTop = messages.scrollHeight;
+
+        return bubble;
     }
 
     window.createMessage = createMessage;
     window.handleFeedback = handleFeedback;
     window.sendMessage = sendMessage;
     window.resetSession = resetSession;
+    window.streamChatMessage = streamChatMessage;
 
     const createWidget = () => {
         const container = document.createElement('div');
@@ -242,10 +342,8 @@
                             <div class="input-wrapper">
                                 <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
                             </div>
-                            <div class="send-button" onclick="sendMessage()">
+                            <div class="send-button" onclick="streamChatMessage()">
                                 <svg id='Send_Letter_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
-
-
                                     <g transform="matrix(1 0 0 1 12 12)" >
                                     <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 6.486000000000001 17.514 2 12 2 z M 15.293 12.707 L 13 10.414 L 13 17 L 11 17 L 11 10.414 L 8.707 12.707 L 7.293000000000001 11.293000000000001 L 12 6.586 L 16.707 11.293 L 15.293 12.707 z" stroke-linecap="round" />
                                     </g>
@@ -756,7 +854,8 @@
             });
         
             input.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') sendMessage();
+                console.log(e.key);
+                if (e.key === 'Enter') streamChatMessage(); // Change back to sendMessage() if necessary
             });
 
             leadForm.addEventListener('submit', async (event) => {

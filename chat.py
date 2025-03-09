@@ -15,6 +15,7 @@ gpt4om = AzureChatOpenAI(
     api_key=AZ_OAI_KEY,
     azure_endpoint=AZ_OAI_ENDPOINT,
     max_retries=2,
+    streaming=True
 )
 
 if __name__ == "__main__":
