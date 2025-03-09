@@ -231,7 +231,6 @@ class LeadResource(Resource):
 
 def save_message(user_message, bot_response, latency, session_id):
     with app.app_context():
-        print(f"Saving message: {user_message} | {bot_response} | {latency} | {session_id}")
         conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency, session_id=session_id)
         db.session.add(conversation)
         db.session.commit()
@@ -312,7 +311,6 @@ def view_session(session_id):
     if session:
         # Sort conversations after fetching since they're already loaded
         conversations = sorted(session.conversations, key=lambda x: x.timestamp)
-        print(f"Conversations: {conversations}")
         return render_template('session.html', session=session, conversations=conversations)
     
     flash('Session not found.', 'danger')
