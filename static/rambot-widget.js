@@ -132,7 +132,6 @@
         let partialResponse = '';
         let botMessageElement = null; // Placeholder for the bot's message element
         const session_id = localStorage.getItem('session_id') || '';
-        // const eventSource = new EventSource(`/api/v1/chat-stream?session_id=${encodeURIComponent(session_id)}&message=${encodeURIComponent(text)}`);
     
         const controller = new AbortController();
         const streamTimeout = setTimeout(() => {
@@ -268,72 +267,6 @@
             }
         });
     }
-    //     eventSource.onmessage = (event) => {
-    //         try {
-    //             const jsonData = JSON.parse(event.data);
-    //             if (jsonData.type === "session_id") {
-    //                 localStorage.setItem('session_id', jsonData.value);
-    //                 return;
-    //             }
-    //         } catch (e) {
-    //             // Ignore
-    //         }
-    //         if (event.data === '[DONE]') {
-    //             eventSource.close();
-    //             clearTimeout(streamTimeout);
-    //             loader.remove();
-
-    //             if (botMessageElement) {
-    //                 const finalResponse = markdownToHTML(partialResponse);
-    //                 botMessageElement.innerHTML = finalResponse;
-
-    //                 const separator = document.createElement('hr');
-    //                 separator.className = 'feedback-separator';
-    //                 botMessageElement.appendChild(separator);
-
-    //                 const feedbackQuestion = document.createElement('div');
-    //                 feedbackQuestion.className = 'feedback-question';
-    //                 feedbackQuestion.innerText = 'How was the response?';
-    //                 botMessageElement.appendChild(feedbackQuestion);
-
-    //                 const feedback = document.createElement('div');
-    //                 feedback.className = 'feedback';
-    //                 const likeButton = document.createElement('button');
-    //                 likeButton.className = 'like-btn';
-    //                 likeButton.textContent = '👍';
-    //                 likeButton.addEventListener('click', (event) => handleFeedback(true, botMessageElement.dataset.conversationId, event));
-    //                 feedback.appendChild(likeButton);
-
-    //                 const dislikeButton = document.createElement('button');
-    //                 dislikeButton.className = 'dislike-btn';
-    //                 dislikeButton.textContent = '👎';
-    //                 dislikeButton.addEventListener('click', (event) => handleFeedback(false, botMessageElement.dataset.conversationId, event));
-    //                 feedback.appendChild(dislikeButton);
-
-    //                 botMessageElement.appendChild(feedback);
-    //             }
-    //         } else {
-    //             loader.remove();
-    //             partialResponse += event.data;
-    //             if (!botMessageElement) {
-    //                 botMessageElement = createMessage('', false); 
-    //             }
-    //             const botResponse = markdownToHTML(partialResponse);
-    //             botMessageElement.innerHTML = botResponse;
-    //             messages.scrollTop = messages.scrollHeight;
-    //         }
-    //     };
-    
-    //     eventSource.onerror = () => {
-    //         if (!botMessageElement) {
-    //             createMessage('Sorry, there was an error processing your request.', false);
-    //         } else {
-    //             botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
-    //         }
-    //         loader.remove();
-    //         eventSource.close();
-    //     };
-    // };
 
     const resetSession = async function() {
         try {
