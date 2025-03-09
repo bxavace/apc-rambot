@@ -83,38 +83,47 @@
         const input = document.querySelector('.chat-input');
         const text = input.value.trim();
         if (!text) return;
-
-        createMessage(text, true);
+    
+        createMessage(text, true); // Display the user's message
         input.value = '';
-
+    
         const messages = document.querySelector('.messages');
         const loader = document.createElement('div');
         loader.className = 'loader';
         messages.appendChild(loader);
         messages.scrollTop = messages.scrollHeight;
-
+    
         let partialResponse = '';
+        let botMessageElement = null; // Placeholder for the bot's message element
         const session_id = localStorage.getItem('session_id') || '';
         const eventSource = new EventSource(`/api/v1/chat-stream?session_id=${encodeURIComponent(session_id)}&message=${encodeURIComponent(text)}`);
-
+    
         eventSource.onmessage = (event) => {
             if (event.data === '[DONE]') {
                 eventSource.close();
-                const botResponse = markdownToHTML(partialResponse);
-                createMessage(botResponse, false);
                 loader.remove();
             } else {
                 partialResponse += event.data;
+                if (!botMessageElement) {
+                    botMessageElement = createMessage('', false); // Create an empty bot message
+                }
+                const botResponse = markdownToHTML(partialResponse);
+                botMessageElement.innerHTML = botResponse; // Update the content of the bot message
+                messages.scrollTop = messages.scrollHeight; // Keep the chat scrolled to the bottom
             }
         };
-
+    
         eventSource.onerror = (error) => {
             console.error('Streaming error:', error);
-            createMessage('Sorry, there was an error processing your request.', false);
+            if (!botMessageElement) {
+                createMessage('Sorry, there was an error processing your request.', false);
+            } else {
+                botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+            }
             loader.remove();
             eventSource.close();
         };
-    }
+    };
 
     const resetSession = async function() {
         try {
@@ -187,12 +196,15 @@
 
         messages.appendChild(message);
         messages.scrollTop = messages.scrollHeight;
+
+        return bubble;
     }
 
     window.createMessage = createMessage;
     window.handleFeedback = handleFeedback;
     window.sendMessage = sendMessage;
     window.resetSession = resetSession;
+    window.streamChatMessage = streamChatMessage;
 
     const createWidget = () => {
         const container = document.createElement('div');
@@ -251,7 +263,7 @@
                         <div class="input-wrapper">
                             <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
                         </div>
-                        <div class="send-button" onclick="sendMessage()">
+                        <div class="send-button" onclick="streamChatMessage()">
                             <svg id='Send_Letter_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
 
 
@@ -598,7 +610,7 @@
         
             input.addEventListener('keypress', (e) => {
                 console.log(e.key);
-                if (e.key === 'Enter') sendMessage();
+                if (e.key === 'Enter') streamChatMessage();
             });
 
             leadForm.addEventListener('submit', async (event) => {
