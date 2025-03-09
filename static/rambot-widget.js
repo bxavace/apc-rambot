@@ -27,7 +27,7 @@
     const handleFeedback = async function (isLike, messageId, event) {
         try {
             const session_id = localStorage.getItem('session_id');
-            const response = await fetch(apiBaseUrlDev + '/api/v1/feedback', {
+            const response = await fetch(apiBaseUrlDev + '/api/feedback', {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/json'
