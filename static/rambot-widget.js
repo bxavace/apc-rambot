@@ -11,17 +11,32 @@
     const apiBaseUrlDev = '';
 
     function markdownToHTML(markdown) {
+        // Escape text content for headers, bold, italic, and link text
+        function escapeContent(text) {
+          return text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        }
+      
+        // Escape attribute values for URLs and alt text
+        function escapeAttr(value) {
+          return value
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;');
+        }
+      
         return markdown
-          .replace(/^##### (.*$)/gim, '<h5>$1</h5>') // H5
-          .replace(/^#### (.*$)/gim, '<h4>$1</h4>')  // H4
-          .replace(/^### (.*$)/gim, '<h3>$1</h3>')  // H3
-          .replace(/^## (.*$)/gim, '<h2>$1</h2>')   // H2
-          .replace(/^# (.*$)/gim, '<h1>$1</h1>')    // H1
-          .replace(/\*\*(.*?)\*\*/gim, '<b>$1</b>') // Bold
-          .replace(/\*(.*?)\*/gim, '<i>$1</i>')     // Italic
-          .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img alt="$1" src="$2" />') // Images
-          .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>') // Links
-          .replace(/\n/g, '<br>'); // New lines
+          .replace(/^##### (.*$)/gim, (match, p1) => `<h5>${escapeContent(p1)}</h5>`)
+          .replace(/^#### (.*$)/gim, (match, p1) => `<h4>${escapeContent(p1)}</h4>`)
+          .replace(/^### (.*$)/gim, (match, p1) => `<h3>${escapeContent(p1)}</h3>`)
+          .replace(/^## (.*$)/gim, (match, p1) => `<h2>${escapeContent(p1)}</h2>`)
+          .replace(/^# (.*$)/gim, (match, p1) => `<h1>${escapeContent(p1)}</h1>`)
+          .replace(/\*\*(.*?)\*\*/gim, (match, p1) => `<b>${escapeContent(p1)}</b>`)
+          .replace(/\*(.*?)\*/gim, (match, p1) => `<i>${escapeContent(p1)}</i>`)
+          .replace(/!\[(.*?)\]\((.*?)\)/gim, (match, p1, p2) => `<img alt="${escapeAttr(p1)}" src="${escapeAttr(p2)}" />`)
+          .replace(/\[(.*?)\]\((.*?)\)/gim, (match, p1, p2) => `<a href="${escapeAttr(p2)}">${escapeContent(p1)}</a>`)
+          .replace(/\n/g, '<br>');
       }
 
     const handleFeedback = async function (isLike, messageId, event) {
@@ -117,10 +132,11 @@
         let partialResponse = '';
         let botMessageElement = null; // Placeholder for the bot's message element
         const session_id = localStorage.getItem('session_id') || '';
-        const eventSource = new EventSource(`/api/v1/chat-stream?session_id=${encodeURIComponent(session_id)}&message=${encodeURIComponent(text)}`);
+        // const eventSource = new EventSource(`/api/v1/chat-stream?session_id=${encodeURIComponent(session_id)}&message=${encodeURIComponent(text)}`);
     
+        const controller = new AbortController();
         const streamTimeout = setTimeout(() => {
-            eventSource.close();
+            controller.abort();
             loader.remove();
             if (!botMessageElement) {
                 createMessage('Sorry, there was an error processing your request.', false);
@@ -129,72 +145,195 @@
             }
         }, 30000);
 
-        eventSource.onmessage = (event) => {
-            try {
-                const jsonData = JSON.parse(event.data);
-                if (jsonData.type === "session_id") {
-                    localStorage.setItem('session_id', jsonData.session_id);
-                    return;
-                }
-            } catch (e) {
-                // Ignore
+        fetch('/api/v1/chat-stream', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ session_id, message: text }),
+            signal: controller.signal
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch response');
             }
-            if (event.data === '[DONE]') {
-                eventSource.close();
-                clearTimeout(streamTimeout);
-                loader.remove();
 
-                if (botMessageElement) {
-                    const finalResponse = markdownToHTML(partialResponse);
-                    botMessageElement.innerHTML = finalResponse;
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
 
-                    const separator = document.createElement('hr');
-                    separator.className = 'feedback-separator';
-                    botMessageElement.appendChild(separator);
+            function processStream() {
+                return reader.read().then(({ done, value }) => {
+                    if (done) {
+                        clearTimeout(streamTimeout);
+                        loader.remove();
 
-                    const feedbackQuestion = document.createElement('div');
-                    feedbackQuestion.className = 'feedback-question';
-                    feedbackQuestion.innerText = 'How was the response?';
-                    botMessageElement.appendChild(feedbackQuestion);
+                        if (botMessageElement) {
+                            const finalResponse = markdownToHTML(partialResponse);
+                            console.log('Final response:', finalResponse);
+                            botMessageElement.innerHTML = markdownToHTML(finalResponse);
 
-                    const feedback = document.createElement('div');
-                    feedback.className = 'feedback';
-                    const likeButton = document.createElement('button');
-                    likeButton.className = 'like-btn';
-                    likeButton.textContent = '👍';
-                    likeButton.addEventListener('click', (event) => handleFeedback(true, botMessageElement.dataset.conversationId, event));
-                    feedback.appendChild(likeButton);
+                            const separator = document.createElement('hr');
+                            separator.className = 'feedback-separator';
+                            botMessageElement.appendChild(separator);
 
-                    const dislikeButton = document.createElement('button');
-                    dislikeButton.className = 'dislike-btn';
-                    dislikeButton.textContent = '👎';
-                    dislikeButton.addEventListener('click', (event) => handleFeedback(false, botMessageElement.dataset.conversationId, event));
-                    feedback.appendChild(dislikeButton);
+                            const feedbackQuestion = document.createElement('div');
+                            feedbackQuestion.className = 'feedback-question';
+                            feedbackQuestion.innerText = 'How was the response?';
+                            botMessageElement.appendChild(feedbackQuestion);
 
-                    botMessageElement.appendChild(feedback);
-                }
-            } else {
-                loader.remove();
-                partialResponse += event.data;
-                if (!botMessageElement) {
-                    botMessageElement = createMessage('', false); 
-                }
-                const botResponse = markdownToHTML(partialResponse);
-                botMessageElement.innerHTML = botResponse;
-                messages.scrollTop = messages.scrollHeight;
+                            const feedback = document.createElement('div');
+                            feedback.className = 'feedback';
+                            const likeButton = document.createElement('button');
+                            likeButton.className = 'like-btn';
+                            likeButton.textContent = '👍';
+                            likeButton.addEventListener('click', (event) => handleFeedback(true, botMessageElement.dataset.conversationId, event));
+                            feedback.appendChild(likeButton);
+
+                            const dislikeButton = document.createElement('button');
+                            dislikeButton.className = 'dislike-btn';
+                            dislikeButton.textContent = '👎';
+                            dislikeButton.addEventListener('click', (event) => handleFeedback(false, botMessageElement.dataset.conversationId, event));
+                            feedback.appendChild(dislikeButton);
+
+                            botMessageElement.appendChild(feedback);
+                        }
+                        return;
+                    }
+
+                    const chunk = decoder.decode(value, { stream: true });
+                    loader.remove();
+
+                    try {
+                        console.log('Chunk:', chunk);
+                        const lines = chunk.split('\n');
+                        
+                        for (const line of lines) {
+                            if (line.startsWith('data: ')) {
+                                const content = line.substring(6);
+                                
+                                if (!content) continue;
+                                
+                                if (content.startsWith('{') && content.includes('"type"')) {
+                                    try {
+                                        const jsonData = JSON.parse(content);
+                                        if (jsonData.type === "session_id") {
+                                            localStorage.setItem('session_id', jsonData.value);
+                                            continue;
+                                        }
+                                    } catch (jsonError) {
+                                        console.error('Error parsing JSON from stream:', jsonError);
+                                    }
+                                }
+                                
+                                if (content === '[DONE]') {
+                                    if (botMessageElement) {
+                                        const finalResponse = markdownToHTML(partialResponse);
+                                        botMessageElement.innerHTML = finalResponse;
+                                    }
+                                    continue; 
+                                }
+                                
+                                partialResponse += content;
+                                if (!botMessageElement) {
+                                    botMessageElement = createMessage('', false);
+                                }
+                                
+                                const botResponse = markdownToHTML(partialResponse);
+                                botMessageElement.innerHTML = botResponse;
+                                messages.scrollTop = messages.scrollHeight;
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error processing stream:', error);
+                        if (!botMessageElement) {
+                            createMessage('Sorry, there was an error processing your request.', false);
+                        } else {
+                            botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+                        }
+                    }
+
+                    return processStream();
+                });
             }
-        };
-    
-        eventSource.onerror = () => {
+
+            return processStream();
+        })
+        .catch(error => {
+            clearTimeout(streamTimeout);
+            loader.remove();
             if (!botMessageElement) {
                 createMessage('Sorry, there was an error processing your request.', false);
             } else {
                 botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
             }
-            loader.remove();
-            eventSource.close();
-        };
-    };
+        });
+    }
+    //     eventSource.onmessage = (event) => {
+    //         try {
+    //             const jsonData = JSON.parse(event.data);
+    //             if (jsonData.type === "session_id") {
+    //                 localStorage.setItem('session_id', jsonData.value);
+    //                 return;
+    //             }
+    //         } catch (e) {
+    //             // Ignore
+    //         }
+    //         if (event.data === '[DONE]') {
+    //             eventSource.close();
+    //             clearTimeout(streamTimeout);
+    //             loader.remove();
+
+    //             if (botMessageElement) {
+    //                 const finalResponse = markdownToHTML(partialResponse);
+    //                 botMessageElement.innerHTML = finalResponse;
+
+    //                 const separator = document.createElement('hr');
+    //                 separator.className = 'feedback-separator';
+    //                 botMessageElement.appendChild(separator);
+
+    //                 const feedbackQuestion = document.createElement('div');
+    //                 feedbackQuestion.className = 'feedback-question';
+    //                 feedbackQuestion.innerText = 'How was the response?';
+    //                 botMessageElement.appendChild(feedbackQuestion);
+
+    //                 const feedback = document.createElement('div');
+    //                 feedback.className = 'feedback';
+    //                 const likeButton = document.createElement('button');
+    //                 likeButton.className = 'like-btn';
+    //                 likeButton.textContent = '👍';
+    //                 likeButton.addEventListener('click', (event) => handleFeedback(true, botMessageElement.dataset.conversationId, event));
+    //                 feedback.appendChild(likeButton);
+
+    //                 const dislikeButton = document.createElement('button');
+    //                 dislikeButton.className = 'dislike-btn';
+    //                 dislikeButton.textContent = '👎';
+    //                 dislikeButton.addEventListener('click', (event) => handleFeedback(false, botMessageElement.dataset.conversationId, event));
+    //                 feedback.appendChild(dislikeButton);
+
+    //                 botMessageElement.appendChild(feedback);
+    //             }
+    //         } else {
+    //             loader.remove();
+    //             partialResponse += event.data;
+    //             if (!botMessageElement) {
+    //                 botMessageElement = createMessage('', false); 
+    //             }
+    //             const botResponse = markdownToHTML(partialResponse);
+    //             botMessageElement.innerHTML = botResponse;
+    //             messages.scrollTop = messages.scrollHeight;
+    //         }
+    //     };
+    
+    //     eventSource.onerror = () => {
+    //         if (!botMessageElement) {
+    //             createMessage('Sorry, there was an error processing your request.', false);
+    //         } else {
+    //             botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+    //         }
+    //         loader.remove();
+    //         eventSource.close();
+    //     };
+    // };
 
     const resetSession = async function() {
         try {

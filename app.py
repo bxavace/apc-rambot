@@ -87,20 +87,39 @@ class Chatbot(Resource):
     
 class ChatbotStream(Resource):
     @cross_origin(supports_credentials=True)
-    def get(self):
-        session_id = request.args.get('session_id')
-        user_message = request.args.get('message')
+    def post(self):
+        data = request.json
+        user_message = data.get('message')
+        client_session_id = data.get('session_id')
 
-        if not session_id:
-            new_session = Session(start_time=datetime.now())
-            db.session.add(new_session)
-            db.session.commit()
-            session_id = new_session.id
-            flask_session['session_id'] = session_id
-
+        if client_session_id:
+            session = Session.query.get(client_session_id)
+            if session:
+                session_id = client_session_id
+            else:
+                new_session = Session(start_time=datetime.now())
+                db.session.add(new_session)
+                db.session.commit()
+                session_id = new_session.id
+        else:
+            session_id = flask_session.get('session_id')
+            if not session_id:
+                new_session = Session(start_time=datetime.now())
+                db.session.add(new_session)
+                db.session.commit()
+                session_id = new_session.id
+                flask_session['session_id'] = session_id
+                
+        previous_conversations = Conversation.query.filter_by(session_id=session_id).all()
         conversation = flask_session.get('conversation', [
             {'role': 'ai', 'content': 'Welcome to Asia Pacific College! I am Rambot, your 24/7 Ram assistant. How can I help you today?'}
         ])
+
+        for conv in previous_conversations:
+            conversation.append({'role': 'human', 'content': conv.user_message})
+            conversation.append({'role': 'ai', 'content': conv.bot_response})
+
+        conversation.append({'role': 'human', 'content': user_message})
 
         time_start = time.time()
         full_response = ""  # Accumulate the response for logging
@@ -119,11 +138,10 @@ class ChatbotStream(Resource):
             latency = time_end - time_start
             
             # Update conversation in session
-            conversation.extend([
-                {'role': 'human', 'content': user_message},
-                {'role': 'ai', 'content': full_response}
-            ])
+            conversation.append({'role': 'ai', 'content': full_response})
             flask_session['conversation'] = conversation
+            flask_session.modified = True
+            print(f"Conversation: {conversation}")
             
             # Save the message to database
             threading.Thread(

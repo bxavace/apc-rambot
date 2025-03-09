@@ -58,7 +58,7 @@
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <li class="page-item {% if not sessions.has_prev %}disabled{% endif %}">
-                            <a class="page-link" href="{{ url_for('admin.admin_panel', page=sessions.prev_num) if sessions.has_prev else '#' }}" aria-label="Previous">
+                            <a class="page-link" href="{{ url_for('admin.admin', page=sessions.prev_num) if sessions.has_prev else '#' }}" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -74,7 +74,7 @@
                             {% endif %}
                         {% endfor %}
                         <li class="page-item {% if not sessions.has_next %}disabled{% endif %}">
-                            <a class="page-link" href="{{ url_for('admin.admin_panel', page=sessions.next_num) if sessions.has_next else '#' }}" aria-label="Next">
+                            <a class="page-link" href="{{ url_for('admin.admin', page=sessions.next_num) if sessions.has_next else '#' }}" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
