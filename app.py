@@ -103,29 +103,31 @@ class ChatbotStream(Resource):
         ])
 
         time_start = time.time()
-        response = rag_chain.invoke({
-            'input': user_message,
-            'chat_history': conversation
-        })
-        response = response['answer']
+        full_response = ""  # Accumulate the response for logging
+        def stream_response():
+            nonlocal full_response
+            for chunk in generate_response(user_message, conversation):
+                full_response += chunk
+                yield f"data: {chunk}\n\n"
+            yield "data: [DONE]\n\n"
+
+        response_stream = stream_response()
         time_end = time.time()
         latency = time_end - time_start
 
         threading.Thread(
             target=save_message,
-            args=(user_message, response, latency, session_id)
+            args=(user_message, full_response, latency, session_id)
         ).start()
 
         conversation.extend([
             {'role': 'human', 'content': user_message},
-            {'role': 'ai', 'content': response}
+            {'role': 'ai', 'content': full_response}
         ])
         flask_session['conversation'] = conversation
 
-        conversation_id = Conversation.query.order_by(Conversation.id.desc()).first().id
-
         return Response(
-            stream_with_context(generate_response(user_message)),
+            stream_with_context(response_stream),
             content_type="text/event-stream"
         )
 
