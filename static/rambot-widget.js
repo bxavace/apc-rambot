@@ -9,34 +9,37 @@
 
     // API URL GOES HERE!
     const apiBaseUrlDev = '';
-
+    
     function markdownToHTML(markdown) {
+        // Convert <br> tags to newline characters so header regexes will match
+        markdown = markdown.replace(/<br\s*\/?>/gi, "\n");
+
         // Escape text content for headers, bold, italic, and link text
         function escapeContent(text) {
-          return text
+            return text
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
         }
-      
+        
         // Escape attribute values for URLs and alt text
         function escapeAttr(value) {
-          return value
+            return value
             .replace(/&/g, '&amp;')
             .replace(/"/g, '&quot;');
         }
-      
+
         return markdown
-          .replace(/^##### (.*$)/gim, (match, p1) => `<h5>${escapeContent(p1)}</h5>`)
-          .replace(/^#### (.*$)/gim, (match, p1) => `<h4>${escapeContent(p1)}</h4>`)
-          .replace(/^### (.*$)/gim, (match, p1) => `<h3>${escapeContent(p1)}</h3>`)
-          .replace(/^## (.*$)/gim, (match, p1) => `<h2>${escapeContent(p1)}</h2>`)
-          .replace(/^# (.*$)/gim, (match, p1) => `<h1>${escapeContent(p1)}</h1>`)
-          .replace(/\*\*(.*?)\*\*/gim, (match, p1) => `<b>${escapeContent(p1)}</b>`)
-          .replace(/\*(.*?)\*/gim, (match, p1) => `<i>${escapeContent(p1)}</i>`)
-          .replace(/!\[(.*?)\]\((.*?)\)/gim, (match, p1, p2) => `<img alt="${escapeAttr(p1)}" src="${escapeAttr(p2)}" />`)
-          .replace(/\[(.*?)\]\((.*?)\)/gim, (match, p1, p2) => `<a href="${escapeAttr(p2)}">${escapeContent(p1)}</a>`)
-          .replace(/\n/g, '<br>');
+        .replace(/^##### (.*$)/gim, (match, p1) => `<h5>${escapeContent(p1)}</h5>`)
+        .replace(/^#### (.*$)/gim, (match, p1) => `<h4>${escapeContent(p1)}</h4>`)
+        .replace(/^### (.*$)/gim, (match, p1) => `<h3>${escapeContent(p1)}</h3>`)
+        .replace(/^## (.*$)/gim, (match, p1) => `<h2>${escapeContent(p1)}</h2>`)
+        .replace(/^# (.*$)/gim, (match, p1) => `<h1>${escapeContent(p1)}</h1>`)
+        .replace(/\*\*(.*?)\*\*/gim, (match, p1) => `<b>${escapeContent(p1)}</b>`)
+        .replace(/\*(.*?)\*/gim, (match, p1) => `<i>${escapeContent(p1)}</i>`)
+        .replace(/!\[(.*?)\]\((.*?)\)/gim, (match, p1, p2) => `<img alt="${escapeAttr(p1)}" src="${escapeAttr(p2)}" />`)
+        .replace(/\[(.*?)\]\((.*?)\)/gim, (match, p1, p2) => `<a href="${escapeAttr(p2)}">${escapeContent(p1)}</a>`)
+        .replace(/\n/g, '<br>');
       }
 
     const handleFeedback = async function (isLike, messageId, event) {
@@ -167,9 +170,9 @@
                         loader.remove();
 
                         if (botMessageElement) {
+                            console.log('Partial response:', partialResponse);
                             const finalResponse = markdownToHTML(partialResponse);
-                            console.log('Final response:', finalResponse);
-                            botMessageElement.innerHTML = markdownToHTML(finalResponse);
+                            botMessageElement.innerHTML = finalResponse;
 
                             const separator = document.createElement('hr');
                             separator.className = 'feedback-separator';
@@ -203,7 +206,6 @@
                     loader.remove();
 
                     try {
-                        console.log('Chunk:', chunk);
                         const lines = chunk.split('\n');
                         
                         for (const line of lines) {
@@ -225,12 +227,9 @@
                                 }
                                 
                                 if (content === '[DONE]') {
-                                    if (botMessageElement) {
-                                        const finalResponse = markdownToHTML(partialResponse);
-                                        botMessageElement.innerHTML = finalResponse;
-                                    }
                                     continue; 
                                 }
+                                
                                 
                                 partialResponse += content;
                                 if (!botMessageElement) {
@@ -926,7 +925,6 @@
             });
         
             input.addEventListener('keypress', (e) => {
-                console.log(e.key);
                 if (e.key === 'Enter') streamChatMessage(); // Change back to sendMessage() if necessary
             });
 
