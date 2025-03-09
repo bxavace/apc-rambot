@@ -208,9 +208,15 @@
                             <button type="button" onclick="document.getElementById('modal').remove()" class="cancel-btn">No thanks, I just want to chat</button>
                     </div>
                     <div class="chat-header">
-                    Chat with APC RamBot
-                    <span class="pill">Experimental</span>
-                    <button class="reset" onclick="resetSession()">Reset</button>
+                        <div class="left">
+                        <span>
+                        Chat with APC RamBot
+                        </span>
+                        <span class="pill">Experimental</span>
+                        </div>
+                        <div class="right">
+                        <button class="reset" onclick="resetSession()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </div>
                     </div>
                     <div class="chat-info">
                     <div class="info-text">
@@ -387,6 +393,9 @@
                 border-radius: 20px 20px 0 0;
                 font-weight: 600;
                 color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
 
             .pill {
@@ -653,8 +662,8 @@
             .chat-input {
                 width: 100%;
                 padding: 12px 20px;
-                border: 1px solid #ddd;
-                border-radius: 10px;
+                border: 1px solid #ddd !important;
+                border-radius: 10px !important;
                 outline: none;
                 background: white;
             }
@@ -680,6 +689,7 @@
                 color: #666;
                 text-align: center;
                 margin-bottom: 16px;
+                padding: 8px;
             }
 
             .chat-info {
