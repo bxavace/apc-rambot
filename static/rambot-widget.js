@@ -46,10 +46,22 @@
             console.error('Error submitting feedback:', error);
         } finally {
             const feedbackContainer = event.target.parentElement;
-            feedbackContainer.innerText = 'Thank you for your feedback!';
+            const thankYouElement = document.createElement('div');
+            thankYouElement.className = 'feedback-thankyou';
+            thankYouElement.innerText = 'Thank you for your feedback!';
+            thankYouElement.style.opacity = '0';
+            feedbackContainer.innerHTML = '';
+            feedbackContainer.appendChild(thankYouElement);
             setTimeout(() => {
-                feedbackContainer.innerText = '';
-            }, 5000);
+                thankYouElement.style.transition = 'opacity 0.5s ease';
+                thankYouElement.style.opacity = '1';
+            }, 10);            
+            setTimeout(() => {
+                thankYouElement.style.opacity = '0';
+                setTimeout(() => {
+                    feedbackContainer.innerHTML = '';
+                }, 500);
+            }, 4500);
         }
     }
 
@@ -137,7 +149,6 @@
             const feedbackQuestion = document.createElement('div');
             feedbackQuestion.className = 'feedback-question';
             feedbackQuestion.innerText = 'How was the response?';
-            bubble.appendChild(feedbackQuestion);
 
             const feedback = document.createElement('div');
             feedback.className = 'feedback';
@@ -145,6 +156,7 @@
             likeButton.className = 'like-btn';
             likeButton.textContent = '👍';
             likeButton.addEventListener('click', (event) => handleFeedback(true, conversationId, event));
+            feedback.appendChild(feedbackQuestion);
             feedback.appendChild(likeButton);
 
             const dislikeButton = document.createElement('button');
@@ -596,6 +608,11 @@
                 color: #777;
                 margin-bottom: 5px;
                 align-self: flex-start;
+            }
+
+            .feedback {
+                font-size: 0.9em;
+                color: #777;
             }
 
             .feedback button {
