@@ -275,6 +275,18 @@ def allowed_file(filename):
     ALLOWED_EXTENSIONS = {'pdf', 'md'}
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@admin_bp.route('/leads', methods=['GET'])
+@login_required
+def get_leads():
+    page = request.args.get('page', 1, type=int)
+    per_page = 15
+    leads = Lead.query.paginate(
+        page=page,
+        per_page=per_page,
+        error_out=False
+    )
+    return render_template('leads.html', leads=leads)
+
 @admin_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():

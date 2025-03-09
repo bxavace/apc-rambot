@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Leads{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between">
+            <h2>Leads</h2>
+            <a class="btn btn-primary mb-2" href="{{ url_for('admin.admin') }}">Go back</a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lead in leads %}
+                <tr>
+                    <th scope="row">{{ lead.id }}</th>
+                    <td>{{ lead.name }}</td>
+                    <td>{{ lead.email }}</td>
+                    <td>{{ lead.phone }}</td>
+                    <td>{{ lead.type }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No leads found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

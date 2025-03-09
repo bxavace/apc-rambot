@@ -22,6 +22,8 @@
         <h1>Admin Panel</h1>
         <div class="nav">
             <a class="btn btn-link btn-sm" href="{{ url_for('admin.get_documents') }}">See Documents</a>
+            <a href="{{ url_for('admin.get_leads') }}" class="btn btn-link btn-sm">See Leads</a>
+            <a href="{{ url_for('client') }}" class="btn btn-link btn-sm">Chat</a>
         </div>
         <div class="export">
             <a class="btn btn-primary btn-sm" href="{{ url_for('admin.export_data') }}">Export Data</a>
