@@ -376,6 +376,11 @@ def delete_lead(id):
 @admin_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():
+    upload_folder = app.config['UPLOAD_FOLDER']
+
+    if not os.path.exists(upload_folder):
+        os.makedirs(upload_folder)
+
     if request.method == 'GET':
         return render_template('upload.html')
     
@@ -388,7 +393,6 @@ def upload():
         flash('No selected files', 'warning')
         return redirect(request.url)
     
-    upload_folder = app.config['UPLOAD_FOLDER']
     responses = []
     
     for file in files:
