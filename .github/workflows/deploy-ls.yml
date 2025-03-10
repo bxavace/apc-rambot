@@ -1,0 +1,29 @@
+name: Deploy to AWS Lightsail
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+
+    - name: Deploy to AWS Lightsail
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          cd /home/ubuntu/apc-rambot/ &&
+          git pull origin main &&
+          flask db upgrade &&
+          pkill gunicorn || true &&
+          gunicorn -w 3 --daemon -b 0.0.0.0:5000 --certfile=/home/ubuntu/combined.crt --keyfile=/home/ubuntu/apc.edu.ph.key app:app
+        EOF
