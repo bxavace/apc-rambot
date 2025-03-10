@@ -26,6 +26,19 @@ jobs:
         EOF
 
     - name: Deploy to AWS Lightsail
+      env:
+        VECTOR_STORE_ADDR: ${{ secrets.VECTOR_STORE_ADDR }}
+        VECTOR_STORE_KEY: ${{ secrets.VECTOR_STORE_KEY }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        INDEX_NAME_DEV: ${{ secrets.INDEX_NAME_DEV }}
+        FLASK_ENV: ${{ secrets.FLASK_ENV }}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        AZ_OAI_VER: ${{ secrets.AZ_OAI_VER }}
+        AZ_OAI_KEY: ${{ secrets.AZ_OAI_KEY }}
+        AZ_OAI_ENDPOINT: ${{ secrets.AZ_OAI_ENDPOINT }}
+        AZ_OAI_DEPLOYMENT: ${{ secrets.AZ_OAI_DEPLOYMENT }}
+        ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
           set -x
@@ -34,6 +47,18 @@ jobs:
           git pull origin main &&
           python3 -m venv venv &&
           source venv/bin/activate &&
+          echo "VECTOR_STORE_ADDR=${VECTOR_STORE_ADDR}" > .env &&
+          echo "VECTOR_STORE_KEY=${VECTOR_STORE_KEY}" >> .env &&
+          echo "SECRET_KEY=${SECRET_KEY}" >> .env &&
+          echo "INDEX_NAME_DEV=${INDEX_NAME_DEV}" >> .env &&
+          echo "FLASK_ENV=${FLASK_ENV}" >> .env &&
+          echo "DATABASE_URL=${DATABASE_URL}" >> .env &&
+          echo "AZ_OAI_VER=${AZ_OAI_VER}" >> .env &&
+          echo "AZ_OAI_KEY=${AZ_OAI_KEY}" >> .env &&
+          echo "AZ_OAI_ENDPOINT=${AZ_OAI_ENDPOINT}" >> .env &&
+          echo "AZ_OAI_DEPLOYMENT=${AZ_OAI_DEPLOYMENT}" >> .env &&
+          echo "ADMIN_USERNAME=${ADMIN_USERNAME}" >> .env &&
+          echo "ADMIN_PASSWORD=${ADMIN_PASSWORD}" >> .env &&
           pip3 install -r requirements.txt &&
           flask db upgrade &&
           pkill gunicorn || true &&
