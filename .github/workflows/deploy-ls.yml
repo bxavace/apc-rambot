@@ -35,6 +35,7 @@ jobs:
           python3 -m venv venv &&
           source venv/bin/activate &&
           pip3 install -r requirements.txt &&
+          python -m spacy download en_core_web_sm &&
           flask db upgrade &&
           pkill gunicorn || true &&
           gunicorn -w 3 --daemon -b 0.0.0.0:5000 --certfile=/home/ubuntu/combined.crt --keyfile=/home/ubuntu/apc.edu.ph.key app:app
