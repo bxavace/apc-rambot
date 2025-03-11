@@ -13,8 +13,7 @@ from langchain_text_splitters import SpacyTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, WebBaseLoader
 from embed import datastore
 from markdown import markdown
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
+from utils import limiter
 
 import os
 import threading
@@ -35,16 +34,14 @@ else:
     app.config.from_object(Production)
 
 db.init_app(app)
+limiter.init_app(app)
 api = Api(app)
-
-limiter = Limiter(
-    get_remote_address,
-    app=app,
-    default_limits=["200 per day", "50 per hour"],
-)
+log_dir = os.path.join(app.root_path, 'logs')
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
 
 logging.basicConfig(
-    filename='admin_access.log',
+    filename=os.path.join(log_dir, 'admin_access.log'),
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
@@ -267,20 +264,6 @@ def save_message(user_message, bot_response, latency, session_id):
         conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency, session_id=session_id)
         db.session.add(conversation)
         db.session.commit()
-
-@app.before_request
-def csrf_protect():
-    if request.method == "POST":
-        token = flask_session.pop('_csrf_token', None)
-        if not token or token != request.form.get('_csrf_token'):
-            abort(403)
-
-def generate_csrf_token():
-    if '_csrf_token' not in flask_session:
-        flask_session['_csrf_token'] = flask_session.token_hex(16)
-    return flask_session['_csrf_token']
-
-app.jinja_env.globals['csrf_token'] = generate_csrf_token
 
 # markdown template filter
 @app.template_filter('markdown')
