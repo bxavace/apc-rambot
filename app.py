@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session as flask_session, flash
+from flask import Flask, jsonify, request, Blueprint, render_template, redirect, url_for, Response, session as flask_session, flash, abort
 from flask_restful import Api, Resource
 from flask_migrate import Migrate
 from config import Development, Production
@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from chain import rag_chain
 from chain_nh import model
 from functools import wraps
-from langchain_core.messages import HumanMessage, AIMessage
 from flask_cors import CORS, cross_origin
 from datetime import datetime
 from models import db, Conversation, Session, Feedback, Document
@@ -20,9 +19,9 @@ from flask_limiter.util import get_remote_address
 import os
 import threading
 import time
-import json
 import csv
 from io import StringIO
+import logging
 
 load_dotenv()
 
@@ -42,8 +41,14 @@ limiter = Limiter(
     get_remote_address,
     app=app,
     default_limits=["200 per day", "50 per hour"],
-    storage_uri="redis://localhost:6379"
 )
+
+logging.basicConfig(
+    filename='admin_access.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # TODO: Set the allowed CORS for the admin endpoint
 CORS(app, resources={r"/api/*": {"origins": "*"}, r"/client": {"origins": "*"}, r"/test_session": {"origins": "*"}}, supports_credentials=True)
@@ -128,6 +133,20 @@ def save_message(user_message, bot_response, latency, session_id):
         db.session.add(conversation)
         db.session.commit()
 
+@app.before_request
+def csrf_protect():
+    if request.method == "POST":
+        token = flask_session.pop('_csrf_token', None)
+        if not token or token != request.form.get('_csrf_token'):
+            abort(403)
+
+def generate_csrf_token():
+    if '_csrf_token' not in flask_session:
+        flask_session['_csrf_token'] = flask_session.token_hex(16)
+    return flask_session['_csrf_token']
+
+app.jinja_env.globals['csrf_token'] = generate_csrf_token
+
 # markdown template filter
 @app.template_filter('markdown')
 def convert_markdown(text):
@@ -169,8 +188,10 @@ def login():
         password = request.form['password']
         if check_auth(username, password):
             flask_session['authenticated'] = True
+            logger.info(f"Successful login by: {username} from {request.remote_addr}")
             return redirect(url_for('admin.admin'))
         else:
+            logger.warning(f"Failed login attempt by: {username} from {request.remote_addr}")
             flash('Invalid credentials.')
     return render_template('login.html')
 
@@ -178,6 +199,7 @@ def login():
 def logout():
     flask_session.pop('authenticated', None)
     flash('You have been logged out.')
+    logger.info(f"User logged out from {request.remote_addr}")
     return redirect(url_for('admin.login'))
 
 @admin_bp.route('/')
@@ -196,7 +218,6 @@ def view_session(session_id):
     if session:
         # Sort conversations after fetching since they're already loaded
         conversations = sorted(session.conversations, key=lambda x: x.timestamp)
-        print(f"Conversations: {conversations}")
         return render_template('session.html', session=session, conversations=conversations)
     
     flash('Session not found.', 'danger')
@@ -279,7 +300,7 @@ def get_document(id):
                     html_content = markdown(content)
                 return render_template('document.html', document=document, content=html_content)
         except Exception as e:
-            print(f"Error reading file: {e}")
+            logger.exception(f"Error reading file: {e}")
             document.content = None
             flash(f'Error reading file: {e}', 'danger')
             return redirect(url_for('admin.get_documents'))
@@ -304,15 +325,15 @@ def delete_embeddings(document_id):
         datastore.delete([document_id])
         return True
     except Exception as e:
-        print(f"Error deleting document from Azure Search: {e}")
+        logger.exception(f"Error deleting document from Azure Search: {e}")
         return False
 
 def process_file(filepath):
     if not os.path.isfile(filepath):
-        print(f"Error: File does not exist: {filepath}")
+        logger.error(f"Error: File not found: {filepath}")
         return False
     if not (filepath.lower().endswith('.pdf') or filepath.lower().endswith('.md')):
-        print(f"Error: Invalid file type. Expected a PDF or Markdown: {filepath}")
+        logger.error(f"Error: Unsupported file type: {filepath}")
         return False
     try:
         if filepath.lower().endswith('.pdf'):
@@ -323,13 +344,13 @@ def process_file(filepath):
             data = loader.load()
             
         if not data:
-            print(f"Warning: No data loaded from file: {filepath}")
+            logger.warning(f"Warning: No data was loaded from the file: {filepath}")
             return False
 
         text_splitter = SpacyTextSplitter()
         docs = text_splitter.split_documents(data)
         if not docs:
-            print(f"Warning: No documents were split from the file: {filepath}")
+            logger.warning(f"Warning: No documents were split from the file: {filepath}")
             return False
         ids = datastore.add_documents(documents=docs)
         for doc_id in ids:
@@ -339,7 +360,7 @@ def process_file(filepath):
         return True
 
     except Exception as e:
-        print(f"Error processing file {filepath}: {e}")
+        logger.exception(f"Error processing file {filepath}: {e}")
         return False
 
 ### CLIENT VIEW TEST ###
