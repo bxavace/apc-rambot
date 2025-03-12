@@ -386,6 +386,14 @@
                                     <option value="other">Other</option>
                                 </select>
                             </div>
+                            <div class="privacy-policy">
+                                <input type="checkbox" name="privacy" required>
+                                <label for="privacy">By ticking this box, you have read and agree to our <a href="https://www.apc.edu.ph/privacy-policy/">Privacy Policy</a>.</label>
+                                <br>
+                                <small>
+                                   By clicking 'Submit', you consent to the institution processing your personal data in accordance with the Data Privacy Act of 2012 (RA 10173). For more information, please see <a href="https://www.apc.edu.ph/privacy-policy/">Privacy Policy</a>.
+                                </small>
+                            </div>
                             <button type="submit" class="submit-btn">Submit</button>
                             </form>
                             <button type="button" onclick="document.getElementById('modal').remove()" class="cancel-btn">No thanks, I just want to chat</button>
