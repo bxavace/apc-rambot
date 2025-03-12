@@ -8,6 +8,7 @@ from langchain.chains.history_aware_retriever import create_history_aware_retrie
 
 from embed import retriever
 from datetime import datetime
+import markdown
 
 today = datetime.today()
 date = today.strftime("%B %d, %Y")
@@ -90,6 +91,13 @@ qa_prompt = ChatPromptTemplate.from_messages(
 question_answer_chain = create_stuff_documents_chain(gpt4om, qa_prompt)
 
 rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+
+def generate_response(message, chat_history):
+    for chunk in rag_chain.stream({"input": message, "chat_history": chat_history}):
+        # DEBUG: print(chunk, 'type:', type(chunk))
+        if isinstance(chunk, dict) and "answer" in chunk:
+            content = chunk["answer"].replace("\n", "<br>")
+            yield content
 
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)

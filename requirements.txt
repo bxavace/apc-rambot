@@ -14,4 +14,6 @@ pypdf
 html2text
 spacy
 markdown
+beautifulsoup4
+pymysql
 Flask-Limiter
