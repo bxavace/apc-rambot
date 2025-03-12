@@ -153,7 +153,6 @@ class ChatbotStream(Resource):
             conversation.append({'role': 'ai', 'content': full_response})
             flask_session['conversation'] = conversation
             flask_session.modified = True
-            print(f"Conversation: {conversation}")
             
             # Save the message to database
             threading.Thread(
