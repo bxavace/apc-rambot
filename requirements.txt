@@ -16,3 +16,4 @@ spacy
 markdown
 beautifulsoup4
 pymysql
+Flask-Limiter
