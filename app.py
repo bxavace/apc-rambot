@@ -118,7 +118,7 @@ class ChatbotStream(Resource):
                 )
                 db.session.add(new_session)
                 db.session.commit()
-                session_id = new_session.id
+                session_id = new_session.token
         else:
             new_session = Session(
                 start_time=datetime.now(),
@@ -128,7 +128,7 @@ class ChatbotStream(Resource):
             )
             db.session.add(new_session)
             db.session.commit()
-            session_id = new_session.id
+            session_id = new_session.token
             flask_session['session_id'] = session_id
                 
         previous_conversations = Conversation.query.filter_by(session_id=session_id).all()
@@ -181,6 +181,11 @@ class FeedbackResource(Resource):
         session_id = data.get('session_id')
         is_like = data.get('isLike')
         timestamp = datetime.now()
+
+        session = Session.query.filter_by(token=session_id).first()
+        if not session:
+            return jsonify({'message': 'Session not found.'}), 404
+        
         feedback = Feedback(session_id=session_id, feedback=is_like, timestamp=timestamp)
         db.session.add(feedback)
         db.session.commit()
@@ -269,7 +274,11 @@ class LeadResource(Resource):
 
 def save_message(user_message, bot_response, latency, session_id):
     with app.app_context():
-        conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency, session_id=session_id)
+        session = Session.query.filter_by(token=session_id).first()
+        if not session:
+            return
+    
+        conversation = Conversation(user_message=user_message, bot_response=bot_response, latency=latency, session_id=session.id)
         db.session.add(conversation)
         db.session.commit()
 
