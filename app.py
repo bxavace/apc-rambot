@@ -7,7 +7,7 @@ from chain import rag_chain, generate_response
 from chain_nh import model
 from functools import wraps
 from flask_cors import CORS, cross_origin
-from datetime import datetime
+from datetime import datetime, timedelta
 from models import db, Conversation, Session, Feedback, Document, Lead
 from langchain_text_splitters import SpacyTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, WebBaseLoader
@@ -106,21 +106,30 @@ class ChatbotStream(Resource):
 
         if client_session_id:
             session = Session.query.get(client_session_id)
-            if session:
+            if session and not session.is_expired:
                 session_id = client_session_id
+                session.last_update = datetime.now()
             else:
-                new_session = Session(start_time=datetime.now())
+                new_session = Session(
+                    start_time=datetime.now(),
+                    expires_at=datetime.now() + timedelta(hours=6),
+                    user_agent=request.user_agent.string,
+                    ip_address=request.remote_addr,
+                )
                 db.session.add(new_session)
                 db.session.commit()
                 session_id = new_session.id
         else:
-            session_id = flask_session.get('session_id')
-            if not session_id:
-                new_session = Session(start_time=datetime.now())
-                db.session.add(new_session)
-                db.session.commit()
-                session_id = new_session.id
-                flask_session['session_id'] = session_id
+            new_session = Session(
+                start_time=datetime.now(),
+                expires_at=datetime.now() + timedelta(hours=6),
+                user_agent=request.user_agent.string,
+                ip_address=request.remote_addr,
+            )
+            db.session.add(new_session)
+            db.session.commit()
+            session_id = new_session.id
+            flask_session['session_id'] = session_id
                 
         previous_conversations = Conversation.query.filter_by(session_id=session_id).all()
         conversation = flask_session.get('conversation', [
@@ -340,7 +349,7 @@ def admin():
     )
     return render_template('admin.html', sessions=sessions)
 
-@admin_bp.route('/admin/session/<int:session_id>', methods=['GET'])
+@admin_bp.route('/admin/session/<string:session_id>', methods=['GET'])
 @login_required
 def view_session(session_id):
     session = Session.query\
