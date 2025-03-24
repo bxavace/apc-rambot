@@ -192,7 +192,7 @@ class FeedbackResource(Resource):
         current_session = Session.query.filter_by(token=session_id).first()
         if not current_session:
             return jsonify({'message': 'Session not found.'}), 404
-        feedback = Feedback(session_id=current_session.id, is_like=is_like, timestamp=timestamp)
+        feedback = Feedback(session_id=current_session.id, feedback=is_like, timestamp=timestamp)
         
         db.session.add(feedback)
         db.session.commit()
