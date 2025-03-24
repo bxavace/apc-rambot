@@ -170,7 +170,7 @@ class ChatbotStream(Resource):
             # Save the message to database
             threading.Thread(
                 target=save_message,
-                args=(user_message, full_response, latency, session_id)
+                args=(user_message, full_response, latency, current_session.id)
             ).start()
 
         return Response(
@@ -185,7 +185,12 @@ class FeedbackResource(Resource):
         session_id = data.get('session_id')
         is_like = data.get('isLike')
         timestamp = datetime.now()
-        feedback = Feedback(session_id=session_id, feedback=is_like, timestamp=timestamp)
+
+        current_session = Session.query.filter_by(token=session_id).first()
+        if not current_session:
+            return jsonify({'message': 'Session not found.'}), 404
+        feedback = Feedback(session_id=current_session.id, is_like=is_like, timestamp=timestamp)
+        
         db.session.add(feedback)
         db.session.commit()
 
