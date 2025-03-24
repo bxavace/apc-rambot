@@ -630,9 +630,6 @@ def export_csv():
 
 app.register_blueprint(admin_bp, url_prefix='/admin')
 
-with app.app_context():
-    db.create_all()
-
 api.add_resource(GreetTest, '/api/v1/test')
 api.add_resource(FeedbackResource, '/api/feedback')
 api.add_resource(LeadResource, '/api/v1/lead', '/api/v1/lead/<int:lead_id>')
