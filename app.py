@@ -7,7 +7,7 @@ from chain import rag_chain, generate_response
 from chain_nh import model
 from functools import wraps
 from flask_cors import CORS, cross_origin
-from datetime import datetime
+from datetime import datetime, timedelta
 from models import db, Conversation, Session, Feedback, Document, Lead
 from langchain_text_splitters import SpacyTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, WebBaseLoader
@@ -106,23 +106,36 @@ class ChatbotStream(Resource):
 
         if client_session_id:
             session = Session.query.get(client_session_id)
-            if session:
+            if session and not session.is_expired:
                 session_id = client_session_id
+                session.last_update = datetime.now()
             else:
-                new_session = Session(start_time=datetime.now())
+                new_session = Session(
+                    start_time=datetime.now(),
+                    expires_at=datetime.now() + timedelta(hours=6),
+                    user_agent=request.user_agent.string,
+                    ip_address=request.remote_addr
+                )
                 db.session.add(new_session)
                 db.session.commit()
-                session_id = new_session.id
+                session_id = new_session.token
         else:
-            session_id = flask_session.get('session_id')
-            if not session_id:
-                new_session = Session(start_time=datetime.now())
-                db.session.add(new_session)
-                db.session.commit()
-                session_id = new_session.id
-                flask_session['session_id'] = session_id
-                
-        previous_conversations = Conversation.query.filter_by(session_id=session_id).all()
+            new_session = Session(
+                start_time=datetime.now(),
+                expires_at=datetime.now() + timedelta(hours=6),
+                user_agent=request.user_agent.string,
+                ip_address=request.remote_addr
+            )
+            db.session.add(new_session)
+            db.session.commit()
+            session_id = new_session.token
+            flask_session['session_id'] = session_id
+        
+        current_session = Session.query.filter_by(id=session_id).first()
+        if not current_session:
+            return jsonify({'message': 'Session not found.'}), 404
+        
+        previous_conversations = Conversation.query.filter_by(session_id=current_session.id).all()
         conversation = flask_session.get('conversation', [
             {'role': 'ai', 'content': 'Welcome to Asia Pacific College! I am Rambot, your 24/7 Ram assistant. How can I help you today?'}
         ])
@@ -613,11 +626,11 @@ with app.app_context():
     db.create_all()
 
 api.add_resource(GreetTest, '/api/v1/test')
-api.add_resource(Chatbot, '/api/v1/chat')
 api.add_resource(FeedbackResource, '/api/feedback')
-api.add_resource(ChatbotNoHistory, '/api/v1/chat-no-history')
 api.add_resource(LeadResource, '/api/v1/lead', '/api/v1/lead/<int:lead_id>')
 api.add_resource(ChatbotStream, '/api/v1/chat-stream')
+# api.add_resource(Chatbot, '/api/v1/chat') # Deprecated
+# api.add_resource(ChatbotNoHistory, '/api/v1/chat-no-history') # Deprecated, for testing only
 
 if __name__ == '__main__':
     app.run(debug=True)
