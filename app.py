@@ -8,7 +8,7 @@ from chain_nh import model
 from functools import wraps
 from flask_cors import CORS, cross_origin
 from datetime import datetime, timedelta
-from models import db, Conversation, Session, Feedback, Document, Lead
+from models import db
 from langchain_text_splitters import SpacyTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, WebBaseLoader
 from embed import datastore
@@ -49,6 +49,9 @@ logger = logging.getLogger(__name__)
 
 # TODO: Set the allowed CORS for the admin endpoint
 CORS(app, resources={r"/api/*": {"origins": "*"}, r"/client": {"origins": "*"}, r"/test_session": {"origins": "*"}}, supports_credentials=True)
+
+from models import Session, Conversation, Feedback, Lead, Document
+
 migrate = Migrate(app, db)
 admin_bp = Blueprint('admin', __name__, template_folder='templates')
 
