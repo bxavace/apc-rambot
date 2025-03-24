@@ -131,7 +131,7 @@ class ChatbotStream(Resource):
             session_id = new_session.token
             flask_session['session_id'] = session_id
         
-        current_session = Session.query.filter_by(id=session_id).first()
+        current_session = Session.query.filter_by(token=session_id).first()
         if not current_session:
             return jsonify({'message': 'Session not found.'}), 404
         
