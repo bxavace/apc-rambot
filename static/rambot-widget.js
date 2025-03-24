@@ -7,6 +7,8 @@
     fontAwesomeCss.referrerPolicy = 'no-referrer';
     document.head.appendChild(fontAwesomeCss);
 
+    errorMessage = "Sorry, there was an error processing your request. Please try again later.";
+
     // API URL GOES HERE!
     const apiBaseUrlDev = '';
     
@@ -111,7 +113,7 @@
                 createMessage(botResponse, false, data.conversation_id);
             } catch (error) {
                 console.error('Error:', error);
-                createMessage('Sorry, there was an error processing your request.', false);
+                createMessage(errorMessage, false);
             } finally {
                 loader.remove();
             }
@@ -141,13 +143,12 @@
             controller.abort();
             loader.remove();
             if (!botMessageElement) {
-                createMessage('Sorry, there was an error processing your request.', false);
+                createMessage(errorMessage, false);
             } else {
-                botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+                botMessageElement.innerHTML = errorMessage;
             }
         }, 30000);
-
-        fetch('/api/v1/chat-stream', {
+        fetch(apiBaseUrlDev + "/api/v1/chat-stream", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -170,7 +171,7 @@
                         loader.remove();
 
                         if (botMessageElement) {
-                            console.log('Partial response:', partialResponse);
+                            // console.log('Partial response:', partialResponse);
                             const finalResponse = markdownToHTML(partialResponse);
                             botMessageElement.innerHTML = finalResponse;
 
@@ -244,9 +245,9 @@
                     } catch (error) {
                         console.error('Error processing stream:', error);
                         if (!botMessageElement) {
-                            createMessage('Sorry, there was an error processing your request.', false);
+                            createMessage(errorMessage, false);
                         } else {
-                            botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+                            botMessageElement.innerHTML = errorMessage;
                         }
                     }
 
@@ -260,9 +261,9 @@
             clearTimeout(streamTimeout);
             loader.remove();
             if (!botMessageElement) {
-                createMessage('Sorry, there was an error processing your request.', false);
+                createMessage(errorMessage, false);
             } else {
-                botMessageElement.innerHTML = 'Sorry, there was an error processing your request.';
+                botMessageElement.innerHTML = errorMessage;
             }
         });
     }
