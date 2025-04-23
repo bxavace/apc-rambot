@@ -112,6 +112,7 @@ class ChatbotStream(Resource):
             if session and not session.is_expired:
                 session_id = client_session_id
                 session.last_update = datetime.now()
+                db.session.commit()
             else:
                 new_session = Session(
                     start_time=datetime.now(),
