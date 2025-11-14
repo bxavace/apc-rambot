@@ -14,6 +14,8 @@ AZ_OAI_ENDPOINT=<azure_openai_endpoint>
 AZ_OAI_KEY=<azure_openai_key>
 AZ_OAI_VER=2024-02-01
 AZ_OAI_DEPLOYMENT=<azure_openai_embeddings_deployment_name>
+INDEX_NAME_DEV=<index_name>
+SECRET_KEY=<secret_key>
 ```
 
 Run (dev):

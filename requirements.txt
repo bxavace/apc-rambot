@@ -6,7 +6,7 @@ flask-sqlalchemy
 python-dotenv
 azure-identity
 azure-search-documents
-langchain
+langchain==0.3.27
 langchain-openai
 langchain-community
 gunicorn
