@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block title %}Azure AI Search Explorer{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3>Azure AI Search Explorer</h3>
+    <p class="text-muted">Query the indexed documents stored in your Azure AI Search service. This page is a safe fallback that won't affect existing document views.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% if not search_configured %}
+        <div class="alert alert-warning" role="alert">
+            Azure AI Search isn't configured yet. Set <code>AZURE_SEARCH_ENDPOINT</code>, <code>AZURE_SEARCH_INDEX</code>, and <code>AZURE_SEARCH_KEY</code>
+            in your environment to enable this page.
+        </div>
+    {% endif %}
+
+    <form method="POST" class="card mb-4">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="query">Search phrase</label>
+                <input type="text" name="query" id="query" class="form-control" placeholder="e.g. tuition fees" value="{{ query }}" {% if not search_configured %}disabled{% endif %}>
+                <small class="form-text text-muted">Uses Azure AI Search full-text capabilities (default top {{ search_limit }} results).</small>
+            </div>
+            <button type="submit" class="btn btn-primary" {% if not search_configured %}disabled{% endif %}>Search</button>
+        </div>
+    </form>
+
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if results %}
+        <div class="card">
+            <div class="card-header">Results ({{ results|length }})</div>
+            <div class="list-group list-group-flush">
+                {% for result in results %}
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <strong>Score:</strong>
+                            <span>{{ result.score|default('n/a') }}</span>
+                        </div>
+                        {% if result.highlights %}
+                            <div class="mt-2">
+                                <strong>Highlights</strong>
+                                <pre class="mb-0"><code>{{ result.highlights|tojson(indent=2) }}</code></pre>
+                            </div>
+                        {% endif %}
+                        {% if result.captions %}
+                            <div class="mt-2">
+                                <strong>Captions</strong>
+                                <pre class="mb-0"><code>{{ result.captions|tojson(indent=2) }}</code></pre>
+                            </div>
+                        {% endif %}
+                        <div class="mt-2">
+                            <strong>Fields</strong>
+                            <pre class="mb-0"><code>{{ result.fields|tojson(indent=2) }}</code></pre>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% elif query %}
+        <div class="alert alert-info">No results found for "{{ query }}".</div>
+    {% endif %}
+
+    <div class="mt-3">
+        <a class="btn btn-link" href="{{ url_for('admin.get_documents') }}">Back to Documents</a>
+    </div>
+</div>
+{% endblock %}

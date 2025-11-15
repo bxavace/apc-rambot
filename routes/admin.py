@@ -8,6 +8,9 @@ from functools import wraps
 from io import StringIO
 from urllib.parse import urlencode
 
+from azure.core.credentials import AzureKeyCredential
+from azure.search.documents import SearchClient
+
 from flask import (
     Blueprint,
     Response,
@@ -280,6 +283,40 @@ def get_documents():
     return render_template("documents.html", documents=documents)
 
 
+@admin_bp.route("/documents/ai-search", methods=["GET", "POST"])
+@login_required
+def documents_ai_search():
+    query = ""
+    results = []
+    error = None
+    search_configured = _is_ai_search_configured()
+
+    if request.method == "POST":
+        query = (request.form.get("query") or "").strip()
+        if not search_configured:
+            error = (
+                "Azure AI Search isn't configured yet. Please set AZURE_SEARCH_ENDPOINT, "
+                "AZURE_SEARCH_INDEX, and AZURE_SEARCH_KEY."
+            )
+        elif not query:
+            error = "Enter a search query to continue."
+        else:
+            try:
+                results = _search_ai_documents(query)
+            except Exception as err:  # pylint: disable=broad-except
+                logger.exception("Azure AI Search query failed: %s", err)
+                error = f"Search failed: {err}"
+
+    return render_template(
+        "documents_ai_search.html",
+        query=query,
+        results=results,
+        error=error,
+        search_configured=search_configured,
+        search_limit=current_app.config.get("AZURE_SEARCH_DEFAULT_TOP", 10),
+    )
+
+
 @admin_bp.route("/documents/<int:id>", methods=["GET"])
 @login_required
 def get_document(id):
@@ -327,6 +364,50 @@ def delete_embeddings(document_id):
     except Exception as err:  # pylint: disable=broad-except
         logger.exception("Error deleting document from Azure Search: %s", err)
         return False
+
+
+def _is_ai_search_configured():
+    config = current_app.config
+    required_keys = [
+        "AZURE_SEARCH_ENDPOINT",
+        "AZURE_SEARCH_INDEX",
+        "AZURE_SEARCH_KEY",
+    ]
+    return all(config.get(key) for key in required_keys)
+
+
+def _get_search_client():
+    if not _is_ai_search_configured():
+        return None
+    config = current_app.config
+    credential = AzureKeyCredential(config["AZURE_SEARCH_KEY"])
+    return SearchClient(
+        endpoint=config["AZURE_SEARCH_ENDPOINT"],
+        index_name=config["AZURE_SEARCH_INDEX"],
+        credential=credential,
+    )
+
+
+def _serialize_search_document(doc):
+    data = dict(doc)
+    score = data.pop("@search.score", None)
+    highlights = data.pop("@search.highlights", None)
+    captions = data.pop("@search.captions", None)
+    return {
+        "score": score,
+        "highlights": highlights,
+        "captions": captions,
+        "fields": data,
+    }
+
+
+def _search_ai_documents(query):
+    client = _get_search_client()
+    if client is None:
+        raise RuntimeError("Azure AI Search isn't configured.")
+    top = current_app.config.get("AZURE_SEARCH_DEFAULT_TOP", 10)
+    response = client.search(search_text=query, top=top)
+    return [_serialize_search_document(doc) for doc in response]
 
 
 def process_file(filepath):

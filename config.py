@@ -23,6 +23,10 @@ class Config:
     M365_TENANT_ID = os.getenv('M365_TENANT_ID')
     M365_REDIRECT_URI = os.getenv('M365_REDIRECT_URI')
     M365_SCOPES = ['openid', 'profile', 'email', 'offline_access']
+    AZURE_SEARCH_ENDPOINT = os.getenv('AZURE_SEARCH_ENDPOINT') or os.getenv('VECTOR_STORE_ADDR')
+    AZURE_SEARCH_KEY = os.getenv('AZURE_SEARCH_KEY') or os.getenv('VECTOR_STORE_KEY')
+    AZURE_SEARCH_INDEX = os.getenv('AZURE_SEARCH_INDEX') or os.getenv('INDEX_NAME_DEV')
+    AZURE_SEARCH_DEFAULT_TOP = int(os.getenv('AZURE_SEARCH_DEFAULT_TOP', 10))
 
 class Development(Config):
     DEBUG = True
