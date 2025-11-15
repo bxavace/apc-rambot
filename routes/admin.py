@@ -6,6 +6,7 @@ import os
 import time
 from functools import wraps
 from io import StringIO
+from urllib.parse import urlencode
 
 from flask import (
     Blueprint,
@@ -72,7 +73,11 @@ def login():
             return response
         logger.warning("Failed login attempt by %s from %s", username, request.remote_addr)
         flash("Invalid credentials.")
-    return render_template("login.html", next=next_url)
+    return render_template(
+        "login.html",
+        next=next_url,
+        m365_available=_is_m365_configured(),
+    )
 
 
 @admin_bp.route("/logout")
@@ -82,6 +87,38 @@ def logout():
     response = redirect(url_for("admin.login"))
     unset_jwt_cookies(response)
     return response
+
+
+@admin_bp.route("/login/m365")
+@limiter.limit("5 per minute")
+def login_m365():
+    """Placeholder endpoint for Microsoft 365 OAuth."""
+    if not _is_m365_configured():
+        flash(
+            "Microsoft 365 login isn't configured yet. Set M365_CLIENT_ID, M365_TENANT_ID, "
+            "M365_REDIRECT_URI, and M365_CLIENT_SECRET to enable it.",
+            "warning",
+        )
+        return redirect(url_for("admin.login"))
+
+    auth_url = _build_m365_authorize_url(request.args.get("next"))
+    flash(
+        "Microsoft 365 login placeholder reached. Once credentials are in place, you'll be "
+        "redirected to Microsoft for authentication.",
+        "info",
+    )
+    return redirect(auth_url)
+
+
+@admin_bp.route("/oauth/m365/callback")
+def m365_callback():
+    """Placeholder callback for Microsoft OAuth."""
+    flash(
+        "Received Microsoft OAuth callback placeholder. Configure the token exchange once "
+        "client credentials are available.",
+        "info",
+    )
+    return redirect(url_for("admin.login"))
 
 
 @admin_bp.route("/")
@@ -352,3 +389,29 @@ def export_csv():
         headers={"Content-Disposition": "attachment;filename=conversations.csv"},
     )
     return response
+
+
+def _is_m365_configured():
+    required_keys = [
+        "M365_CLIENT_ID",
+        "M365_TENANT_ID",
+        "M365_REDIRECT_URI",
+    ]
+    config = current_app.config
+    return all(config.get(key) for key in required_keys)
+
+
+def _build_m365_authorize_url(next_url):
+    config = current_app.config
+    tenant = config.get("M365_TENANT_ID", "common")
+    authority = f"https://login.microsoftonline.com/{tenant}"
+    scopes = config.get("M365_SCOPES", [])
+    query = {
+        "client_id": config.get("M365_CLIENT_ID", ""),
+        "response_type": "code",
+        "redirect_uri": config.get("M365_REDIRECT_URI", ""),
+        "response_mode": "query",
+        "scope": " ".join(scopes),
+        "state": next_url or url_for("admin.admin"),
+    }
+    return f"{authority}/oauth2/v2.0/authorize?{urlencode(query)}"

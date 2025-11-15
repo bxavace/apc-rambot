@@ -28,6 +28,14 @@ or (prod-linux)
 gunicorn -c gunicorn.config.py app:app
 ```
 
+To enable MS365 Integration, add the following to `.env`:
+```
+M365_CLIENT_ID
+M365_CLIENT_SECRET
+M365_TENANT_ID
+M365_REDIRECT_URI
+```
+
 ---
 
 Codebase:

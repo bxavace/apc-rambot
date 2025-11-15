@@ -18,6 +18,11 @@ class Config:
     JWT_COOKIE_SECURE = False
     JWT_COOKIE_SAMESITE = 'Lax'
     JWT_COOKIE_CSRF_PROTECT = False
+    M365_CLIENT_ID = os.getenv('M365_CLIENT_ID')
+    M365_CLIENT_SECRET = os.getenv('M365_CLIENT_SECRET')
+    M365_TENANT_ID = os.getenv('M365_TENANT_ID')
+    M365_REDIRECT_URI = os.getenv('M365_REDIRECT_URI')
+    M365_SCOPES = ['openid', 'profile', 'email', 'offline_access']
 
 class Development(Config):
     DEBUG = True
