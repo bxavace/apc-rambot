@@ -4,6 +4,7 @@ Flask-Cors
 Flask-Migrate
 flask-sqlalchemy
 python-dotenv
+Flask-JWT-Extended
 azure-identity
 azure-search-documents
 langchain==0.3.27

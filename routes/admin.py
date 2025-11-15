@@ -15,8 +15,13 @@ from flask import (
     redirect,
     render_template,
     request,
-    session as flask_session,
     url_for,
+)
+from flask_jwt_extended import (
+    create_access_token,
+    set_access_cookies,
+    unset_jwt_cookies,
+    verify_jwt_in_request,
 )
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, WebBaseLoader
 from langchain_text_splitters import SpacyTextSplitter
@@ -42,34 +47,41 @@ def check_auth(username, password):
 def login_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        if "authenticated" not in flask_session:
-            return redirect(url_for("admin.login", next=url_for("admin.admin")))
+        try:
+            verify_jwt_in_request()
+        except Exception:  # pylint: disable=broad-except
+            next_url = request.path
+            return redirect(url_for("admin.login", next=next_url))
         return f(*args, **kwargs)
 
     return decorated
 
 
 @admin_bp.route("/login", methods=["GET", "POST"])
-@limiter.limit("5 per minute")
+@limiter.limit("10 per minute")
 def login():
+    next_url = request.args.get("next") or request.form.get("next") or url_for("admin.admin")
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if check_auth(username, password):
-            flask_session["authenticated"] = True
+            access_token = create_access_token(identity=username)
+            response = redirect(next_url)
+            set_access_cookies(response, access_token)
             logger.info("Successful login by %s from %s", username, request.remote_addr)
-            return redirect(url_for("admin.admin"))
+            return response
         logger.warning("Failed login attempt by %s from %s", username, request.remote_addr)
         flash("Invalid credentials.")
-    return render_template("login.html")
+    return render_template("login.html", next=next_url)
 
 
 @admin_bp.route("/logout")
 def logout():
-    flask_session.pop("authenticated", None)
     flash("You have been logged out.")
     logger.info("User logged out from %s", request.remote_addr)
-    return redirect(url_for("admin.login"))
+    response = redirect(url_for("admin.login"))
+    unset_jwt_cookies(response)
+    return response
 
 
 @admin_bp.route("/")

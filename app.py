@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask_cors import CORS
 from flask_migrate import Migrate
+from flask_jwt_extended import JWTManager
 from dotenv import load_dotenv
 
 from config import Development, Production
@@ -14,6 +15,7 @@ import os
 
 load_dotenv()
 
+jwt = JWTManager()
 migrate = Migrate()
 
 
@@ -27,6 +29,7 @@ def create_app():
     db.init_app(app)
     limiter.init_app(app)
     migrate.init_app(app, db)
+    jwt.init_app(app)
 
     CORS(
         app,
